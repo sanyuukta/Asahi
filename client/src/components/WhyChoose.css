@@ -1,0 +1,272 @@
+/* ========================================================
+   UNIFORM PREMIUM CORPORATE WHY CHOOSE SECTION
+   ======================================================== */
+
+.whychoose-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 8%;
+  background: #FCF8F8; /* Matches warm brand red tone */
+  text-align: center;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Background Ambient Glows */
+.whychoose-bg-glow {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(215, 0, 21, 0.04) 0%, rgba(215, 0, 21, 0) 70%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.whychoose-bg-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(217, 28, 60, 0.03) 0%, rgba(217, 28, 60, 0) 75%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.whychoose-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 70px;
+}
+
+.whychoose-tag {
+  display: inline-block;
+  background: rgba(217, 28, 60, 0.07);
+  border: 1px solid rgba(217, 28, 60, 0.16);
+  color: #D70015;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 30px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* TITLE */
+.whychoose-title {
+  font-size: clamp(34px, 4.5vw, 46px);
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 18px;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.whychoose-title span {
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SUBTITLE */
+.whychoose-subtitle {
+  max-width: 680px;
+  margin: auto;
+  font-size: 16.5px;
+  color: #4b5563;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.whychoose-subtitle::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* GRID */
+.whychoose-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1240px;
+  margin: auto;
+}
+
+/* CARD BASE - CLEAN LIGHT GLASS */
+.whychoose-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 40px 32px;
+  border-radius: 26px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.02),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* BOTTOM GRADIENT BORDER SCALING UPWARD */
+.whychoose-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+}
+
+/* HOVER EFFECT */
+.whychoose-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: #ffffff;
+  border-color: rgba(215, 0, 21, 0.35);
+  box-shadow: 
+    0 22px 45px rgba(215, 0, 21, 0.08), 
+    0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.whychoose-card:hover::after {
+  transform: scaleY(1);
+  opacity: 1;
+  height: 6px;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+}
+
+/* ICON - STARTS SUBTLE RED, TURNS SOLID RED ON HOVER */
+.whychoose-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(217, 28, 60, 0.06);
+  color: #D70015;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whychoose-card:hover .whychoose-icon {
+  transform: scale(1.08);
+  background: #D70015; /* Active red background */
+  color: #ffffff; /* Active white symbol */
+}
+
+/* CARD NUMBER (ABSOLUTE POSITIONED TOP RIGHT) */
+.card-number {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  font-size: 13.5px;
+  font-weight: 900;
+  color: rgba(215, 0, 21, 0.2);
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+}
+
+.whychoose-card:hover .card-number {
+  color: #D70015;
+}
+
+/* TITLE */
+.whychoose-card h3 {
+  font-size: 19.5px;
+  font-weight: 850;
+  color: #111827;
+  margin-bottom: 10px;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* DESCRIPTION */
+.whychoose-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN
+   ======================================================== */
+@media (max-width: 1024px) {
+  .whychoose-section {
+    padding: 90px 6%;
+  }
+  .whychoose-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .whychoose-section {
+    padding: 60px 3%;
+  }
+  .whychoose-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-2-2 column grid layout */
+    gap: 12px; /* Compact gap */
+  }
+  .whychoose-card {
+    padding: 24px 14px;
+    border-radius: 16px;
+  }
+  .whychoose-card h3 {
+    font-size: 15.5px !important; /* Resized for mobile columns */
+    margin-bottom: 8px;
+  }
+  .whychoose-card p {
+    font-size: 11.5px !important; /* Resized for mobile columns */
+    line-height: 1.45;
+  }
+  .whychoose-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .card-header-row {
+    margin-bottom: 16px;
+  }
+  .whychoose-header {
+    margin-bottom: 40px;
+  }
+  .whychoose-subtitle::after {
+    margin: 12px auto 0 !important;
+  }
+}

@@ -1,0 +1,208 @@
+/* ========================================================
+   GLOBAL ASAHI BUTTONS — Gradient + Hover Slide Shine
+   ======================================================== */
+
+.btn-primary,
+.primary-btn,
+.proceed-checkout-btn,
+.place-btn,
+.browse-books-btn,
+.enroll-btn,
+.enroll-btn-premium,
+.form-section button,
+.pay-now-btn,
+.profile-save-btn,
+.btn-premium-solid,
+.courses-btn,
+.btn-hero-primary-pill,
+.about-btn,
+.enquiry-submit-btn,
+.submit-form-btn,
+.cta-btn-primary {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(255, 30, 39, 0.3) !important;
+  z-index: 1 !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Shine layer — slides on hover */
+.btn-primary::after,
+.primary-btn::after,
+.proceed-checkout-btn::after,
+.place-btn::after,
+.browse-books-btn::after,
+.enroll-btn::after,
+.enroll-btn-premium::after,
+.form-section button::after,
+.pay-now-btn::after,
+.profile-save-btn::after,
+.btn-premium-solid::after,
+.courses-btn::after,
+.btn-hero-primary-pill::after,
+.about-btn::after,
+.enquiry-submit-btn::after,
+.submit-form-btn::after,
+.cta-btn-primary::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 55% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.btn-primary:hover,
+.primary-btn:hover,
+.proceed-checkout-btn:hover,
+.place-btn:hover,
+.browse-books-btn:hover,
+.enroll-btn:hover,
+.enroll-btn-premium:hover,
+.form-section button:hover,
+.pay-now-btn:hover,
+.profile-save-btn:hover,
+.btn-premium-solid:hover,
+.courses-btn:hover,
+.btn-hero-primary-pill:hover,
+.about-btn:hover,
+.enquiry-submit-btn:hover,
+.submit-form-btn:hover,
+.cta-btn-primary:hover {
+  background: linear-gradient(135deg, #FF2E36 0%, #C40015 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(255, 30, 39, 0.42) !important;
+}
+
+/* Slide shine across button on hover */
+.btn-primary:hover::after,
+.primary-btn:hover::after,
+.proceed-checkout-btn:hover::after,
+.place-btn:hover::after,
+.browse-books-btn:hover::after,
+.enroll-btn:hover::after,
+.enroll-btn-premium:hover::after,
+.form-section button:hover::after,
+.pay-now-btn:hover::after,
+.profile-save-btn:hover::after,
+.btn-premium-solid:hover::after,
+.courses-btn:hover::after,
+.btn-hero-primary-pill:hover::after,
+.about-btn:hover::after,
+.enquiry-submit-btn:hover::after,
+.submit-form-btn:hover::after,
+.cta-btn-primary:hover::after {
+  left: 200% !important;
+}
+
+.btn-primary:active,
+.primary-btn:active,
+.proceed-checkout-btn:active,
+.place-btn:active,
+.browse-books-btn:active,
+.enroll-btn:active,
+.enroll-btn-premium:active,
+.form-section button:active,
+.pay-now-btn:active,
+.profile-save-btn:active,
+.btn-premium-solid:active,
+.courses-btn:active,
+.btn-hero-primary-pill:active,
+.about-btn:active,
+.enquiry-submit-btn:active,
+.submit-form-btn:active,
+.cta-btn-primary:active {
+  transform: translateY(0) !important;
+}
+
+/* Touch / mobile — slide + gradient on tap */
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  .btn-primary,
+  .primary-btn,
+  .proceed-checkout-btn,
+  .place-btn,
+  .browse-books-btn,
+  .enroll-btn,
+  .enroll-btn-premium,
+  .form-section button,
+  .pay-now-btn,
+  .profile-save-btn,
+  .btn-premium-solid,
+  .courses-btn,
+  .btn-hero-primary-pill,
+  .about-btn,
+  .enquiry-submit-btn,
+  .submit-form-btn,
+  .cta-btn-primary {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+
+  .btn-primary:active,
+  .primary-btn:active,
+  .proceed-checkout-btn:active,
+  .place-btn:active,
+  .browse-books-btn:active,
+  .enroll-btn:active,
+  .enroll-btn-premium:active,
+  .form-section button:active,
+  .pay-now-btn:active,
+  .profile-save-btn:active,
+  .btn-premium-solid:active,
+  .courses-btn:active,
+  .btn-hero-primary-pill:active,
+  .about-btn:active,
+  .enquiry-submit-btn:active,
+  .submit-form-btn:active,
+  .cta-btn-primary:active {
+    background: linear-gradient(135deg, #FF2E36 0%, #C40015 100%) !important;
+    transform: translateY(-2px) scale(0.98) !important;
+    box-shadow: 0 8px 25px rgba(255, 30, 39, 0.42) !important;
+  }
+
+  .btn-primary:active::after,
+  .primary-btn:active::after,
+  .proceed-checkout-btn:active::after,
+  .place-btn:active::after,
+  .browse-books-btn:active::after,
+  .enroll-btn:active::after,
+  .enroll-btn-premium:active::after,
+  .form-section button:active::after,
+  .pay-now-btn:active::after,
+  .profile-save-btn:active::after,
+  .btn-premium-solid:active::after,
+  .courses-btn:active::after,
+  .btn-hero-primary-pill:active::after,
+  .about-btn:active::after,
+  .enquiry-submit-btn:active::after,
+  .submit-form-btn:active::after,
+  .cta-btn-primary:active::after {
+    left: 200% !important;
+  }
+}

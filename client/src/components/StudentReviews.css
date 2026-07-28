@@ -1,0 +1,339 @@
+/* ========================================================
+   PREMIUM DUAL-DIRECTION STUDENT REVIEWS STYLING
+======================================================== */
+
+:root {
+  --gap-students: 60px;
+  --gap-reviews: 30px;
+}
+
+.reviews-section {
+  width: 100%;
+  padding: 80px 0 100px;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow: hidden;
+  text-align: center;
+  background: #f8fafc;
+  position: relative;
+}
+
+/* TITLE */
+.reviews-title {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #0f172a;
+  letter-spacing: -1.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.reviews-title span {
+  color: #D91C3C;
+}
+
+.reviews-subtitle {
+  font-size: 15.5px;
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 55px;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  line-height: 1.6;
+}
+
+.reviews-subtitle::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* ========================================================
+   MARQUEE ROTATORS (WITH FADE OUT BOUNDARIES)
+======================================================== */
+.students-slider, .reviews-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  /* Premium linear mask fade edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.students-slider {
+  margin-bottom: 45px;
+}
+
+/* ========================================================
+   TRACK 1: STUDENTS (LEFT-TO-RIGHT MARQUEE)
+======================================================== */
+.students-track {
+  display: flex;
+  gap: var(--gap-students);
+  width: max-content;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap-students);
+  animation: studentsMoveLtoR 28s linear infinite;
+}
+
+
+
+.student-box {
+  text-align: center;
+}
+
+/* Elegant visual initials avatar */
+.student-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+}
+
+.student-box p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ========================================================
+   TRACK 2: REVIEWS (RIGHT-TO-LEFT MARQUEE)
+======================================================== */
+.reviews-track {
+  display: flex;
+  gap: var(--gap-reviews);
+  width: max-content;
+}
+
+.marquee-content-reviews {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap-reviews);
+  animation: reviewsMoveRtoL 32s linear infinite;
+}
+
+
+
+.review-box {
+  background: #ffffff;
+  padding: 32px 36px;
+  border-radius: 20px;
+  min-width: 380px;
+  max-width: 380px;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* BOTTOM GRADIENT BORDER SCALING UPWARD ON HOVER */
+.review-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.review-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(215, 0, 21, 0.35);
+  box-shadow: 0 20px 45px rgba(215, 0, 21, 0.08);
+}
+
+.review-box:hover::after {
+  transform: scaleY(1);
+  opacity: 1;
+  height: 6px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.review-author {
+  margin-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.review-author h5 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+
+.review-author span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #D91C3C;
+}
+
+/* Elegant quote mark background */
+.review-box::before {
+  content: "❝";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 80px;
+  color: #D91C3C;
+  opacity: 0.05;
+  line-height: 1;
+  font-family: serif;
+  z-index: 0;
+}
+
+/* ========================================================
+   SEAMLESS INFINITE MARQUEE ANIMATIONS
+======================================================== */
+@keyframes studentsMoveLtoR {
+  0% { transform: translateX(calc(-100% - var(--gap-students))); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes reviewsMoveRtoL {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - var(--gap-reviews))); }
+}
+
+/* ========================================================
+   RESPONSIVE DEVICE DESIGN
+======================================================== */
+@media(max-width: 1000px) {
+  :root {
+    --gap-students: 40px;
+    --gap-reviews: 24px;
+  }
+  
+  .reviews-section {
+    padding: 60px 0 80px;
+  }
+
+  .reviews-title {
+    font-size: 38px;
+    margin-bottom: 10px !important;
+  }
+
+  .reviews-subtitle {
+    font-size: 13.5px !important;
+    margin-bottom: 30px !important;
+    padding: 0 16px !important;
+  }
+
+  .reviews-subtitle::after {
+    margin: 12px auto 0 !important;
+  }
+
+  .review-box {
+    min-width: 320px;
+    max-width: 320px;
+    padding: 24px 28px;
+  }
+}
+
+@media(max-width: 600px) {
+  :root {
+    --gap-students: 30px;
+    --gap-reviews: 16px;
+  }
+  
+  .reviews-section {
+    padding: 50px 0 70px;
+  }
+
+  .reviews-title {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .student-avatar {
+    width: 75px;
+    height: 75px;
+    font-size: 22px;
+    margin-bottom: 8px;
+    border-width: 2px;
+  }
+
+  .student-box p {
+    font-size: 12.5px;
+  }
+
+  .review-box {
+    min-width: 270px;
+    max-width: 270px;
+    padding: 18px 20px;
+    border-radius: 16px;
+  }
+
+  .review-text {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  
+  .review-author {
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+
+  .review-author h5 {
+    font-size: 13px;
+  }
+
+  .review-author span {
+    font-size: 10.5px;
+  }
+  
+  .review-box::before {
+    font-size: 60px;
+    top: 5px;
+    left: 15px;
+  }
+}

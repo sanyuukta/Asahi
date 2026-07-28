@@ -1,0 +1,27 @@
+body{
+margin:0;
+font-family:sans-serif;
+}
+
+.container{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background: linear-gradient(135deg,#E60023,#ff4d4d,#ffffff);
+color:white;
+text-align:center;
+}
+
+
+
+button{
+padding:12px 20px;
+border:none;
+background:white;
+color:#E60023;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}

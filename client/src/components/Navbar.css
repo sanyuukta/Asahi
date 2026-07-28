@@ -1,0 +1,610 @@
+/* ==========================================
+   ULTRA-PREMIUM FLOATING NAVBAR
+   ========================================== */
+.navbar-premium {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  z-index: 1000;
+  overflow: hidden; /* Keep the curved pseudo-element clipped */
+  
+  /* Polished Luxury Paint - Multi-layered Red Background */
+  background:
+    /* Top-right glossy highlight */
+    radial-gradient(circle at 85% 0%, rgba(255,80,80,.22), transparent 32%),
+    /* Second curved wave highlight */
+    radial-gradient(circle at 35% -40%, rgba(255,255,255,.08), transparent 45%),
+    /* Diagonal light reflection */
+    linear-gradient(135deg, rgba(255,255,255,.08) 0%, transparent 35%),
+    /* Bottom curved fade into a darker red wave */
+    radial-gradient(circle at 50% 140%, rgba(130, 0, 10, 0.4) 0%, transparent 60%),
+    /* Base Ferrari Crimson Gradient */
+    linear-gradient(90deg,
+      #b50016 0%,
+      #cb001b 35%,
+      #d7001e 60%,
+      #c10018 100%
+    );
+  
+  /* 6px Glass backdrop blur */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  
+  /* Bottom Border Spec */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  
+  /* Clean, flat professional look - no outer header shadows */
+  box-shadow: none;
+  
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-premium:hover {
+  box-shadow: none;
+}
+
+/* Sharp Curved Wave Overlay inside right side of navbar */
+.navbar-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32%;
+  max-width: 480px;
+  min-width: 320px;
+  height: 100%;
+  /* Glossy transparent gradient fill on the right side of the curve */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 70%);
+  /* Curved boundary line separator */
+  border-left: 1.5px solid rgba(255, 255, 255, 0.16);
+  /* Graceful elliptical curve bulging leftward */
+  border-radius: 140px 0 0 160px / 50% 0 0 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Centered content layout container */
+.navbar-container-premium {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 24px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Force all immediate navbar blocks to lock to the exact vertical center line */
+.navbar-container-premium > * {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.nav-links-premium li {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1280px) {
+  .navbar-container-premium {
+    padding: 0 24px;
+  }
+}
+
+/* BRAND LOGO AREA */
+.main-nav-premium {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.logo-premium {
+  display: flex;
+  align-items: center;
+}
+
+.logo-premium img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: white;
+  padding: 2.5px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.brand-text-premium h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.brand-text-premium span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 3px;
+}
+
+/* NAVIGATION LINKS */
+.nav-links-premium {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.nav-links-premium a, .special-nav-link {
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+
+.nav-links-premium a::after, .special-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.nav-links-premium a:hover, .special-nav-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.nav-links-premium a:hover::after, .special-nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-links-premium a.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-links-premium a.active::after {
+  width: 100%;
+}
+
+/* RIGHT SECTION ITEMS */
+.nav-right-premium {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Icon Buttons (Cart/Profile) */
+.nav-icon-btn {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-icon-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08);
+}
+
+.enroll-pill-btn {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #b50016 !important;
+  font-size: 13.5px !important;
+  font-weight: 750 !important;
+  padding: 10px 22px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1;
+}
+
+.enroll-pill-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(179, 0, 18, 0.22) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.enroll-pill-btn:hover {
+  background: #ffffff !important;
+  color: #d7001e !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+}
+
+.enroll-pill-btn:hover::after {
+  left: 200%;
+}
+
+.enroll-pill-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Touch / mobile — header button slide on tap */
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  .enroll-pill-btn {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .enroll-pill-btn:active {
+    background: #ffffff !important;
+    color: #d7001e !important;
+    transform: translateY(-2px) scale(0.98) !important;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .enroll-pill-btn:active::after {
+    left: 200%;
+  }
+}
+
+/* Mobile Hamburger */
+.menu-icon-premium {
+  display: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon-premium:hover {
+  transform: scale(1.08);
+}
+
+/* Mobile Menu Container Hidden on Desktop */
+.mobile-menu-container {
+  display: none;
+}
+
+/* ==========================================
+   TABLET & MOBILE BREAKPOINTS
+   ========================================== */
+@media (max-width: 1024px) {
+  .navbar-premium {
+    width: calc(100% - 32px);
+    padding: 0 20px;
+  }
+  .nav-links-premium {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-premium {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    height: 72px;
+    padding: 0 !important;
+  }
+  .navbar-container-premium {
+    padding: 0 4px !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .main-nav-premium {
+    flex: 0 0 auto !important;
+    gap: 8px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 14px !important;
+    align-items: center !important;
+    height: auto !important;
+  }
+  .brand-text-premium {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    height: auto !important;
+  }
+  .brand-text-premium h2 {
+    font-size: 14px !important;
+    margin: 0 !important;
+    display: block !important;
+    line-height: 1.05 !important;
+  }
+  .brand-text-premium span {
+    display: block !important;
+    font-size: 6.5px !important;
+    letter-spacing: 0.4px !important;
+    margin-top: 1px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  .logo-premium img {
+    width: 32px;
+    height: 32px;
+  }
+  .desktop-only-links {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 4px !important;
+    height: auto !important;
+  }
+  .nav-links-premium li:nth-child(3) {
+    display: none !important;
+  }
+  .nav-links-premium a, .special-nav-link {
+    font-size: 12px;
+    padding: 5px 0;
+    white-space: nowrap;
+  }
+  .nav-right-premium {
+    flex: 0 0 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-right: 14px !important;
+    gap: 0 !important;
+    height: auto !important;
+  }
+  .menu-icon-premium {
+    display: none !important;
+  }
+  .enroll-pill-btn {
+    padding: 8px 14px !important;
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+  }
+  .nav-icon-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+
+  .mobile-menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-menu-container.active {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header-swiggy {
+    background: linear-gradient(135deg, #D5001C 0%, #C50018 100%);
+    padding: 30px 24px;
+    color: white;
+  }
+
+  .swiggy-user-info h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .swiggy-user-info p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 4px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mobile-menu-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .swiggy-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .swiggy-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .swiggy-list-item:hover {
+    background: #f1f5f9;
+  }
+
+  .sli-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #111111;
+  }
+
+  .sli-icon {
+    color: #D5001C;
+    font-size: 16px;
+  }
+
+  .sli-arrow {
+    color: #94a3b8;
+    font-size: 12px;
+  }
+
+  .mobile-footer {
+    padding: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: #f8fafc;
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 16px;
+  }
+
+  .legal-links span {
+    cursor: pointer;
+  }
+
+  .legal-links span:hover {
+    color: #D5001C;
+  }
+
+  .social-connect p {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 14px;
+  }
+
+  .social-icon {
+    font-size: 18px;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #D5001C;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar-premium {
+    height: 72px !important;
+    top: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+  .navbar-container-premium {
+    padding: 0 2px !important;
+    gap: 0 !important;
+  }
+  .main-nav-premium {
+    gap: 7px !important;
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+  }
+  .brand-text-premium h2 {
+    font-size: 13px !important;
+  }
+  .brand-text-premium span {
+    font-size: 6px !important;
+    letter-spacing: 0.35px !important;
+    margin-top: 1px !important;
+  }
+  .logo-premium img {
+    width: 28px;
+    height: 28px;
+  }
+  .desktop-only-links {
+    gap: 8px !important;
+    padding: 0 2px !important;
+  }
+  .nav-links-premium a, .special-nav-link {
+    font-size: 11px;
+    padding: 4px 0;
+  }
+  .enroll-pill-btn {
+    display: inline-flex !important;
+    padding: 7px 12px !important;
+    font-size: 10.5px !important;
+  }
+  .nav-right-premium {
+    padding-right: 12px !important;
+  }
+  .nav-icon-btn {
+    display: none !important;
+  }
+}

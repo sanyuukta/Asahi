@@ -1,0 +1,84 @@
+/* =========================================
+   CUSTOM REACT-TOASTIFY PREMIUM STYLES
+========================================= */
+
+/* Main Container spacing */
+.Toastify__toast-container {
+  padding: 20px !important;
+}
+
+/* The Toast Box - Premium Glassmorphism / Crisp look */
+.Toastify__toast {
+  border-radius: 12px !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0,0,0,0.05) !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  padding: 16px 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #0f172a !important; /* Force text color */
+}
+
+/* Text Body */
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #0f172a !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.2px !important;
+}
+
+.Toastify__toast-body div,
+.Toastify__toast-body span,
+.Toastify__toast-body p {
+  color: #0f172a !important; /* Prevent text being white */
+}
+
+/* Custom Icons colors */
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #10b981 !important; /* Premium Emerald */
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: #D91C3C !important; /* ASAHI Red */
+}
+
+.Toastify__toast--info .Toastify__toast-icon svg {
+  fill: #3b82f6 !important; /* Premium Blue */
+}
+
+/* Slim progress bar for premium feel */
+.Toastify__progress-bar {
+  height: 3px !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  bottom: 0 !important;
+  top: auto !important;
+  opacity: 0.9 !important;
+}
+
+.Toastify__progress-bar--success {
+  background: linear-gradient(90deg, #10b981, #34d399) !important;
+}
+
+.Toastify__progress-bar--error {
+  background: linear-gradient(90deg, #D91C3C, #f43f5e) !important;
+}
+
+.Toastify__progress-bar--info {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa) !important;
+}
+
+/* Close button - sleek and minimal */
+.Toastify__close-button {
+  color: #94a3b8 !important;
+  opacity: 0.5 !important;
+  align-self: center !important;
+  transition: 0.2s ease !important;
+}
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+  color: #0f172a !important;
+}
