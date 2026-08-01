@@ -883,12 +883,37 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  overflow: hidden;
 }
 
-.svc-step:hover {
+.svc-step::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.svc-step:hover,
+.svc-step:active {
   border-color: #FF1E27;
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(255, 30, 39, 0.2);
+  box-shadow: 0 20px 45px rgba(255, 30, 39, 0.18);
+}
+
+.svc-step:hover::after,
+.svc-step:active::after {
+  transform: scaleY(1);
+  opacity: 1;
+  height: 5px;
 }
 
 .svc-step-head {
@@ -1240,17 +1265,24 @@
   .svc-spot-actions { flex-direction: column; gap: 10px; }
   .btn-spot-enroll, .btn-spot-wa { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
 
-  /* Mobile Pathway Strip & Step Cards */
-  .svc-pathway { padding: 48px 4%; }
-  .svc-pathway-h2 { font-size: 25px; letter-spacing: -0.5px; margin: 0 0 8px; }
-  .svc-steps-row { grid-template-columns: 1fr; gap: 14px; }
+  /* Mobile Pathway Strip & Step Cards - SIDE BY SIDE (2 COLUMNS) */
+  .svc-pathway { padding: 44px 3%; }
+  .svc-pathway-h2 { font-size: 24px; letter-spacing: -0.5px; margin: 0 0 8px; }
+  .svc-steps-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
   .svc-step-arrow { display: none; }
   .svc-step {
-    padding: 20px 18px;
-    border-radius: 18px;
+    padding: 16px 14px;
+    border-radius: 16px;
     align-items: flex-start;
     text-align: left;
-    gap: 8px;
+    gap: 6px;
+  }
+  .svc-step::after {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
   .svc-step-head {
     width: 100%;
@@ -1260,29 +1292,29 @@
     margin-bottom: 2px;
   }
   .svc-step-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 16px;
   }
   .svc-step-num {
-    font-size: 22px;
+    font-size: 18px;
   }
   .svc-step-kanji {
-    font-size: 12px;
+    font-size: 11px;
   }
   .svc-step-tag {
-    font-size: 10px;
-    padding: 3px 10px;
+    font-size: 9px;
+    padding: 2.5px 8px;
   }
   .svc-step-title {
-    font-size: 16.5px;
+    font-size: 14.5px;
     font-weight: 850;
     margin: 2px 0 0;
   }
   .svc-step-desc {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.45;
     color: #475569;
   }
 
