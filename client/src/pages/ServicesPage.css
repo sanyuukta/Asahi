@@ -495,30 +495,6 @@
   color: #FF1E27;
 }
 
-.svc-nav-item-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  width: 100%;
-}
-
-.svc-mobile-inline-card {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
-}
-
-@media (min-width: 901px) {
-  .svc-mobile-inline-card {
-    display: none !important;
-  }
-}
-
 /* PROGRESS BAR */
 .svc-nav-progress {
   position: absolute;
@@ -533,7 +509,6 @@
 /* ── RIGHT SPOTLIGHT PANEL ───────────────────── */
 .svc-spotlight {
   min-height: 580px;
-  scroll-margin-top: 100px;
 }
 
 .svc-spotlight-card {
@@ -1223,12 +1198,6 @@
 
   .svc-hero-h1 { font-size: 44px; }
   .svc-steps-row { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 900px) {
-  .svc-spotlight {
-    margin-top: 10px;
-  }
 }
 
 @media (max-width: 768px) {

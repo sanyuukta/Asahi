@@ -308,8 +308,11 @@ function ServicesPage() {
     setActiveIdx(idx);
     setAutoAdvance(false);
     clearInterval(autoTimer.current);
+
     if (spotlightRef.current) {
-      spotlightRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const yOffset = -90;
+      const y = spotlightRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
