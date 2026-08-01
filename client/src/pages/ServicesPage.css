@@ -533,6 +533,7 @@
 /* ── RIGHT SPOTLIGHT PANEL ───────────────────── */
 .svc-spotlight {
   min-height: 580px;
+  scroll-margin-top: 100px;
 }
 
 .svc-spotlight-card {
@@ -1226,88 +1227,7 @@
 
 @media (max-width: 900px) {
   .svc-spotlight {
-    display: none !important;
-  }
-
-  .svc-mobile-inline-card {
-    display: flex !important;
-  }
-
-  .svc-mobile-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .svc-mobile-desc {
-    font-size: 13.5px;
-    color: #475569;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  .svc-mobile-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 12px 14px;
-  }
-
-  .svc-m-stat {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .svc-m-stat label {
-    display: block;
-    font-size: 9.5px;
-    text-transform: uppercase;
-    color: #64748b;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 1px;
-  }
-
-  .svc-m-stat strong {
-    display: block;
-    font-size: 12px;
-    font-weight: 800;
-    color: #0f172a;
-  }
-
-  .svc-mobile-deliverables h5 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748b;
-    font-weight: 750;
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .svc-mobile-deliv-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .svc-mobile-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 6px;
-  }
-
-  .svc-mobile-actions button {
-    width: 100%;
-    justify-content: center;
+    margin-top: 10px;
   }
 }
 
