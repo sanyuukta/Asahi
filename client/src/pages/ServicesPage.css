@@ -1201,42 +1201,99 @@
 }
 
 @media (max-width: 768px) {
-  .svc-hero { padding: 115px 5% 40px; }
-  .svc-hero-h1 { font-size: 34px; letter-spacing: -1.2px; }
-  .svc-hero-sub { font-size: 14.5px; }
+  .svc-hero { padding: 110px 4% 30px; }
+  .svc-hero-h1 { font-size: 32px; letter-spacing: -1.2px; }
+  .svc-hero-sub { font-size: 14px; margin-bottom: 16px; }
+  .svc-sub-underline { width: 60px; height: 3px; margin: 10px auto 24px; }
 
-  .svc-showcase { padding: 40px 4%; }
+  /* Mobile Search & Filter Bar */
+  .svc-search-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 20px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .svc-filter-divider { display: none; }
+  .svc-filter-trigger { width: 100%; justify-content: space-between; }
+  .svc-filter-menu { width: 100%; right: 0; left: 0; }
+
+  .svc-showcase { padding: 30px 3%; }
 
   .svc-spotlight-card {
-    padding: 28px 24px;
+    padding: 22px 18px;
     border-radius: 20px;
   }
 
-  .svc-spot-title-block { flex-direction: column; align-items: flex-start; }
+  .svc-spot-title-block { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .svc-spot-title { font-size: 22px; }
+  .svc-spot-subtitle { font-size: 13.5px; }
+
   .svc-stat-strip {
     flex-direction: column;
-    gap: 16px;
-    padding: 18px 20px;
+    gap: 14px;
+    padding: 16px 18px;
   }
   .svc-stat-div { width: 100%; height: 1px; margin: 0; }
 
   .svc-deliv-grid { grid-template-columns: 1fr; }
-  .svc-spot-actions { flex-direction: column; }
-  .btn-spot-enroll, .btn-spot-wa { width: 100%; justify-content: center; }
+  .svc-spot-actions { flex-direction: column; gap: 10px; }
+  .btn-spot-enroll, .btn-spot-wa { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
 
-  .svc-steps-row { grid-template-columns: 1fr; gap: 18px; }
+  /* Mobile Pathway Strip & Step Cards */
+  .svc-pathway { padding: 48px 4%; }
+  .svc-pathway-h2 { font-size: 25px; letter-spacing: -0.5px; margin: 0 0 8px; }
+  .svc-steps-row { grid-template-columns: 1fr; gap: 14px; }
   .svc-step-arrow { display: none; }
-  .svc-step { text-align: left; align-items: flex-start; }
-  .svc-step-head { width: 100%; justify-content: space-between; }
+  .svc-step {
+    padding: 20px 18px;
+    border-radius: 18px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+  .svc-step-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+  .svc-step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+  .svc-step-num {
+    font-size: 22px;
+  }
+  .svc-step-kanji {
+    font-size: 12px;
+  }
+  .svc-step-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+  .svc-step-title {
+    font-size: 16.5px;
+    font-weight: 850;
+    margin: 2px 0 0;
+  }
+  .svc-step-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #475569;
+  }
 
   .svc-why-grid { grid-template-columns: 1fr; }
 
-  .svc-cta-inner { flex-direction: column; text-align: center; }
+  .svc-cta-banner { padding: 36px 18px; border-radius: 20px; }
+  .svc-cta-inner { flex-direction: column; text-align: center; gap: 20px; }
   .svc-cta-label { margin: 0 auto; }
-  .svc-cta-text h2 { font-size: 22px; }
-  .btn-cta-partner { width: 100%; justify-content: center; }
-  .svc-pathway-h2 { font-size: 26px; }
+  .svc-cta-text h2 { font-size: 20px; }
+  .btn-cta-partner { width: 100%; justify-content: center; padding: 14px 24px; font-size: 14px; }
 
-  .svc-big-kanji { font-size: 90px; top: 12px; right: 14px; }
-  .svc-kanji-float { font-size: 70px; }
+  .svc-big-kanji { font-size: 80px; top: 10px; right: 12px; }
+  .svc-kanji-float { font-size: 60px; }
 }
