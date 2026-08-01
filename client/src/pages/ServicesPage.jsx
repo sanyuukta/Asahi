@@ -473,28 +473,83 @@ function ServicesPage() {
                   className={`svc-nav-item ${safeIdx === idx ? "active" : ""}`}
                   onClick={() => handleSelect(idx)}
                 >
-                  <div className="svc-nav-item-left">
-                    <span className="svc-nav-num">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <div className="svc-nav-text">
-                      <p className="svc-nav-title">{svc.title}</p>
-                      <AnimatePresence>
-                        {safeIdx === idx && (
-                          <motion.span
-                            className="svc-nav-sub"
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.25 }}
-                          >
-                            {svc.subtitle}
-                          </motion.span>
-                        )}
-                      </AnimatePresence>
+                  <div className="svc-nav-item-top">
+                    <div className="svc-nav-item-left">
+                      <span className="svc-nav-num">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <div className="svc-nav-text">
+                        <p className="svc-nav-title">{svc.title}</p>
+                        <span className="svc-nav-sub">{svc.subtitle}</span>
+                      </div>
                     </div>
+                    <span className="svc-nav-icon">{svc.icon}</span>
                   </div>
-                  <span className="svc-nav-icon">{svc.icon}</span>
+
+                  {/* MOBILE INLINE EXPANDABLE DETAILS PANEL */}
+                  <AnimatePresence>
+                    {safeIdx === idx && (
+                      <motion.div 
+                        className="svc-mobile-inline-card"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        <div className="svc-mobile-meta-row">
+                          <span className="svc-spot-badge">{svc.badge}</span>
+                          <span className="svc-spot-for">🎯 {svc.forWhom}</span>
+                        </div>
+
+                        <p className="svc-mobile-desc">{svc.desc}</p>
+
+                        <div className="svc-mobile-stats-grid">
+                          <div className="svc-m-stat">
+                            <FaClock className="svc-stat-icon" />
+                            <div>
+                              <label>Duration</label>
+                              <strong>{svc.duration}</strong>
+                            </div>
+                          </div>
+                          <div className="svc-m-stat">
+                            <FaGlobeAsia className="svc-stat-icon" />
+                            <div>
+                              <label>Format</label>
+                              <strong>{svc.mode}</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="svc-mobile-deliverables">
+                          <h5><FaStar className="svc-heading-icon" /> Key Deliverables & Outcomes</h5>
+                          <div className="svc-mobile-deliv-list">
+                            {svc.deliverables.map((d, i) => (
+                              <div key={i} className="svc-deliv-item">
+                                <FaCheckCircle className="svc-check" />
+                                <span>{d}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="svc-mobile-actions">
+                          <button
+                            className="btn-spot-enroll"
+                            onClick={(e) => { e.stopPropagation(); handleEnroll(svc.title); }}
+                          >
+                            Begin Your Journey <FaArrowRight />
+                          </button>
+                          <button
+                            className="btn-spot-wa"
+                            onClick={(e) => { e.stopPropagation(); handleWA(svc.title); }}
+                          >
+                            <FaWhatsapp /> WhatsApp Inquiry
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
                   {safeIdx === idx && (
                     <motion.div
                       className="svc-nav-progress"
