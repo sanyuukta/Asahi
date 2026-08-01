@@ -11,7 +11,8 @@ import {
   FaTrash,
   FaSearch,
   FaClock,
-  FaFileExcel
+  FaFileExcel,
+  FaBook
 } from "react-icons/fa";
 import { downloadStudentListExcel } from "../utils/downloadStudentExcel";
 
@@ -20,6 +21,13 @@ function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [books, setBooks] = useState([]);
+  const [bookForm, setBookForm] = useState({
+    name: "",
+    description: "",
+    image: null,
+  });
+  const [bookSubmitting, setBookSubmitting] = useState(false);
   const [confirmDialog, setConfirmDialog] = useState({
     isOpen: false,
     message: "",
@@ -46,6 +54,16 @@ function AdminDashboard() {
     }
   };
 
+  const fetchBooks = async () => {
+    try {
+      const res = await API.get("/books");
+      setBooks(res.data.books || []);
+    } catch (err) {
+      console.log(err);
+      toast.error("Failed to load books ❌");
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 900) setSidebarOpen(false);
@@ -56,6 +74,7 @@ function AdminDashboard() {
 
   useEffect(() => {
     fetchData();
+    fetchBooks();
   }, []);
 
   /* =========================
@@ -113,6 +132,62 @@ function AdminDashboard() {
       console.error(err);
       toast.error("Failed to generate Excel file");
     }
+  };
+
+  const handleBookChange = (e) => {
+    const { name, value } = e.target;
+    setBookForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleBookImage = (e) => {
+    const file = e.target.files?.[0] || null;
+    setBookForm((prev) => ({ ...prev, image: file }));
+  };
+
+  const handleAddBook = async (e) => {
+    e.preventDefault();
+    if (!bookForm.name || !bookForm.image) {
+      toast.warning("Book name and image are required");
+      return;
+    }
+
+    try {
+      setBookSubmitting(true);
+      const formData = new FormData();
+      formData.append("name", bookForm.name);
+      formData.append("description", bookForm.description);
+      formData.append("image", bookForm.image);
+
+      await API.post("/books", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      toast.success("Book added successfully ✅");
+      setBookForm({ name: "", description: "", image: null });
+      fetchBooks();
+    } catch (err) {
+      console.log(err);
+      toast.error("Failed to add book ❌");
+    } finally {
+      setBookSubmitting(false);
+    }
+  };
+
+  const handleDeleteBook = async (bookId) => {
+    setConfirmDialog({
+      isOpen: true,
+      message: "Delete this book from website?",
+      onConfirm: async () => {
+        setConfirmDialog((prev) => ({ ...prev, isOpen: false }));
+        try {
+          await API.delete(`/books/${bookId}`);
+          toast.success("Book deleted successfully");
+          setBooks((prev) => prev.filter((book) => book._id !== bookId));
+        } catch (err) {
+          console.log(err);
+          toast.error("Failed to delete book ❌");
+        }
+      },
+    });
   };
 
   if (loading) {
@@ -206,6 +281,15 @@ function AdminDashboard() {
                 <p>{enquiries.length}</p>
               </div>
             </div>
+            <div className="card">
+              <div className="card-icon-area red">
+                <FaBook />
+              </div>
+              <div>
+                <h3>Total Books</h3>
+                <p>{books.length}</p>
+              </div>
+            </div>
           </div>
 
           {/* LIST HEADER WITH SEARCH */}
@@ -275,6 +359,73 @@ function AdminDashboard() {
               </tbody>
             </table>
           </div>
+
+          <section className="books-admin-section">
+            <div className="section-top">
+              <h2>Books Management</h2>
+            </div>
+
+            <form className="book-form-inline" onSubmit={handleAddBook}>
+              <input
+                type="text"
+                name="name"
+                value={bookForm.name}
+                onChange={handleBookChange}
+                placeholder="Book name (e.g. Fujichan 1)"
+              />
+              <input
+                type="text"
+                name="description"
+                value={bookForm.description}
+                onChange={handleBookChange}
+                placeholder="Book description"
+              />
+              <input type="file" accept="image/*" onChange={handleBookImage} />
+              <button className="btn-primary" type="submit" disabled={bookSubmitting}>
+                {bookSubmitting ? "Adding..." : "Add Book"}
+              </button>
+            </form>
+
+            <div className="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {books.map((book) => (
+                    <tr key={book._id}>
+                      <td>
+                        <img
+                          src={book.imageUrl}
+                          alt={book.name}
+                          style={{ width: "62px", height: "46px", objectFit: "cover", borderRadius: "8px" }}
+                        />
+                      </td>
+                      <td style={{ fontWeight: 600 }}>{book.name}</td>
+                      <td style={{ maxWidth: "320px" }}>{book.description || "—"}</td>
+                      <td>
+                        <button className="btn-danger" onClick={() => handleDeleteBook(book._id)}>
+                          <FaTrash style={{ marginRight: "6px" }} /> Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                  {books.length === 0 && (
+                    <tr>
+                      <td colSpan="4" style={{ textAlign: "center", padding: "24px", color: "#64748b" }}>
+                        No books added yet.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </section>
         </main>
       </div>
     </>

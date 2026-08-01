@@ -1,15 +1,27 @@
 import { useState, useEffect } from "react";
-import { FaWhatsapp, FaTimes, FaGraduationCap, FaComments, FaHandshake } from "react-icons/fa";
+import { 
+  FaWhatsapp, 
+  FaTimes, 
+  FaGraduationCap, 
+  FaComments, 
+  FaHandshake, 
+  FaPaperPlane,
+  FaBookOpen,
+  FaAward,
+  FaBriefcase
+} from "react-icons/fa";
 import fujichan1 from "../assets/fujichan1.png";
 import fujichan2 from "../assets/fujichan2.png";
 import fujichan3 from "../assets/fujichan-3.png";
+import asahiLogo from "../assets/asahilogo.jpeg";
 import "./WhatsAppWidget.css";
 
 function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
+  const [customMessage, setCustomMessage] = useState("");
 
-  // Auto-hide the 'Chat with us!' tooltip after 5 seconds on load
+  // Auto-hide tooltip after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTooltip(false);
@@ -18,69 +30,103 @@ function WhatsAppWidget() {
     return () => clearTimeout(timer);
   }, []);
 
-  // User provided target number +91 77965 30192
+  // Target WhatsApp phone number (+91 77965 30192)
   const adminPhone = "917796530192";
 
   const topics = [
     {
-      id: "jlpt",
-      title: "JLPT & NAT Courses",
-      subtitle: "Enquire about prep batches",
+      id: "n5_course",
+      title: "JLPT N5 / Q5 Beginner Course",
+      subtitle: "Basic Foundation & Vocabulary (3 Months)",
       icon: <FaGraduationCap />,
-      message: "Hello ASAHI! I am interested in preparing for JLPT/NAT. Could you please share batch details and fee structure?"
+      message: `Kon'nichiwa ASAHI Advisory Team! 🌸\n\nI am interested in enrolling for the *JLPT N5 / Q5 Beginner Course*.\n\n📌 Requested Details:\n• Next Upcoming N5 Batch Dates & Timings\n• Fee Structure & Payment Modes\n• Hiragana, Katakana & 100 Kanji Worksheets\n\nPlease connect me with Sensei to confirm my enrollment. Arigatou gozaimasu! 🙏`
+    },
+    {
+      id: "n4_course",
+      title: "JLPT N4 / Q4 Pre-Intermediate",
+      subtitle: "Grammar & Listening Mastery (4 Months)",
+      icon: <FaGraduationCap />,
+      message: `Kon'nichiwa ASAHI Advisory Team! 🌸\n\nI am interested in enrolling for the *JLPT N4 / Q4 Course*.\n\n📌 Requested Details:\n• N4 Batch Schedules & Live Class Timings\n• Fee Details & Exam Mock Test Series\n• 300 Kanji & Vocabulary Prep\n\nPlease share the enrollment procedure. Arigatou! 🙏`
+    },
+    {
+      id: "n3_course",
+      title: "JLPT N3 / Q3 Intermediate Course",
+      subtitle: "Natural Speed Conversation & 650 Kanji",
+      icon: <FaGraduationCap />,
+      message: `Kon'nichiwa ASAHI Advisory Team! 🌸\n\nI want to enroll in the *JLPT N3 / Q3 Intermediate Course*.\n\n📌 Requested Details:\n• N3 Live Batch Timings & Instructor Info\n• Course Fee Structure & Mock Assessment Series\n• Pitch Accent Audio Dialogues\n\nLooking forward to joining. Arigatou gozaimasu! 🙏`
+    },
+    {
+      id: "n2_course",
+      title: "JLPT N2 / Q2 Business Level",
+      subtitle: "Advanced Corporate Japanese & Placements",
+      icon: <FaBriefcase />,
+      message: `Kon'nichiwa ASAHI Advisory Team! 💼\n\nI am aiming for *JLPT N2 / Q2 Business Level Certification* and direct career opportunities in Japan.\n\n📌 Requested Details:\n• N2 Advanced Batch Timings & Curriculum\n• Tokyo & Osaka Corporate Placement Support\n• Keigo Speech & Business Interview Prep\n\nKindly guide me through the registration. Arigatou! 🎌`
+    },
+    {
+      id: "n1_course",
+      title: "JLPT N1 / Q1 Native Mastery",
+      subtitle: "Highest Japanese Proficiency Level",
+      icon: <FaAward />,
+      message: `Kon'nichiwa ASAHI Senior Advisory Team! ⛩️\n\nI am interested in the *JLPT N1 / Q1 Native Level Course*.\n\n📌 Requested Details:\n• N1 Special Mentorship Batch Timings\n• Advanced 2,000 Kanji & Academic Literature\n• University & Executive Career Pipelines\n\nPlease connect me with Head Sensei. Arigatou gozaimasu! 🙏`
     },
     {
       id: "services",
-      title: "Explore Bilingual Services",
-      subtitle: "SSW, Placements, & Translation",
+      title: "Japan Careers & SSW Visas",
+      subtitle: "Tokyo & Osaka Direct Placement",
       icon: <FaComments />,
-      message: "Hello ASAHI! I would like to explore your Bilingual Services (SSW / Placements / Translation). Please share more details."
+      message: `Kon'nichiwa ASAHI Career Advisory Team! 💼\n\nI would like to explore ASAHI's Bilingual Recruitment & SSW Placement Services in Japan.\n\n📌 My Areas of Interest:\n• Direct Placement in Tokyo / Osaka (IT & Engineering)\n• SSW Visa Guidance & Interview Coaching\n• Japanese Resume Formatting & Keigo Mock Interviews\n\nKindly share the enrollment process and career consultation details. Arigatou! 🎌`
     },
     {
       id: "tieup",
-      title: "Corporate & College Tie-Up",
-      subtitle: "Bilingual recruitment partnership",
+      title: "Corporate & School Tie-Ups",
+      subtitle: "Institutional & Academic Partnerships",
       icon: <FaHandshake />,
-      message: "Hello ASAHI! I am looking for corporate tie-ups or institutional collaborations. Let's connect."
+      message: `Kon'nichiwa ASAHI Management! 🤝\n\nI am reaching out regarding an Institutional Tie-up & Academic Collaboration with ASAHI Bilingual Services.\n\n📌 Collaboration Scope:\n• School / College Japanese Language Programs (60+ Partnered Institutions)\n• Corporate Japanese Training for Employees\n• Student Exchange & Visa Pipeline\n\nLooking forward to discussing a partnership. Best regards!`
     },
     {
       id: "book1",
       title: "Fujichan 1 (Book)",
       subtitle: "Comprehensive N5-N4 Textbook",
       image: fujichan1,
-      message: "Hello ASAHI! I would like to purchase the *Fujichan 1 (JLPT N5-N4)* textbook. Please share payment and shipping details.\n\nBook Image: "
+      message: `Kon'nichiwa ASAHI Publishing! 📚\n\nI wish to order the *Fujichan 1 (JLPT N5-N4)* official Japanese textbook.\n\n📌 Item Details:\n• Book Title: Fujichan 1 (Comprehensive N5-N4)\n• Includes: Native Audio Exercises & Kanji Worksheets\n\nPlease share the payment link and doorstep delivery timeline. Arigatou! 🌸\n\nBook Reference: `
     },
     {
       id: "book2",
       title: "Fujichan 2 (Book)",
       subtitle: "Intermediate N3 Textbook",
       image: fujichan2,
-      message: "Hello ASAHI! I would like to purchase the *Fujichan 2 (JLPT N3)* textbook. Please share payment and shipping details.\n\nBook Image: "
+      message: `Kon'nichiwa ASAHI Publishing! 📚\n\nI wish to order the *Fujichan 2 (JLPT N3)* official Japanese textbook.\n\n📌 Item Details:\n• Book Title: Fujichan 2 (Intermediate N3)\n• Includes: Native Audio Exercises & Kanji Worksheets\n\nPlease share the payment link and doorstep delivery timeline. Arigatou! 🌸\n\nBook Reference: `
     },
     {
       id: "book3",
       title: "Fujichan 3 (Book)",
       subtitle: "Advanced N2-N1 Textbook",
       image: fujichan3,
-      message: "Hello ASAHI! I would like to purchase the *Fujichan 3 (JLPT N2-N1)* textbook. Please share payment and shipping details.\n\nBook Image: "
+      message: `Kon'nichiwa ASAHI Publishing! 📚\n\nI wish to order the *Fujichan 3 (JLPT N2-N1)* official Japanese textbook.\n\n📌 Item Details:\n• Book Title: Fujichan 3 (Advanced N2-N1)\n• Includes: Native Audio Exercises & Kanji Worksheets\n\nPlease share the payment link and doorstep delivery timeline. Arigatou! 🌸\n\nBook Reference: `
     }
   ];
 
   const handleTopicClick = (topic) => {
     let finalMessage = topic.message;
     if (topic.id.startsWith("book")) {
-      // Dynamic absolute URL so WhatsApp displays an automatic link preview
       const fullUrl = window.location.origin + topic.image;
       finalMessage += fullUrl;
     }
     const encoded = encodeURIComponent(finalMessage);
-    window.open(`https://wa.me/${adminPhone}?text=${encoded}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=${adminPhone}&text=${encoded}`, "_blank");
   };
 
-  const handleGeneralEnquiry = () => {
-    const message = "Hello ASAHI! I have a general enquiry. Please connect me with an advisor.";
-    const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/${adminPhone}?text=${encoded}`, "_blank");
+  const handleSendCustomMessage = (e) => {
+    e.preventDefault();
+    if (!customMessage.trim()) {
+      const defaultMsg = `Kon'nichiwa ASAHI Team! 🌸\n\nI have a general enquiry regarding Japanese language courses and career pathways. Please connect me with an advisor.\n\nArigatou gozaimasu! 🙏`;
+      window.open(`https://api.whatsapp.com/send?phone=${adminPhone}&text=${encodeURIComponent(defaultMsg)}`, "_blank");
+      return;
+    }
+
+    const formattedCustom = `Kon'nichiwa ASAHI Advisory Team! 🌸\n\n${customMessage.trim()}\n\nKindly assist me at your earliest convenience. Arigatou gozaimasu! 🙏`;
+    window.open(`https://api.whatsapp.com/send?phone=${adminPhone}&text=${encodeURIComponent(formattedCustom)}`, "_blank");
+    setCustomMessage("");
   };
 
   return (
@@ -88,7 +134,7 @@ function WhatsAppWidget() {
       {/* Floating Tooltip */}
       {showTooltip && !isOpen && (
         <div className="whatsapp-tooltip">
-          <span>Chat with us!</span>
+          <span>🌸 Chat with ASAHI Support</span>
           <button 
             className="tooltip-close" 
             onClick={(e) => { 
@@ -116,12 +162,20 @@ function WhatsAppWidget() {
           {/* Header */}
           <div className="whatsapp-card-header">
             <div className="header-logo-row">
-              <FaWhatsapp className="header-wa-icon" />
-              <div>
-                <h4>Chat with us on WhatsApp</h4>
-                <p>Choose a topic to start the conversation</p>
+              <div className="header-avatar-container">
+                <img src={asahiLogo} alt="ASAHI Logo" className="header-avatar-img" />
+                <span className="online-indicator-dot"></span>
+              </div>
+              <div className="header-title-details">
+                <h4>ASAHI Bilingual Services</h4>
+                <p>🟢 Online • Replies in &lt; 5 mins</p>
               </div>
             </div>
+          </div>
+
+          {/* Sub Header Tag */}
+          <div className="whatsapp-sub-banner">
+            <span>Select a course or type your query below:</span>
           </div>
 
           {/* Topics List */}
@@ -147,13 +201,19 @@ function WhatsAppWidget() {
             ))}
           </div>
 
-          {/* General Enquiry Button */}
-          <div className="whatsapp-card-footer">
-            <button className="general-enquiry-btn" onClick={handleGeneralEnquiry}>
-              <FaWhatsapp className="btn-wa-icon" />
-              <span>General Enquiry</span>
+          {/* Custom Message Direct Input Footer */}
+          <form className="whatsapp-card-footer" onSubmit={handleSendCustomMessage}>
+            <input
+              type="text"
+              className="whatsapp-input-field"
+              placeholder="Write your custom query..."
+              value={customMessage}
+              onChange={(e) => setCustomMessage(e.target.value)}
+            />
+            <button type="submit" className="whatsapp-send-btn" title="Send on WhatsApp">
+              <FaPaperPlane />
             </button>
-          </div>
+          </form>
         </div>
       )}
     </div>

@@ -9,13 +9,18 @@ import WhatsAppWidget from "./components/WhatsAppWidget"
 import Hero from "./components/Hero"
 import AboutPreview from "./components/AboutPreview"
 import Courses from "./components/Courses"
+import BooksPreview from "./components/BooksPreview"
 import WhyChoose from "./components/WhyChoose"
 import Stats from "./components/Stats"
+import JapanInsightsSection from "./components/JapanInsightsSection"
 
 import CoursesPage from "./pages/CoursesPage"
 import Enquiry from "./pages/Enquiry"
 import AboutUs from "./pages/AboutUs"
 import ServicesPage from "./pages/ServicesPage"
+import BooksPage from "./pages/BooksPage"
+import BookDetailPage from "./pages/BookDetailPage"
+import ContactPage from "./pages/ContactPage"
 
 /* ADMIN */
 import AdminDashboard from "./pages/AdminDashboard"
@@ -31,8 +36,10 @@ function Home() {
       <Hero />
       <AboutPreview />
       <Courses />
+      <BooksPreview />
       <WhyChoose />
       <Stats />
+      <JapanInsightsSection />
       <StudentReviews />
     </>
   )
@@ -74,6 +81,9 @@ function App() {
         <Route path="/register" element={<Navigate to="/enquiry" replace />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/books" element={<BooksPage />} />
+        <Route path="/books/:id" element={<BookDetailPage />} />
+        <Route path="/contact" element={<Navigate to="/enquiry" replace />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy-policy" element={<Privacy />} />
 

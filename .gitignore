@@ -24,3 +24,13 @@ Thumbs.db
 # Uploads & generated files
 server/uploads/
 server/invoices/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+.venv/
+env/

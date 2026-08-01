@@ -189,53 +189,143 @@ code {
 }
 
 /* ========================================================
-   GLOBAL PREMIUM ASAHI RED GLASSMORPHISM BUTTONS
+   GLOBAL PREMIUM ASAHI RED GRADIENT BUTTONS
    ======================================================== */
 .btn-primary,
 .primary-btn,
+.btn-asahi-red,
 .proceed-checkout-btn,
 .place-btn,
 .browse-books-btn,
 .enroll-btn,
-.form-section button,
+.btn-buy-whatsapp,
 .pay-now-btn,
 .profile-save-btn,
 .btn-premium-solid {
-  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%) !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 20px rgba(215, 0, 21, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
   position: relative !important;
   overflow: hidden !important;
-  z-index: 1 !important;
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 22px rgba(255, 30, 39, 0.32) !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  padding: 14px 28px !important;
-  border-radius: 10px !important;
-  font-size: 15px !important;
-  font-weight: 750 !important;
-  letter-spacing: 0.5px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
   text-decoration: none !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.btn-primary::after,
+.primary-btn::after,
+.btn-asahi-red::after,
+.proceed-checkout-btn::after,
+.place-btn::after,
+.browse-books-btn::after,
+.enroll-btn::after,
+.btn-buy-whatsapp::after,
+.pay-now-btn::after,
+.profile-save-btn::after,
+.btn-premium-solid::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 55% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  pointer-events: none !important;
 }
 
 .btn-primary:hover,
 .primary-btn:hover,
+.btn-asahi-red:hover,
 .proceed-checkout-btn:hover,
 .place-btn:hover,
 .browse-books-btn:hover,
 .enroll-btn:hover,
-.form-section button:hover,
+.btn-buy-whatsapp:hover,
 .pay-now-btn:hover,
 .profile-save-btn:hover,
 .btn-premium-solid:hover {
-  transform: translateY(-2px) scale(1.02) !important;
+  transform: translateY(-3px) scale(1.02) !important;
   background: linear-gradient(135deg, #FF2E36 0%, #C40015 100%) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 10px 28px rgba(255, 30, 39, 0.42), 0 0 16px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(255, 30, 39, 0.5) !important;
+}
+
+.btn-primary:hover::after,
+.primary-btn:hover::after,
+.btn-asahi-red:hover::after,
+.proceed-checkout-btn:hover::after,
+.place-btn:hover::after,
+.browse-books-btn:hover::after,
+.enroll-btn:hover::after,
+.btn-buy-whatsapp:hover::after,
+.pay-now-btn:hover::after,
+.profile-save-btn:hover::after,
+.btn-premium-solid:hover::after {
+  left: 200% !important;
+}
+
+/* ========================================================
+   GLOBAL PREMIUM WHITE GLASS BUTTONS (VIEW DETAILS, ETC.)
+   ======================================================== */
+.btn-secondary,
+.btn-white-glass,
+.btn-view-details,
+.view-details-btn,
+.details-btn,
+.secondary-btn,
+.btn-asahi-glass {
+  position: relative !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #e2e8f0 !important;
+  padding: 13px 22px !important;
+  border-radius: 12px !important;
+  font-size: 14.5px !important;
+  font-weight: 750 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-secondary:hover,
+.btn-white-glass:hover,
+.btn-view-details:hover,
+.view-details-btn:hover,
+.details-btn:hover,
+.secondary-btn:hover,
+.btn-asahi-glass:hover {
+  border-color: #FF1E27 !important;
+  color: #FF1E27 !important;
+  background: #fff5f5 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(255, 30, 39, 0.18) !important;
+}
+
+.btn-secondary:hover svg,
+.btn-white-glass:hover svg,
+.btn-view-details:hover svg,
+.view-details-btn:hover svg,
+.details-btn:hover svg,
+.secondary-btn:hover svg,
+.btn-asahi-glass:hover svg {
+  transform: translateX(3px) !important;
+  transition: transform 0.25s ease !important;
 }

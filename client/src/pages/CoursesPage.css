@@ -47,6 +47,88 @@
   pointer-events: none;
 }
 
+/* EXAM TRACK TOGGLE SWITCHER (JLPT DEFAULT | NAT SECOND) */
+.exam-track-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 440px;
+  margin: 0 auto 36px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  position: relative;
+  z-index: 10;
+}
+
+.exam-toggle-btn {
+  position: relative;
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.active-pill-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(255, 30, 39, 0.35);
+  z-index: 1;
+}
+
+.btn-content-relative {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-toggle-btn.active {
+  color: #ffffff;
+}
+
+.exam-toggle-btn.active .toggle-icon-react {
+  color: #ffffff !important;
+}
+
+.toggle-icon-react.red-icon {
+  color: #ff1e27;
+}
+
+.toggle-icon-react.dark-icon {
+  color: #475569;
+}
+
+@media (max-width: 650px) {
+  .exam-track-toggle-wrapper {
+    margin-bottom: 24px;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .exam-toggle-btn {
+    padding: 10px 10px;
+    font-size: 12.5px;
+  }
+}
+
 /* ========================================================
    ACADEMICS HEADER SECTION
    ======================================================== */
@@ -324,28 +406,65 @@
 }
 
 /* ========================================================
-   ENROLL BUTTONS
+   ENROLL BUTTON (CENTERED & STYLED)
    ======================================================== */
-.enroll-btn-premium {
-  display: inline-flex;
+.card-footer-premium {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 13px;
-  font-size: 13.5px;
-  font-weight: 700;
-  border-radius: 10px; /* Modern sleek rounded rectangle button */
+  margin-top: auto;
+}
+
+.enroll-btn-premium {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   color: white;
   background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
-  box-shadow: 0 4px 14px rgba(215, 0, 21, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 30, 39, 0.35);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.enroll-btn-premium::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 55% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  pointer-events: none !important;
 }
 
 .enroll-btn-premium:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(215, 0, 21, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #FF2E36 0%, #C40015 100%);
+  box-shadow: 0 12px 30px rgba(255, 30, 39, 0.5);
+}
+
+.enroll-btn-premium:hover::after {
+  left: 200% !important;
 }
 
 /* ========================================================
@@ -466,16 +585,40 @@
   height: 6px;
 }
 
+.why-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.why-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 750;
+  color: #22c55e;
+  background: #f0fdf4;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.check-bullet {
+  font-size: 10px;
+}
+
 .why-icon {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
-  border-radius: 16px;
-  font-size: 24px;
-  background: rgba(217, 28, 60, 0.05);
+  margin: 0;
+  border-radius: 14px;
+  font-size: 20px;
+  background: rgba(217, 28, 60, 0.08);
   color: #D70015;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -604,36 +747,49 @@
   }
 
   .why-container {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 12px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 10px 0 !important;
-    overflow: hidden !important;
   }
 
   .why-card {
-    flex: 1 !important;
+    width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    padding: 20px 10px 18px !important;
-    gap: 10px !important;
+    padding: 14px 6px 12px !important;
+    gap: 6px !important;
     border-radius: 16px !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01) !important;
-    min-height: auto !important;
-    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03) !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .why-card-top-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin: 0 0 2px !important;
   }
 
   .why-icon {
-    margin: 0 auto 10px !important;
+    margin: 0 auto 4px !important;
     flex-shrink: 0 !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 17px !important;
-    border-radius: 12px !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+  }
+
+  .why-pill-badge {
+    font-size: 8px !important;
+    padding: 2px 4px !important;
+    border-radius: 6px !important;
+    white-space: nowrap !important;
   }
 
   .why-card-text {
@@ -645,15 +801,15 @@
   }
 
   .why-card h3 {
-    font-size: 12px !important;
+    font-size: 11.5px !important;
     font-weight: 850 !important;
     line-height: 1.25 !important;
-    margin: 0 !important;
+    margin: 0 0 2px !important;
     color: #0f172a !important;
   }
 
   .why-card p {
-    font-size: 10px !important;
+    font-size: 9.5px !important;
     line-height: 1.35 !important;
     color: #64748b !important;
     margin: 0 !important;

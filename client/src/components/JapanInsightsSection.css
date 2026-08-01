@@ -1,0 +1,547 @@
+/* ========================================================
+   JAPAN INSIGHTS & ASAHI ADVANTAGE SECTION STYLING
+   ======================================================== */
+
+.japan-insights-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 5%;
+  background: #fcfdfe;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: #1e293b;
+}
+
+.japan-insights-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Background Ambient Glows */
+.japan-insights-glow {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(255, 30, 39, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.japan-insights-glow-2 {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(217, 28, 60, 0.04) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* HEADER */
+.japan-insights-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.japan-insights-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 30, 39, 0.08);
+  border: 1px solid rgba(255, 30, 39, 0.2);
+  color: #d70015;
+  font-size: 12px;
+  font-weight: 750;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.header-badge-icon {
+  font-size: 13px;
+}
+
+.japan-insights-title {
+  font-size: 40px;
+  font-weight: 850;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.gradient-text-red {
+  background: linear-gradient(135deg, #FF1E27 0%, #D91C3C 45%, #B30012 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-underline {
+  width: 320px;
+  max-width: 85%;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, #FF1E27 0%, #D91C3C 50%, #B30012 100%);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: gradientShift 3s ease infinite;
+  box-shadow: 0 2px 10px rgba(217, 28, 60, 0.4);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.japan-insights-subtitle {
+  font-size: 15.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* ========================================================
+   2-COLUMN STAGE: OPPORTUNITY VS SOLUTION
+   ======================================================== */
+.japan-insights-stage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 50px;
+}
+
+.japan-insights-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+}
+
+.japan-insights-card:hover {
+  box-shadow: 0 18px 45px rgba(255, 30, 39, 0.08);
+  border-color: rgba(255, 30, 39, 0.25);
+}
+
+.insights-card-header {
+  margin-bottom: 24px;
+}
+
+.card-top-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.card-top-tag.red-tag {
+  background: rgba(255, 30, 39, 0.08);
+  color: #ff1e27;
+}
+
+.card-top-tag.dark-tag {
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.insights-card-header h3 {
+  font-size: 22px;
+  font-weight: 850;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.insights-card-header p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* FACTS LIST (LEFT COLUMN) */
+.facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fact-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  padding: 14px 16px;
+  border-radius: 18px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.fact-item::after, .solution-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.fact-item:hover::after, .solution-item:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.fact-item:hover {
+  background: #ffffff;
+  border-color: rgba(255, 30, 39, 0.2);
+  box-shadow: 0 8px 24px rgba(255, 30, 39, 0.08);
+  transform: translateY(-2px);
+}
+
+.fact-item:hover .fact-content h4,
+.solution-item:hover .solution-problem-row h5 {
+  color: #ff1e27;
+  transition: color 0.3s ease;
+}
+
+.fact-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 30, 39, 0.1);
+  color: #ff1e27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.fact-content h4 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.fact-content p {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* SOLUTIONS LIST (RIGHT COLUMN) */
+.solutions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.solution-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 14px 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-item:hover {
+  border-color: rgba(255, 30, 39, 0.3);
+  box-shadow: 0 8px 24px rgba(255, 30, 39, 0.08);
+  transform: translateY(-2px);
+}
+
+.solution-problem-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.challenge-tag {
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.solution-problem-row h5 {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.solution-answer-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.sol-check-icon {
+  color: #22c55e;
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.solution-answer-box p {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ========================================================
+   BOTTOM METRICS & CTA BANNER
+   ======================================================== */
+.japan-insights-bottom-bar {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+}
+
+.metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-box strong {
+  font-size: 20px;
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.metric-box span {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.insights-cta-btn {
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 30, 39, 0.35);
+  transition: all 0.35s ease;
+  white-space: nowrap;
+}
+
+.insights-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 30, 39, 0.45);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================= */
+@media (max-width: 1024px) {
+  .japan-insights-stage {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .japan-insights-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  .metrics-strip {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .metric-divider {
+    display: none;
+  }
+
+  .insights-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .japan-insights-section {
+    padding: 44px 3.5%;
+  }
+
+  .japan-insights-header {
+    margin-bottom: 28px;
+  }
+
+  .japan-insights-badge {
+    font-size: 10.5px;
+    padding: 5px 12px;
+  }
+
+  .japan-insights-title {
+    font-size: 25px;
+  }
+
+  .japan-insights-subtitle {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .japan-insights-card {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .insights-card-header {
+    margin-bottom: 18px;
+  }
+
+  .insights-card-header h3 {
+    font-size: 18px;
+  }
+
+  .insights-card-header p {
+    font-size: 12.5px;
+  }
+
+  .facts-list, .solutions-list {
+    gap: 12px;
+  }
+
+  .fact-item {
+    padding: 10px 12px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .fact-icon-box {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .fact-content h4 {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .fact-content p {
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  .solution-item {
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .solution-problem-row {
+    margin-bottom: 6px;
+  }
+
+  .challenge-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .solution-problem-row h5 {
+    font-size: 12.5px;
+  }
+
+  .solution-answer-box {
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .sol-check-icon {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .solution-answer-box p {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .japan-insights-bottom-bar {
+    padding: 20px 16px;
+    border-radius: 18px;
+    gap: 16px;
+  }
+
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .metric-box strong {
+    font-size: 17px;
+  }
+
+  .metric-box span {
+    font-size: 10px;
+  }
+
+  .insights-cta-btn {
+    padding: 12px 18px;
+    font-size: 13.5px;
+  }
+}

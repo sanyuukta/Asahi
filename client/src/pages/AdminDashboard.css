@@ -709,6 +709,30 @@ gap:8px;
 white-space:nowrap;
 }
 
+.books-admin-section{
+margin-top:28px;
+}
+
+.book-form-inline{
+display:grid;
+grid-template-columns:1.1fr 1.5fr 1fr auto;
+gap:12px;
+margin-bottom:18px;
+}
+
+.book-form-inline input{
+height:44px;
+border:1px solid #e2e8f0;
+border-radius:10px;
+padding:0 12px;
+font-size:14px;
+background:#fff;
+}
+
+.book-form-inline input[type="file"]{
+padding:8px;
+}
+
 
 /* =========================================
    SEARCH BOX
@@ -1508,6 +1532,10 @@ align-items:stretch;
 .download-excel-btn{
 width:100%;
 justify-content:center;
+}
+
+.book-form-inline{
+grid-template-columns:1fr;
 }
 
 .search-box{

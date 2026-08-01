@@ -2,7 +2,7 @@ import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { 
   FaTimes, FaFacebook, FaInstagram, FaLinkedin, FaBars, FaChevronRight,
-  FaHome, FaInfoCircle, FaBriefcase, FaUserPlus
+  FaHome, FaInfoCircle, FaBriefcase, FaUserPlus, FaBook, FaPhoneAlt, FaLink
 } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import logo from "../assets/asahilogo.jpeg";
@@ -24,8 +24,9 @@ function Navbar() {
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/books", label: "Books" },
     { path: "/courses", label: "Courses" },
-    { path: "/about", label: "About" },
     { path: "/services", label: "Services" }
   ];
 
@@ -44,6 +45,12 @@ function Navbar() {
     } else {
       navigate(item.path);
     }
+  };
+
+  const handleExploreMore = () => {
+    setMenuOpen(false);
+    const message = "Hello ASAHI! I want to explore more about your courses and services.";
+    window.open(`https://api.whatsapp.com/send?phone=917796530192&text=${encodeURIComponent(message)}`, "_blank");
   };
 
 
@@ -88,12 +95,17 @@ function Navbar() {
           </div>
         </div>
 
-        {/* MOBILE MENU CONTAINER */}
+        {/* MOBILE MENU OVERLAY & CONTAINER */}
+        <div className={`mobile-menu-overlay ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(false)} />
+
         <div className={`mobile-menu-container ${menuOpen ? "active" : ""}`}>
-          <div className="mobile-menu-header-swiggy" onClick={handleGoHome} style={{ cursor: "pointer" }}>
-            <div className="swiggy-user-info">
+          <div className="mobile-menu-header-swiggy">
+            <div className="swiggy-user-info" onClick={handleGoHome} style={{ cursor: "pointer" }}>
               <h2>ASAHI</h2>
               <p>Bilingual Services</p>
+            </div>
+            <div className="mobile-close-btn" onClick={() => setMenuOpen(false)} title="Close Menu">
+              <FaTimes />
             </div>
           </div>
 
@@ -107,16 +119,29 @@ function Navbar() {
                 <div className="sli-left"><FaBriefcase className="sli-icon"/> <span>Courses</span></div>
                 <FaChevronRight className="sli-arrow" />
               </div>
-              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/about"); }}>
-                <div className="sli-left"><FaInfoCircle className="sli-icon"/> <span>About</span></div>
+              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/books"); }}>
+                <div className="sli-left"><FaBook className="sli-icon"/> <span>Books</span></div>
+                <FaChevronRight className="sli-arrow" />
+              </div>
+              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/enquiry"); }}>
+                <div className="sli-left"><FaUserPlus className="sli-icon"/> <span>Enroll Now</span></div>
                 <FaChevronRight className="sli-arrow" />
               </div>
               <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/services"); }}>
                 <div className="sli-left"><FaBriefcase className="sli-icon"/> <span>Services</span></div>
                 <FaChevronRight className="sli-arrow" />
               </div>
-              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/enquiry"); }}>
-                <div className="sli-left"><FaUserPlus className="sli-icon"/> <span>Enroll Now</span></div>
+              <div className="swiggy-other-title">Other</div>
+              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/about"); }}>
+                <div className="sli-left"><FaInfoCircle className="sli-icon"/> <span>About</span></div>
+                <FaChevronRight className="sli-arrow" />
+              </div>
+              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/terms"); }}>
+                <div className="sli-left"><FaInfoCircle className="sli-icon"/> <span>Terms & Conditions</span></div>
+                <FaChevronRight className="sli-arrow" />
+              </div>
+              <div className="swiggy-list-item" onClick={() => { setMenuOpen(false); navigate("/privacy-policy"); }}>
+                <div className="sli-left"><FaInfoCircle className="sli-icon"/> <span>Privacy Policy</span></div>
                 <FaChevronRight className="sli-arrow" />
               </div>
             </div>

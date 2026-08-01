@@ -1,67 +1,57 @@
 /* ========================================================
-   PREMIUM WHATSAPP CHAT WIDGET STYLING
+   RECREATED LUXURY WHATSAPP CHAT WIDGET STYLING
    ======================================================== */
 
 .whatsapp-widget-wrapper {
   position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
+  bottom: 28px !important;
+  right: 28px !important;
   z-index: 999999 !important;
   display: block !important;
-  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ========================================================
-   TRIGGER BUTTON
-   ======================================================== */
+/* TRIGGER BUTTON */
 .whatsapp-trigger {
-  width: 60px !important;
-  height: 60px !important;
+  width: 58px !important;
+  height: 58px !important;
   border-radius: 50% !important;
-  background: #25d366 !important;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
   color: white !important;
   border: none !important;
   cursor: pointer !important;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45) !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-size: 28px !important;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 .whatsapp-trigger:hover {
   transform: scale(1.08) rotate(8deg) !important;
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6) !important;
-  background: #20ba5a !important;
 }
 
 .whatsapp-trigger.open {
-  background: #ef4444 !important;
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.45) !important;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.45) !important;
   transform: rotate(90deg) !important;
 }
 
-.whatsapp-trigger.open:hover {
-  background: #dc2626 !important;
-  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.6) !important;
-}
-
-/* ========================================================
-   TOOLTIP
-   ======================================================== */
+/* TOOLTIP */
 .whatsapp-tooltip {
   position: absolute !important;
-  bottom: 75px !important;
+  bottom: 72px !important;
   right: 0 !important;
   background: #0f172a !important;
   color: white !important;
-  padding: 10px 16px !important;
-  border-radius: 12px !important;
-  font-size: 13.5px !important;
+  padding: 8px 16px !important;
+  border-radius: 14px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2) !important;
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
@@ -72,7 +62,7 @@
   content: "" !important;
   position: absolute !important;
   bottom: -6px !important;
-  right: 25px !important;
+  right: 22px !important;
   border-width: 6px 6px 0 !important;
   border-style: solid !important;
   border-color: #0f172a transparent transparent !important;
@@ -81,11 +71,11 @@
 .tooltip-close {
   background: transparent !important;
   border: none !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   padding: 2px !important;
   transition: color 0.2s !important;
 }
@@ -94,19 +84,17 @@
   color: white !important;
 }
 
-/* ========================================================
-   CHAT CARD CONTAINER
-   ======================================================== */
+/* CHAT CARD CONTAINER */
 .whatsapp-card {
   position: absolute !important;
-  bottom: 80px !important;
+  bottom: 75px !important;
   right: 0 !important;
-  width: 360px !important;
-  max-height: min(520px, 80vh) !important;
+  width: 370px !important;
+  max-height: min(540px, 82vh) !important;
   background: #ffffff !important;
-  border-radius: 20px !important;
-  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.2) !important;
-  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22) !important;
+  border: 1px solid #e2e8f0 !important;
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
@@ -117,13 +105,11 @@
   animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ========================================================
-   CARD HEADER
-   ======================================================== */
+/* CARD HEADER */
 .whatsapp-card-header {
   background: linear-gradient(135deg, #075e54 0%, #128c7e 100%) !important;
   color: white !important;
-  padding: 24px 20px !important;
+  padding: 18px 20px !important;
 }
 
 .header-logo-row {
@@ -132,49 +118,77 @@
   gap: 14px !important;
 }
 
-.header-wa-icon {
-  font-size: 38px !important;
-  color: #25d366 !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)) !important;
+.header-avatar-container {
+  position: relative !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
 }
 
-.whatsapp-card-header h4 {
-  font-size: 16px !important;
+.header-avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid #ffffff !important;
+}
+
+.online-indicator-dot {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+  background: #25d366 !important;
+  border: 2px solid #075e54 !important;
+  border-radius: 50% !important;
+}
+
+.header-title-details h4 {
+  font-size: 15.5px !important;
   font-weight: 750 !important;
-  margin: 0 0 3px 0 !important;
-  letter-spacing: -0.3px !important;
+  margin: 0 0 2px 0 !important;
 }
 
-.whatsapp-card-header p {
-  font-size: 12px !important;
+.header-title-details p {
+  font-size: 11.5px !important;
   margin: 0 !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-weight: 500 !important;
 }
 
-/* ========================================================
-   TOPICS LIST (SCROLLABLE)
-   ======================================================== */
+/* SUB BANNER */
+.whatsapp-sub-banner {
+  background: #f1f5f9;
+  padding: 8px 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.whatsapp-sub-banner span {
+  font-size: 11.5px;
+  font-weight: 650;
+  color: #64748b;
+  display: block;
+}
+
+/* TOPICS LIST */
 .whatsapp-topics-list {
-  padding: 12px 10px !important;
+  padding: 12px 12px !important;
   overflow-y: auto !important;
   flex: 1 !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 10px !important;
   background: #f8fafc !important;
 }
 
 .whatsapp-topics-list::-webkit-scrollbar {
-  width: 5px;
-}
-
-.whatsapp-topics-list::-webkit-scrollbar-track {
-  background: transparent;
+  width: 4px;
 }
 
 .whatsapp-topics-list::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
 
@@ -182,45 +196,44 @@
   width: 100% !important;
   display: flex !important;
   align-items: center !important;
-  gap: 14px !important;
-  padding: 12px 14px !important;
+  gap: 12px !important;
+  padding: 11px 14px !important;
   background: #ffffff !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  border-radius: 16px !important;
+  border: 1px solid #e2e8f0 !important;
   cursor: pointer !important;
   text-align: left !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02) !important;
 }
 
 .whatsapp-topic-item:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
-  border-color: rgba(37, 211, 102, 0.3) !important;
-  background: #fafcfb !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08) !important;
+  border-color: rgba(37, 211, 102, 0.4) !important;
+  background: #ffffff !important;
 }
 
 .topic-icon-wrapper {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  background: rgba(37, 211, 102, 0.08) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background: rgba(37, 211, 102, 0.1) !important;
   color: #128c7e !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
   flex-shrink: 0 !important;
 }
 
 .topic-thumbnail {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 6px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 8px !important;
   object-fit: cover !important;
   flex-shrink: 0 !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e2e8f0 !important;
 }
 
 .topic-text {
@@ -231,58 +244,64 @@
   font-size: 13.5px !important;
   font-weight: 750 !important;
   color: #0f172a !important;
-  margin: 0 0 3px 0 !important;
-  letter-spacing: -0.2px !important;
+  margin: 0 0 2px 0 !important;
 }
 
 .topic-text p {
   font-size: 11px !important;
   color: #64748b !important;
   margin: 0 !important;
-  font-weight: 500 !important;
-  line-height: 1.3 !important;
 }
 
-/* ========================================================
-   CARD FOOTER & GENERAL ENQUIRY
-   ======================================================== */
+/* CUSTOM MESSAGE DIRECT INPUT FOOTER */
 .whatsapp-card-footer {
-  padding: 16px 20px !important;
+  padding: 12px 14px !important;
   background: #ffffff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-top: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
-.general-enquiry-btn {
-  width: 100% !important;
-  padding: 12px !important;
+.whatsapp-input-field {
+  flex: 1 !important;
+  border: 1.5px solid #e2e8f0 !important;
   border-radius: 12px !important;
-  background: #25d366 !important;
+  padding: 10px 14px !important;
+  font-size: 13px !important;
+  font-family: inherit !important;
+  outline: none !important;
+  color: #0f172a !important;
+  transition: border-color 0.25s !important;
+}
+
+.whatsapp-input-field:focus {
+  border-color: #25d366 !important;
+}
+
+.whatsapp-send-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
   color: white !important;
   border: none !important;
-  font-weight: 700 !important;
-  font-size: 14px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
+  font-size: 16px !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25) !important;
   transition: all 0.25s !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;
 }
 
-.general-enquiry-btn:hover {
-  background: #20ba5a !important;
-  transform: translateY(-1.5px) !important;
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35) !important;
+.whatsapp-send-btn:hover {
+  transform: scale(1.06) !important;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45) !important;
 }
 
-.btn-wa-icon {
-  font-size: 18px !important;
-}
-
-/* ========================================================
-   RESPONSIVE DESIGN (EXPANDED TO ALL MOBILE & TABLET SIZES <= 650PX)
-   ======================================================== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 650px) {
   .whatsapp-widget-wrapper {
     bottom: 20px !important;
@@ -292,21 +311,10 @@
   .whatsapp-card {
     width: calc(100vw - 40px) !important;
     right: 0 !important;
-    bottom: 75px !important;
-    max-height: min(480px, 75vh) !important;
-  }
-
-  .whatsapp-tooltip {
     bottom: 70px !important;
-    right: 0 !important;
-    font-size: 12px !important;
-    padding: 8px 12px !important;
   }
 }
 
-/* ========================================================
-   KEYFRAME ANIMATIONS
-   ======================================================== */
 @keyframes slideUp {
   from {
     opacity: 0;

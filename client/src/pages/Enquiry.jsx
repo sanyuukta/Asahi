@@ -4,7 +4,12 @@ import API from "../services/api"
 import "./Enquiry.css"
 
 import { MdEmail } from "react-icons/md"
-import { FaPhoneAlt, FaChevronDown } from "react-icons/fa"
+import { 
+  FaPhoneAlt, FaChevronDown, FaUser, FaEnvelope, FaPhone, 
+  FaGraduationCap, FaCommentDots, FaWhatsapp, FaClock, 
+  FaCheckCircle, FaAward, FaShieldAlt, FaPaperPlane, 
+  FaMapMarkerAlt, FaExternalLinkAlt 
+} from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
 
 import { ToastContainer, toast } from "react-toastify"
@@ -166,7 +171,7 @@ function Register() {
       setModal({
         show: true,
         type: "success",
-        title: "Form Submitted Successfully! 🎉",
+        title: "Form Submitted Successfully!",
         message: "Thank you for getting in touch. Our team will contact you shortly."
       });
 
@@ -246,7 +251,7 @@ function Register() {
 
       <div className="contact-header">
         <span className="enquiry-subtitle-tag">Admissions & Inquiries</span>
-        <h1>Begin Your <span>Japanese Language Journey</span></h1>
+        <h1>Begin Your <span className="gradient-text">Japanese Language Journey</span></h1>
 
         <p>
           Take the first step towards mastering Japanese. Fill out the application form below, and our expert coordinators will review your requirements and get in touch with you shortly.
@@ -260,27 +265,36 @@ function Register() {
 
           <h2>{getFormTitle()}</h2>
 
-          <input
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={handleChange}
-          />
+          <div className="input-group-field">
+            <FaUser className="field-icon" />
+            <input
+              name="name"
+              placeholder="Full Name"
+              value={form.name}
+              onChange={handleChange}
+            />
+          </div>
 
-          <input
-            name="email"
-            placeholder="Email Address"
-            value={form.email}
-            onChange={handleChange}
-          />
+          <div className="input-group-field">
+            <FaEnvelope className="field-icon" />
+            <input
+              name="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
           {errors.email && <p className="error">{errors.email}</p>}
 
-          <input
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-          />
+          <div className="input-group-field">
+            <FaPhone className="field-icon" />
+            <input
+              name="phone"
+              placeholder="Phone Number"
+              value={form.phone}
+              onChange={handleChange}
+            />
+          </div>
           {errors.phone && <p className="error">{errors.phone}</p>}
 
           {/* CUSTOM EXAM SELECT */}
@@ -293,7 +307,10 @@ function Register() {
                 setLevelOpen(false);
               }}
             >
-              <span>{form.exam || "Select Exam"}</span>
+              <span className="trigger-left-content">
+                <FaGraduationCap className="field-icon" />
+                <span>{form.exam || "Select Exam"}</span>
+              </span>
               <FaChevronDown className="select-arrow-icon" />
             </div>
             
@@ -325,10 +342,13 @@ function Register() {
                 setExamOpen(false);
               }}
             >
-              <span>
-                {form.level === "Not Sure" 
-                  ? "Not sure / Need guidance" 
-                  : (form.level || "Select Level")}
+              <span className="trigger-left-content">
+                <FaAward className="field-icon" />
+                <span>
+                  {form.level === "Not Sure" 
+                    ? "Not sure / Need guidance" 
+                    : (form.level || "Select Level")}
+                </span>
               </span>
               <FaChevronDown className="select-arrow-icon" />
             </div>
@@ -356,15 +376,18 @@ function Register() {
             )}
           </div>
 
-          <textarea
-            name="message"
-            placeholder="Your Message (Optional)"
-            value={form.message}
-            onChange={handleChange}
-          />
+          <div className="input-group-field textarea-field">
+            <FaCommentDots className="field-icon textarea-icon" />
+            <textarea
+              name="message"
+              placeholder="Your Message (Optional)"
+              value={form.message}
+              onChange={handleChange}
+            />
+          </div>
 
-          <button onClick={submit} disabled={loading}>
-            {loading ? "Submitting..." : "Submit Application"}
+          <button onClick={submit} disabled={loading} className="btn-submit-enquiry">
+            {loading ? "Submitting..." : <><FaPaperPlane className="btn-icon-space" /> Submit Application</>}
           </button>
 
         </div>
@@ -372,21 +395,25 @@ function Register() {
         {/* CONTACT */}
         <div className="contact-section">
 
-          <h2>Contact <span>Information</span></h2>
+          <div className="contact-section-header">
+            <span className="contact-badge"><FaMapMarkerAlt /> ASAHI HEADQUARTERS</span>
+            <h2>Contact <span>Information</span></h2>
+            <p className="contact-sub">Have questions? Speak directly with our bilingual education counselors.</p>
+          </div>
 
-          <a href="mailto:asahigs@info.com" className="contact-box">
-            <div className="contact-icon"><MdEmail /></div>
+          <a href="mailto:asahibilingual@gmail.com" className="contact-box">
+            <div className="contact-icon email"><MdEmail /></div>
             <div className="contact-text">
-              <h3>Email</h3>
-              <p>asahigs@info.com</p>
+              <h3>OFFICIAL EMAIL</h3>
+              <p>asahibilingual@gmail.com</p>
             </div>
           </a>
 
-          <a href="tel:+91XXXXXXXXXX" className="contact-box">
-            <div className="contact-icon"><FaPhoneAlt /></div>
+          <a href="tel:+917796530192" className="contact-box">
+            <div className="contact-icon phone"><FaPhoneAlt /></div>
             <div className="contact-text">
-              <h3>Phone</h3>
-              <p>+91 XXXXX XXXXX</p>
+              <h3>PHONE & ADMISSIONS</h3>
+              <p>+91 77965 30192 / +91 93254 75225</p>
             </div>
           </a>
 
@@ -396,23 +423,77 @@ function Register() {
             rel="noopener noreferrer"
             className="contact-box"
           >
-            <div className="contact-icon"><FaLocationDot /></div>
+            <div className="contact-icon loc"><FaLocationDot /></div>
             <div className="contact-text">
-              <h3>Location</h3>
+              <h3>CAMPUS LOCATION</h3>
               <p>Nagpur, Maharashtra, India</p>
             </div>
           </a>
 
-          <div className="map">
-            <iframe
-              title="map"
-              src="https://www.google.com/maps?q=Nagpur&output=embed"
-              loading="lazy"
-            />
+          <div className="map-widget-card">
+            <div className="map-card-header">
+              <span><FaMapMarkerAlt /> ASAHI NAGPUR CAMPUS MAP</span>
+              <a 
+                href="https://www.google.com/maps?q=Nagpur" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="map-header-link"
+              >
+                Open Maps <FaExternalLinkAlt />
+              </a>
+            </div>
+            <div className="map-frame-wrapper">
+              <iframe
+                title="ASAHI Campus Map"
+                src="https://www.google.com/maps?q=Nagpur&output=embed"
+                loading="lazy"
+              />
+            </div>
           </div>
 
         </div>
 
+      </div>
+
+      {/* COMPACT HIGH-TRUST GUARANTEE BAR */}
+      <div className="trust-promises-wrapper">
+        <div className="section-header trust-header">
+          <span className="milestones-tag">ADMISSIONS GUARANTEE & SUPPORT</span>
+          <h2>Why Students & Parents <span className="gradient-text">Trust ASAHI</span></h2>
+          <p>Our commitment to transparent guidance, fast response, and complete data privacy.</p>
+        </div>
+
+        <div className="trust-promises-section">
+          <div className="trust-promise-card">
+            <div className="promise-icon-wrap green">
+              <FaShieldAlt />
+            </div>
+            <div className="promise-content">
+              <h4>100% Privacy Guarantee</h4>
+              <p>Your details are strictly confidential & never shared with third parties.</p>
+            </div>
+          </div>
+
+          <div className="trust-promise-card">
+            <div className="promise-icon-wrap red">
+              <FaClock />
+            </div>
+            <div className="promise-content">
+              <h4>24-Hour Fast Callback</h4>
+              <p>Our senior bilingual counselors respond within 24 business hours.</p>
+            </div>
+          </div>
+
+          <div className="trust-promise-card">
+            <div className="promise-icon-wrap purple">
+              <FaGraduationCap />
+            </div>
+            <div className="promise-content">
+              <h4>Free Level Assessment</h4>
+              <p>Get 1-on-1 guidance to select your ideal JLPT or NAT course level.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* PREMIUM CENTERED VIEWPORT MODAL */}
@@ -420,6 +501,16 @@ function Register() {
         <div className="enquiry-modal-backdrop animate-fade-in" onClick={() => modal.type !== "loading" && setModal(prev => ({ ...prev, show: false }))}>
           <div className="enquiry-modal-card animate-scale-up" onClick={(e) => e.stopPropagation()}>
             
+            {modal.type !== "loading" && (
+              <button 
+                className="enquiry-modal-x-close" 
+                onClick={() => setModal({ show: false, type: "", title: "", message: "" })}
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            )}
+
             {modal.type === "loading" && (
               <div className="modal-content">
                 <div className="modal-spinner"></div>
@@ -434,7 +525,7 @@ function Register() {
                 <h3>{modal.title}</h3>
                 <p>{modal.message}</p>
                 <button 
-                  className="modal-close-btn" 
+                  className="enquiry-modal-action-btn" 
                   onClick={() => setModal({ show: false, type: "", title: "", message: "" })}
                 >
                   Got It
@@ -448,7 +539,7 @@ function Register() {
                 <h3>{modal.title}</h3>
                 <p style={{ whiteSpace: "pre-line" }}>{modal.message}</p>
                 <button 
-                  className="modal-close-btn error-btn" 
+                  className="enquiry-modal-action-btn error-btn" 
                   onClick={() => setModal({ show: false, type: "", title: "", message: "" })}
                 >
                   Try Again

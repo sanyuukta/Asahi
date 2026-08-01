@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import "./StudentReviews.css"
+import { motion } from "framer-motion";
+import { FaStar, FaQuoteLeft, FaCheckCircle } from "react-icons/fa";
+import "./StudentReviews.css";
 
 const students = [
   {
@@ -37,14 +38,11 @@ const students = [
     achievement: "Placed at Wipro Japan",
     review: "Highly recommended coaching institute for serious students who wish to work in Japan."
   }
-]
+];
 
-function StudentReviews(){
-
-  return(
-
+function StudentReviews() {
+  return (
     <section className="reviews-section">
-
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,16 +50,19 @@ function StudentReviews(){
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="reviews-title">
-          ASAHI <span>Student Reviews</span>
+          ASAHI <span className="gradient-text-red">Student Reviews</span>
         </h2>
-        <p className="reviews-subtitle">Hear firsthand experiences from our graduates who successfully cleared JLPT exams and relocated to Japan</p>
+        <div className="gradient-underline" />
+        <p className="reviews-subtitle">
+          Hear firsthand experiences from our graduates who successfully cleared JLPT exams and relocated to Japan.
+        </p>
       </motion.div>
 
       {/* TRACK 1: STUDENT PROFILE BUBBLES (LEFT TO RIGHT) */}
       <div className="students-slider">
         <div className="students-track">
           <div className="marquee-content">
-            {students.map((s,i)=>(
+            {students.map((s, i) => (
               <div className="student-box" key={i}>
                 <div className="student-avatar" style={{ background: s.gradient }}>
                   {s.initials}
@@ -71,7 +72,7 @@ function StudentReviews(){
             ))}
           </div>
           <div className="marquee-content" aria-hidden="true">
-            {students.map((s,i)=>(
+            {students.map((s, i) => (
               <div className="student-box" key={i + students.length}>
                 <div className="student-avatar" style={{ background: s.gradient }}>
                   {s.initials}
@@ -87,34 +88,55 @@ function StudentReviews(){
       <div className="reviews-slider">
         <div className="reviews-track">
           <div className="marquee-content-reviews">
-            {students.map((s,i)=>(
+            {students.map((s, i) => (
               <div className="review-box" key={i}>
+                <div className="review-box-top">
+                  <div className="star-rating-row">
+                    {[...Array(5)].map((_, index) => (
+                      <FaStar key={index} className="star-icon" />
+                    ))}
+                  </div>
+                  <FaQuoteLeft className="quote-icon" />
+                </div>
+
                 <p className="review-text">"{s.review}"</p>
+
                 <div className="review-author">
                   <h5>{s.name}</h5>
-                  <span>{s.achievement}</span>
+                  <span className="achievement-badge">
+                    <FaCheckCircle className="check-icon" /> {s.achievement}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
           <div className="marquee-content-reviews" aria-hidden="true">
-            {students.map((s,i)=>(
+            {students.map((s, i) => (
               <div className="review-box" key={i + students.length}>
+                <div className="review-box-top">
+                  <div className="star-rating-row">
+                    {[...Array(5)].map((_, index) => (
+                      <FaStar key={index} className="star-icon" />
+                    ))}
+                  </div>
+                  <FaQuoteLeft className="quote-icon" />
+                </div>
+
                 <p className="review-text">"{s.review}"</p>
+
                 <div className="review-author">
                   <h5>{s.name}</h5>
-                  <span>{s.achievement}</span>
+                  <span className="achievement-badge">
+                    <FaCheckCircle className="check-icon" /> {s.achievement}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-
     </section>
-
-  )
-
+  );
 }
 
-export default StudentReviews
+export default StudentReviews;
