@@ -252,6 +252,7 @@ function Register() {
       <div className="contact-header">
         <span className="enquiry-subtitle-tag">Admissions & Inquiries</span>
         <h1>Begin Your <span className="gradient-text">Japanese Language Journey</span></h1>
+        <div className="gradient-underline" />
 
         <p>
           Take the first step towards mastering Japanese. Fill out the application form below, and our expert coordinators will review your requirements and get in touch with you shortly.
@@ -460,6 +461,7 @@ function Register() {
         <div className="section-header trust-header">
           <span className="milestones-tag">ADMISSIONS GUARANTEE & SUPPORT</span>
           <h2>Why Students & Parents <span className="gradient-text">Trust ASAHI</span></h2>
+          <div className="gradient-underline" />
           <p>Our commitment to transparent guidance, fast response, and complete data privacy.</p>
         </div>
 

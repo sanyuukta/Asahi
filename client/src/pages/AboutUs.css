@@ -31,19 +31,21 @@
 }
 
 .gradient-underline-sm {
-  width: 70px;
+  width: 280px;
+  max-width: 80%;
   height: 4px;
-  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
-  border-radius: 3px;
-  margin: 16px auto 0;
+  background: linear-gradient(90deg, #FF1E27 0%, #D91C3C 50%, #B30012 100%);
+  border-radius: 10px;
+  margin: 20px auto 30px;
   flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(217, 28, 60, 0.4);
 }
 
 .section-header p {
   font-size: 16px;
   color: #475569;
   max-width: 650px;
-  margin: 0 auto;
+  margin: 14px auto 0;
   text-align: center;
   line-height: 1.6;
   width: 100%;
@@ -670,12 +672,35 @@
   border-radius: 18px;
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-badge-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
 .trust-badge-card:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 30, 39, 0.35);
   box-shadow: 0 12px 28px rgba(255, 30, 39, 0.12);
+}
+
+.trust-badge-card:hover::after {
+  transform: scaleY(1);
+  opacity: 1;
 }
 
 .t-icon-box {

@@ -82,18 +82,12 @@
   color: #475569; /* Slate 600 */
   line-height: 1.65;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 18px auto 0;
   font-weight: 500;
 }
 
 .contact-header p::after {
-  content: '';
-  display: block;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
-  margin: 16px auto 0;
-  border-radius: 2px;
+  display: none !important;
 }
 
 /* ========================================================
@@ -701,22 +695,99 @@
   }
 }
 
+.contact-header .gradient-underline,
+.trust-header .gradient-underline {
+  width: 280px;
+  max-width: 80%;
+  height: 4px;
+  margin: 20px auto 30px;
+  background: linear-gradient(90deg, #FF1E27 0%, #D91C3C 50%, #B30012 100%);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: gradientShift 3s ease infinite;
+  box-shadow: 0 3px 12px rgba(217, 28, 60, 0.4);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @media (max-width: 600px) {
   .contact-page {
     padding: 100px 16px 40px;
   }
   .contact-header h1 {
     font-size: 32px;
+    margin-bottom: 0;
+  }
+  .contact-header .gradient-underline,
+  .trust-header .gradient-underline {
+    width: 140px !important;
+    margin: 10px auto 16px !important;
   }
   .contact-header p {
     font-size: 14.5px;
+    margin-top: 0;
   }
   .contact-header p::after {
-    margin: 12px auto 0 !important;
+    display: none !important;
   }
   .form-section h2 {
     font-size: 20px;
     text-align: center;
+  }
+
+  /* 2-TOP + 1-BOTTOM CENTERED CARDS ON MOBILE */
+  .trust-promises-section {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .trust-promise-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 16px 12px !important;
+    border-radius: 18px !important;
+  }
+
+  .trust-promise-card:nth-child(3) {
+    grid-column: span 2 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+
+  .promise-icon-wrap {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 17px !important;
+    border-radius: 12px !important;
+    margin: 0 auto 8px !important;
+  }
+
+  .promise-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .promise-content h4 {
+    font-size: 13.5px !important;
+    font-weight: 850 !important;
+    margin-bottom: 4px !important;
+    text-align: center !important;
+  }
+
+  .promise-content p {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
   }
 }
 

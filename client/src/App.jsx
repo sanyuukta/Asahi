@@ -11,7 +11,7 @@ import AboutPreview from "./components/AboutPreview"
 import Courses from "./components/Courses"
 import BooksPreview from "./components/BooksPreview"
 import WhyChoose from "./components/WhyChoose"
-import Stats from "./components/Stats"
+import ServicesPreview from "./components/ServicesPreview"
 import JapanInsightsSection from "./components/JapanInsightsSection"
 
 import CoursesPage from "./pages/CoursesPage"
@@ -38,7 +38,7 @@ function Home() {
       <Courses />
       <BooksPreview />
       <WhyChoose />
-      <Stats />
+      <ServicesPreview />
       <JapanInsightsSection />
       <StudentReviews />
     </>

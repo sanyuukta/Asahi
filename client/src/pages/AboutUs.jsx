@@ -132,13 +132,13 @@ const AboutUs = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="hero-pill-badge">
-              <FaBookOpen /> WELCOME TO ASAHI BILINGUAL ACADEMY
+              <FaBookOpen /> ASAHI JLPT PREPARATION CLASSES & ASAHI BILINGUAL SERVICES
             </span>
             <h1>
               Empowering Careers Through <span className="gradient-text">Japanese Mastery</span> & Global Opportunities
             </h1>
             <p>
-              ASAHI empowers students with world-class Japanese language education, cultural immersion, career guidance, and international placements in Tokyo & Osaka.
+              At <strong>Asahi JLPT Preparation Classes & Asahi Bilingual Services</strong>, we empower students with world-class Japanese language education, JLPT N5–N1 exam preparation, cultural immersion, corporate translation, and direct international placements in Tokyo & Osaka.
             </p>
 
             <div className="hero-highlights-list">
@@ -259,8 +259,8 @@ const AboutUs = () => {
         >
           <span className="milestones-tag">PROVEN TRACK RECORD</span>
           <h2>Key <span className="gradient-text">Milestones</span></h2>
-          <p>Our journey of academic excellence, corporate partnerships, and student success</p>
           <div className="gradient-underline-sm" />
+          <p>Our journey of academic excellence, corporate partnerships, and student success</p>
         </motion.div>
 
         <div className="milestones-wrapper">
@@ -307,8 +307,8 @@ const AboutUs = () => {
         >
           <span className="milestones-tag">GLOBAL IMPACT & TRUST</span>
           <h2>Connecting Students With <span className="gradient-text">Top Japanese MNCs</span></h2>
-          <p>Bridging language proficiency and international careers with certified Japanese training</p>
           <div className="gradient-underline-sm" />
+          <p>Bridging language proficiency and international careers with certified Japanese training</p>
         </motion.div>
 
         <div className="intl-container">

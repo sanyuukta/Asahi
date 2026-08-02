@@ -31,6 +31,10 @@ function ServicesPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const t = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+    return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
@@ -309,11 +313,18 @@ function ServicesPage() {
     setAutoAdvance(false);
     clearInterval(autoTimer.current);
 
-    if (spotlightRef.current) {
-      const yOffset = -90;
-      const y = spotlightRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    setTimeout(() => {
+      if (spotlightRef.current) {
+        const headerOffset = 85;
+        const elementPosition = spotlightRef.current.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: "smooth"
+        });
+      }
+    }, 60);
   };
 
   const handleEnroll = (title) => {
@@ -362,6 +373,14 @@ function ServicesPage() {
           <span className="svc-red-text">One Academy.</span>
         </motion.h1>
 
+        {/* ELEGANT SUBHEADING UNDERLINE DIRECTLY UNDER H1 */}
+        <motion.div 
+          className="svc-sub-underline"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        />
+
         <motion.p
           className="svc-hero-sub"
           initial={{ opacity: 0, y: 16 }}
@@ -370,14 +389,6 @@ function ServicesPage() {
         >
           From N5 foundation to Tokyo MNC placement — select a specialized track and explore what ASAHI has built for you.
         </motion.p>
-
-        {/* ELEGANT SUBHEADING UNDERLINE */}
-        <motion.div 
-          className="svc-sub-underline"
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-        />
 
         {/* UNIFIED SEARCH & FILTER BAR */}
         <motion.div 
@@ -438,6 +449,14 @@ function ServicesPage() {
                         setActiveIdx(0);
                         setAutoAdvance(false);
                         setIsFilterOpen(false);
+                        setTimeout(() => {
+                          if (spotlightRef.current) {
+                            const headerOffset = 85;
+                            const elementPosition = spotlightRef.current.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({ top: Math.max(0, offsetPosition), behavior: "smooth" });
+                          }
+                        }, 60);
                       }}
                     >
                       <span className="svc-opt-icon">{f.icon}</span>
@@ -533,7 +552,7 @@ function ServicesPage() {
                   {/* TOP META ROW */}
                   <div className="svc-spot-meta">
                     <span className="svc-spot-badge">{activeService.badge}</span>
-                    <span className="svc-spot-for">🎯 {activeService.forWhom}</span>
+                    <span className="svc-spot-for"><FaAward className="svc-inline-tag-icon" /> {activeService.forWhom}</span>
                   </div>
 
                   {/* TITLE BLOCK */}
@@ -668,10 +687,9 @@ function ServicesPage() {
           <div className="svc-section-header">
             <span className="svc-badge-sub"><FaQuestionCircle /> GOT QUESTIONS?</span>
             <h2>Frequently Asked <span className="svc-red-text">Questions</span></h2>
-            <p>Everything you need to know about ASAHI bilingual programs and admissions.</p>
-
-            {/* ELEGANT UNDERLINE */}
+            {/* ELEGANT UNDERLINE DIRECTLY UNDER H2 */}
             <div className="svc-sub-underline" />
+            <p>Everything you need to know about ASAHI bilingual programs and admissions.</p>
           </div>
 
           <div className="svc-faq-list">

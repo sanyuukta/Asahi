@@ -247,9 +247,10 @@ function BooksPage() {
 
       {/* 3. JAPAN & ASAHI IMMERSION SECTION */}
       <section className="japan-asahi-showcase-section">
+        {/* 3. JAPAN & ASAHI IMMERSION SHOWCASE */}
         <div className="japan-showcase-header">
           <span className="japan-badge">
-            <FaGlobeAsia className="japan-badge-icon" /> 日本 & ASAHI Spirit
+            <FaGlobeAsia className="japan-badge-icon" /> ASAHI SPIRIT & ADVANTAGE
           </span>
           <h2>Explore Japan & The <span className="gradient-text">ASAHI Advantage</span></h2>
           <div className="gradient-underline-sm" />
@@ -314,7 +315,7 @@ function BooksPage() {
           </div>
 
           <div className="story-content-wrap">
-            <span className="story-sub-tag">🎌 Why ASAHI Japanese?</span>
+            <span className="story-sub-tag"><FaAward className="tag-inline-icon" /> Why ASAHI Japanese?</span>
             <h3>Your Gateway to <span className="gradient-text">Living, Studying & Working in Japan</span></h3>
             <p>
               At ASAHI Bilingual Services, we don't just teach grammar rules — we connect you to the heart of Japan. Whether you dream of strolling through Kyoto’s cherry blossoms, studying in Tokyo, or working in Japan's top tech firms, our <strong>Fujichan book series</strong> gives you the exact tools to achieve your goals.

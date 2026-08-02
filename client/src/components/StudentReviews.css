@@ -287,28 +287,80 @@
 
 @media (max-width: 600px) {
   :root {
-    --gap-students: 24px;
+    --gap-students: 20px;
     --gap-reviews: 14px;
   }
 
   .reviews-section {
-    padding: 50px 0 70px;
+    padding: 56px 0;
   }
 
   .reviews-title {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .gradient-underline {
+    width: 140px;
+    height: 3px;
+    margin: 10px auto 14px;
+  }
+
+  .reviews-subtitle {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+    color: #475569;
+  }
+
+  .students-slider {
+    margin-bottom: 32px;
   }
 
   .student-avatar {
-    width: 70px;
-    height: 70px;
-    font-size: 22px;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    margin-bottom: 6px;
+    border-width: 2px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .student-box p {
+    font-size: 12px;
+    font-weight: 750;
+    color: #0f172a;
   }
 
   .review-box {
-    min-width: 270px;
-    max-width: 270px;
-    padding: 20px;
-    border-radius: 18px;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 18px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+  }
+
+  .review-text {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    color: #475569;
+  }
+
+  .review-author {
+    padding-top: 10px;
+  }
+
+  .review-author h5 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+
+  .achievement-badge {
+    font-size: 11px;
+    font-weight: 750;
   }
 }

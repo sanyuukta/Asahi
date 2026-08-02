@@ -11,7 +11,8 @@ import {
   FaGraduationCap,
   FaAward,
   FaBriefcase,
-  FaUserCheck
+  FaUserCheck,
+  FaRocket
 } from "react-icons/fa";
 import "./JapanInsightsSection.css";
 
@@ -96,7 +97,7 @@ function JapanInsightsSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="insights-card-header">
-              <span className="card-top-tag red-tag">🇯🇵 THE JAPAN OPPORTUNITY</span>
+              <span className="card-top-tag red-tag"><FaGlobeAsia className="tag-inline-icon" /> THE JAPAN OPPORTUNITY</span>
               <h3>Why Japan is the #1 Destination</h3>
               <p>Key market facts and lifestyle advantages for Indian professionals:</p>
             </div>
@@ -135,7 +136,7 @@ function JapanInsightsSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="insights-card-header">
-              <span className="card-top-tag dark-tag">✨ THE ASAHI SOLUTION</span>
+              <span className="card-top-tag dark-tag"><FaAward className="tag-inline-icon" /> THE ASAHI SOLUTION</span>
               <h3>How ASAHI Ensures Your Success</h3>
               <p>How we solve the major hurdles students & professionals face:</p>
             </div>
@@ -192,7 +193,7 @@ function JapanInsightsSection() {
           </div>
 
           <button className="insights-cta-btn" onClick={() => navigate("/enquiry")}>
-            🚀 Start Your Japan Application <FaArrowRight />
+            <FaRocket className="btn-inline-icon" /> Start Your Japan Application <FaArrowRight />
           </button>
         </div>
       </div>

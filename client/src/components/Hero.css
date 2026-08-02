@@ -831,7 +831,7 @@
 
 @media (max-width: 768px) {
   .hero-split-root {
-    padding: 80px 16px 40px !important;
+    padding: 104px 16px 48px !important;
   }
 
   .hero-split-left-col {
@@ -842,12 +842,12 @@
     width: 100% !important;
   }
 
-  /* HEADLINE & SUBTEXT MOBILE FIX */
+  /* HEADLINE & SUBTEXT MOBILE FIX - CLEAN & SPACIOUS */
   .hero-luxury-title {
-    font-size: 28px !important;
-    line-height: 1.22 !important;
-    letter-spacing: -0.5px !important;
-    margin-bottom: 14px !important;
+    font-size: 27px !important;
+    line-height: 1.26 !important;
+    letter-spacing: -0.4px !important;
+    margin-bottom: 16px !important;
     text-align: center !important;
     width: 100% !important;
     word-break: normal !important;
@@ -855,126 +855,176 @@
 
   .hero-luxury-description {
     font-size: 13.5px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 18px !important;
+    line-height: 1.62 !important;
+    margin-bottom: 24px !important;
     text-align: center !important;
     max-width: 100% !important;
+    color: #475569 !important;
   }
 
-  /* TRUST BULLETS MOBILE FIX (2 TOP SIDE-BY-SIDE + 1 BOTTOM CENTERED) */
+  /* TRUST BULLETS MOBILE FIX - DE-CLUTTERED & WELL SPACED */
   .hero-trust-bullets-row {
     display: flex !important;
     flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 8px 10px !important;
-    margin-bottom: 22px !important;
+    gap: 8px 12px !important;
+    margin-bottom: 28px !important;
     width: 100% !important;
   }
 
   .trust-bullet {
-    font-size: 11.5px !important;
+    font-size: 11px !important;
     line-height: 1.3 !important;
     white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    flex: 0 0 auto !important;
+    color: #1e293b !important;
+    font-weight: 650 !important;
+  }
+
+  .trust-bullet:nth-child(1),
+  .trust-bullet:nth-child(2) {
+    flex: 0 0 auto !important;
   }
 
   .trust-bullet:nth-child(3) {
     width: 100% !important;
+    display: flex !important;
     justify-content: center !important;
+    margin-top: 4px !important;
   }
 
   .check-bullet-icon {
-    font-size: 13.5px !important;
+    font-size: 13px !important;
+    color: #22c55e !important;
   }
 
-  /* ACTION BUTTON MOBILE FIX (ABOVE THE FOLD & CENTERED) */
+  /* ACTION BUTTON MOBILE FIX - CLEAN GAP ABOVE & BELOW */
   .hero-actions-group {
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 30px !important;
   }
 
   .btn-caddverse-explore-lg {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 300px !important;
     justify-content: center !important;
-    padding: 14px 20px !important;
-    font-size: 15px !important;
+    padding: 13.5px 22px !important;
+    font-size: 14.5px !important;
     border-radius: 14px !important;
     margin: 0 auto !important;
+    box-shadow: 0 8px 24px rgba(255, 30, 39, 0.28) !important;
   }
 
-  /* STATS PILL MOBILE FIX */
+  /* STATS PILL MOBILE FIX - SPACIOUS INTERNAL & EXTERNAL PADDING */
   .hero-caddverse-stats-pill {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px 10px !important;
-    padding: 14px 12px !important;
-    border-radius: 18px !important;
-    margin-top: 4px !important;
+    gap: 16px 12px !important;
+    padding: 18px 16px !important;
+    border-radius: 20px !important;
+    margin-top: 6px !important;
   }
 
   .cadd-stat-item {
     gap: 10px !important;
+    align-items: center !important;
   }
 
   .cadd-icon-circle {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 15px !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 16px !important;
   }
 
   .cadd-stat-info h3 {
-    font-size: 18px !important;
+    font-size: 19px !important;
   }
 
   .cadd-stat-info p {
-    font-size: 10.5px !important;
+    font-size: 11px !important;
+    color: #94a3b8 !important;
   }
 
   .cadd-divider {
     display: none !important;
   }
 
-  /* RIGHT SHOWCASE CARD MOBILE FIX */
+  /* RIGHT SHOWCASE CARD MOBILE FIX - DE-CLUTTERED & SPACIOUS */
   .hero-glass-visual-card {
-    border-radius: 20px !important;
-    padding: 12px !important;
-    gap: 12px !important;
-    margin-top: 10px !important;
+    border-radius: 24px !important;
+    padding: 16px !important;
+    gap: 14px !important;
+    margin-top: 28px !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08) !important;
   }
 
   .interactive-tabs-topbar {
-    padding: 4px !important;
+    padding: 6px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #f8fafc !important;
+    border-radius: 14px !important;
   }
 
   .tabs-label {
-    display: none !important; /* Hide label for full width tabs */
+    display: block !important;
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    color: #64748b !important;
+    letter-spacing: 0.6px !important;
+    padding-left: 2px !important;
   }
 
-  .tabs-pills-row {
-    width: 100% !important;
-    justify-content: space-between !important;
+  .dots-indicator-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
   }
 
-  .level-tab-btn {
-    flex: 1 !important;
-    padding: 6px 4px !important;
-    font-size: 11.5px !important;
-    text-align: center !important;
+  .dot-pill-btn {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .dot-pill-btn.active {
+    width: 22px !important;
   }
 
   .dynamic-level-info-box {
-    padding: 12px 14px !important;
+    padding: 16px !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 8px !important;
-    border-radius: 16px !important;
+    gap: 10px !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  }
+
+  .level-badge-tag {
+    font-size: 9.5px !important;
+    padding: 3px 8px !important;
+    margin-bottom: 6px !important;
   }
 
   .dynamic-level-info-box h4 {
-    font-size: 14.5px !important;
+    font-size: 15.5px !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    margin: 0 0 4px !important;
+    color: #ffffff !important;
+  }
+
+  .kanji-info {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
   }
 
   .info-box-right {
@@ -982,14 +1032,44 @@
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
+    margin-top: 4px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .target-pill {
+    font-size: 10.5px !important;
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #f1f5f9 !important;
+  }
+
+  .pass-pill {
+    font-size: 11px !important;
+    color: #4ade80 !important;
+    font-weight: 750 !important;
   }
 
   .showcase-image-frame-luxury {
-    height: 220px !important;
+    height: 230px !important;
     border-radius: 16px !important;
   }
 
   .badge-float {
     display: none !important; /* Clean image view without clutter on phone screens */
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-trust-bullets-row {
+    gap: 4px 6px !important;
+  }
+  .trust-bullet {
+    font-size: 10px !important;
+    gap: 3px !important;
+  }
+  .check-bullet-icon {
+    font-size: 11.5px !important;
   }
 }

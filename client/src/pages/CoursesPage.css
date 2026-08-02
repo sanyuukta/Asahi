@@ -173,23 +173,28 @@
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-underline-sm {
+  width: 280px;
+  max-width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, #FF1E27 0%, #D91C3C 50%, #B30012 100%);
+  border-radius: 10px;
+  margin: 20px auto 30px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(217, 28, 60, 0.4);
+}
+
 .courses-page-desc {
   font-size: 15.5px;
   color: #475569; /* Slate 600 */
   line-height: 1.65;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 14px auto 0;
   font-weight: 500;
 }
 
 .courses-page-desc::after {
-  content: '';
-  display: block;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
-  margin: 16px auto 0;
-  border-radius: 2px;
+  display: none !important;
 }
 
 /* ========================================================
@@ -515,19 +520,13 @@
   font-size: 15.5px;
   color: #475569;
   max-width: 600px;
-  margin: 14px auto 0;
+  margin: 8px auto 0;
   font-weight: 500;
   line-height: 1.6;
 }
 
 .why-subtitle-courses::after {
-  content: '';
-  display: block;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
-  margin: 16px auto 0;
-  border-radius: 2px;
+  display: none !important;
 }
 
 .why-container {
@@ -748,8 +747,8 @@
 
   .why-container {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 10px 0 !important;
@@ -757,39 +756,52 @@
 
   .why-card {
     width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    padding: 14px 6px 12px !important;
-    gap: 6px !important;
-    border-radius: 16px !important;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03) !important;
+    padding: 18px 14px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04) !important;
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .why-card:nth-child(3) {
+    grid-column: span 2 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    margin: 0 auto !important;
   }
 
   .why-card-top-row {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 4px !important;
-    margin: 0 0 2px !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 0 14px !important;
   }
 
   .why-icon {
-    margin: 0 auto 4px !important;
+    margin: 0 auto !important;
     flex-shrink: 0 !important;
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 15px !important;
-    border-radius: 10px !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 17px !important;
+    border-radius: 12px !important;
   }
 
   .why-pill-badge {
-    font-size: 8px !important;
-    padding: 2px 4px !important;
-    border-radius: 6px !important;
+    font-size: 9.5px !important;
+    padding: 3.5px 9px !important;
+    border-radius: 8px !important;
     white-space: nowrap !important;
+    margin: 2px auto 0 !important;
   }
 
   .why-card-text {
@@ -797,22 +809,24 @@
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 2px !important;
+    gap: 4px !important;
   }
 
   .why-card h3 {
-    font-size: 11.5px !important;
+    font-size: 14.5px !important;
     font-weight: 850 !important;
-    line-height: 1.25 !important;
-    margin: 0 0 2px !important;
+    line-height: 1.35 !important;
+    margin: 0 0 4px !important;
     color: #0f172a !important;
+    text-align: center !important;
   }
 
   .why-card p {
-    font-size: 9.5px !important;
-    line-height: 1.35 !important;
-    color: #64748b !important;
+    font-size: 11.5px !important;
+    line-height: 1.5 !important;
+    color: #475569 !important;
     margin: 0 !important;
+    text-align: center !important;
   }
 }
 

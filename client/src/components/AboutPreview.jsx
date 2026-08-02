@@ -57,7 +57,7 @@ function AboutPreview() {
         {/* Section Header */}
         <header className="about-section-header">
           <span className="about-top-badge">
-            <FaAward className="badge-icon" /> OFFICIAL JAPANESE ACADEMY
+            <FaAward className="badge-icon" /> ASAHI JLPT PREPARATION CLASSES & BILINGUAL SERVICES
           </span>
           <h2 className="about-section-title">
             What is <span className="gradient-text-red">ASAHI</span>?
@@ -116,13 +116,13 @@ function AboutPreview() {
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="about-sub-tag">🎌 DISCOVER ASAHI BILINGUAL SERVICES</span>
+            <span className="about-sub-tag"><FaAward className="tag-inline-icon" /> ASAHI JLPT PREPARATION CLASSES & ASAHI BILINGUAL SERVICES</span>
             <h3 className="about-main-heading">
               Your Premier Gateway to <span className="gradient-text-red">Living & Working</span> in Japan
             </h3>
 
             <p className="about-desc-paragraph">
-              ASAHI Bilingual Services is an official Japanese language academy dedicated to helping Indian students and professionals master Japanese language proficiency from <strong>N5 to N1</strong> while unlocking direct career opportunities across Tokyo, Osaka, and leading MNCs.
+              <strong>Asahi JLPT Preparation Classes & Asahi Bilingual Services</strong> is an official Japanese language academy dedicated to helping Indian students and professionals master Japanese language proficiency from <strong>N5 to N1</strong> while unlocking direct career opportunities across Tokyo, Osaka, and leading MNCs.
             </p>
 
             {/* 4 Pillars Grid (2x2) */}

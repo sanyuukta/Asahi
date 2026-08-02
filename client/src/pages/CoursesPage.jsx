@@ -246,6 +246,7 @@ function CoursesPage() {
             <h1 className="courses-main-title">
               JLPT <span>Preparation Courses</span>
             </h1>
+            <div className="gradient-underline-sm" />
             <p className="courses-page-desc">
               Structured language training aligned with official JLPT standards, designed to take you from a absolute beginner to a native-level professional.
             </p>
@@ -274,6 +275,7 @@ function CoursesPage() {
             <h1 className="courses-main-title">
               NAT-TEST <span>Exam Mastery</span>
             </h1>
+            <div className="gradient-underline-sm" />
             <p className="courses-page-desc">
               Accelerated and specialized curricula built to excel in the NAT-TEST examinations, accepted by universities and immigration authorities in Japan.
             </p>
@@ -305,6 +307,7 @@ function CoursesPage() {
           <h2 className="why-title">
             Why Our Courses <br /><span>Stand Out</span>
           </h2>
+          <div className="gradient-underline-sm" />
           <p className="why-subtitle-courses">Learn about the core academic advantages that make our programs highly effective</p>
         </motion.div>
 

@@ -37,7 +37,7 @@ function WhyChoose() {
       tag: "98.4% Satisfaction Rate",
       highlight: true,
       stats: "Live Every Day",
-      oppositeBadge: "🌸 ライブ授業 (Live Batches)",
+      oppositeBadge: "ライブ授業 (Live Batches)",
       theme: "asahi-red"
     },
     {
@@ -50,7 +50,7 @@ function WhyChoose() {
       tag: "N5 to N1 Certification",
       highlight: true,
       stats: "98.4% Pass Rate",
-      oppositeBadge: "🎯 合格率 98.4% (JLPT Pass)",
+      oppositeBadge: "合格率 98.4% (JLPT Pass)",
       theme: "asahi-red"
     },
     {
@@ -63,7 +63,7 @@ function WhyChoose() {
       tag: "Direct Job Placement",
       highlight: false,
       stats: "120+ Placed Students",
-      oppositeBadge: "🗼 就職支援 (Tokyo Hiring)",
+      oppositeBadge: "就職支援 (Tokyo Hiring)",
       theme: "asahi-red"
     },
     {
@@ -76,7 +76,7 @@ function WhyChoose() {
       tag: "Included with Fujichan Books",
       highlight: false,
       stats: "100+ Audio Lessons",
-      oppositeBadge: "🎧 音声教材 (Native Audio)",
+      oppositeBadge: "音声教材 (Native Audio)",
       theme: "asahi-red"
     },
     {
@@ -89,7 +89,7 @@ function WhyChoose() {
       tag: "Weekend & Evening Options",
       highlight: false,
       stats: "Flexible Hours",
-      oppositeBadge: "⏰ 柔軟な時間 (Flexible Batch)",
+      oppositeBadge: "柔軟な時間 (Flexible Batch)",
       theme: "asahi-red"
     },
     {
@@ -102,7 +102,7 @@ function WhyChoose() {
       tag: "Full Visa Guidance",
       highlight: false,
       stats: "100% Visa Success",
-      oppositeBadge: "✈️ ビザサポート (Visa Ready)",
+      oppositeBadge: "ビザサポート (Visa Ready)",
       theme: "asahi-red"
     }
   ];
@@ -194,18 +194,6 @@ function WhyChoose() {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* BOTTOM CALLOUT BANNER */}
-        <div className="whychoose-bottom-callout">
-          <div className="callout-left">
-            <span className="callout-badge">🌸 Ready to Begin Your Journey?</span>
-            <h3>Start Learning Japanese with ASAHI Today!</h3>
-            <p>Join over 1000+ successful students mastering JLPT levels and working in Japan.</p>
-          </div>
-          <button className="callout-cta-btn" onClick={() => navigate("/enquiry")}>
-            Enroll for Free Trial Class <FaArrowRight />
-          </button>
         </div>
       </div>
     </section>

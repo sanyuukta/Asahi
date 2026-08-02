@@ -123,20 +123,21 @@
 
 .brand-text-premium h2 {
   font-size: 20px;
-  font-weight: 800;
-  color: white;
+  font-weight: 850;
+  color: #ffffff;
   line-height: 1;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .brand-text-premium span {
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: rgba(255, 255, 255, 0.92);
   text-transform: uppercase;
   display: block;
   margin-top: 3px;
+  white-space: nowrap;
 }
 
 /* NAVIGATION LINKS */
@@ -337,7 +338,7 @@
     left: 0 !important;
     right: 0 !important;
     border-radius: 0 !important;
-    height: 72px !important;
+    height: 78px !important;
     padding: 0 !important;
     overflow: visible !important;
   }
@@ -350,7 +351,7 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 16px !important;
+    padding: 0 18px !important;
     width: 100% !important;
     max-width: 100% !important;
     height: 100% !important;
@@ -360,7 +361,7 @@
   .main-nav-premium {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -368,24 +369,27 @@
   }
 
   .logo-premium img {
-    width: 36px !important;
-    height: 36px !important;
+    width: 40px !important;
+    height: 40px !important;
   }
 
   .brand-text-premium h2 {
-    font-size: 16px !important;
-    font-weight: 800 !important;
+    font-size: 16.5px !important;
+    font-weight: 850 !important;
     color: #ffffff !important;
     margin: 0 !important;
     line-height: 1.1 !important;
+    letter-spacing: 0.5px !important;
   }
 
   .brand-text-premium span {
-    font-size: 7.5px !important;
-    letter-spacing: 0.8px !important;
-    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     margin-top: 2px !important;
     display: block !important;
+    white-space: nowrap !important;
   }
 
   .desktop-only-links {
@@ -395,7 +399,7 @@
   .nav-right-premium {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -405,30 +409,33 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 8px 16px !important;
-    font-size: 12px !important;
-    font-weight: 750 !important;
-    border-radius: 20px !important;
+    padding: 6px 11px !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    border-radius: 14px !important;
     background: #ffffff !important;
     color: #b50016 !important;
     border: 1px solid rgba(255, 255, 255, 0.9) !important;
     white-space: nowrap !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+    order: -1 !important;
   }
 
   .menu-icon-premium {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 36px !important;
-    height: 36px !important;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: 10px !important;
     background: rgba(255, 255, 255, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.35) !important;
     color: #ffffff !important;
     font-size: 16px !important;
     cursor: pointer !important;
+    order: 1 !important;
   }
+
 
   .mobile-menu-container {
     position: fixed;
@@ -626,34 +633,37 @@
   }
 
   .main-nav-premium {
-    gap: 8px !important;
-  }
-
-  .logo-premium img {
-    width: 34px !important;
-    height: 34px !important;
-  }
-
-  .brand-text-premium h2 {
-    font-size: 15px !important;
-  }
-
-  .brand-text-premium span {
-    font-size: 7px !important;
-  }
-
-  .nav-right-premium {
     gap: 10px !important;
   }
 
+  .logo-premium img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .brand-text-premium h2 {
+    font-size: 15.5px !important;
+    letter-spacing: 0.4px !important;
+  }
+
+  .brand-text-premium span {
+    font-size: 7.5px !important;
+    letter-spacing: 1px !important;
+    font-weight: 700 !important;
+  }
+
+  .nav-right-premium {
+    gap: 20px !important;
+  }
+
   .enroll-pill-btn {
-    padding: 7px 14px !important;
-    font-size: 11.5px !important;
+    padding: 7.5px 14px !important;
+    font-size: 12px !important;
   }
 
   .menu-icon-premium {
-    width: 34px !important;
-    height: 34px !important;
+    width: 36px !important;
+    height: 36px !important;
     font-size: 15px !important;
   }
 }

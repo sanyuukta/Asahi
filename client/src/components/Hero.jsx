@@ -115,7 +115,7 @@ function Hero() {
 
           {/* Subheading Paragraph */}
           <p className="hero-luxury-description">
-            Master Japanese language proficiency (JLPT N5-N1), learn authentic business Keigo, and secure direct placement opportunities with top tech companies & MNCs across Japan.
+            <strong>Asahi JLPT Preparation Classes & Asahi Bilingual Services</strong> provide expert Japanese language training (JLPT N5-N1), authentic Business Keigo mastery, and direct career placement opportunities across top tech companies & MNCs in Japan.
           </p>
 
           {/* 3 Key Trust Bullet Badges */}

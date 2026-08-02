@@ -1,21 +1,21 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
-function ScrollToTop(){
+function ScrollToTop() {
+  const { pathname } = useLocation()
 
-const { pathname } = useLocation()
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+    const t = setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 20)
+    return () => clearTimeout(t)
+  }, [pathname])
 
-useEffect(() => {
-
-window.scrollTo({
-top: 0,
-left: 0,
-behavior: "smooth"
-})
-
-}, [pathname])
-
-return null
+  return null
 }
 
 export default ScrollToTop
