@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 94px;
   z-index: 1000;
   overflow: hidden; /* Keep the curved pseudo-element clipped */
   
@@ -134,11 +134,11 @@
   color: #ffffff;
   line-height: 1;
   letter-spacing: 0.8px;
-  margin: 0 0 2px 0;
+  margin: 3px 0 3px 0;
 }
 
 .brand-text-premium .sub-line-1 {
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 1.6px;
   color: rgba(255, 255, 255, 0.95);
@@ -149,10 +149,10 @@
 }
 
 .brand-text-premium .sub-line-2 {
-  font-size: 7.5px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
   display: block;
   margin-top: 1px;
@@ -357,7 +357,7 @@
     left: 0 !important;
     right: 0 !important;
     border-radius: 0 !important;
-    height: 86px !important;
+    height: 94px !important;
     padding: 0 !important;
     overflow: visible !important;
   }
@@ -388,8 +388,8 @@
   }
 
   .logo-premium img {
-    width: 44px !important;
-    height: 44px !important;
+    width: 46px !important;
+    height: 46px !important;
   }
 
   .brand-text-premium {
@@ -401,29 +401,29 @@
   }
 
   .brand-text-premium h2 {
-    font-size: 16.5px !important;
+    font-size: 17px !important;
     font-weight: 900 !important;
     color: #ffffff !important;
-    margin: 0 0 2px 0 !important;
+    margin: 3px 0 3px 0 !important;
     line-height: 1 !important;
     letter-spacing: 0.8px !important;
   }
 
   .brand-text-premium .sub-line-1 {
-    font-size: 7px !important;
+    font-size: 8px !important;
     font-weight: 800 !important;
     letter-spacing: 1.4px !important;
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: #ffffff !important;
     margin: 0 !important;
     display: block !important;
     white-space: nowrap !important;
   }
 
   .brand-text-premium .sub-line-2 {
-    font-size: 6.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.2px !important;
-    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.4px !important;
+    color: #ffffff !important;
     margin-top: 1px !important;
     display: block !important;
     white-space: nowrap !important;
@@ -679,20 +679,22 @@
   }
 
   .brand-text-premium h2 {
-    font-size: 14px !important;
-    letter-spacing: 0.5px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.6px !important;
   }
 
   .brand-text-premium .sub-line-1 {
-    font-size: 5.5px !important;
-    letter-spacing: 1px !important;
+    font-size: 7.5px !important;
+    letter-spacing: 1.2px !important;
     font-weight: 800 !important;
+    color: #ffffff !important;
   }
 
   .brand-text-premium .sub-line-2 {
-    font-size: 5px !important;
-    letter-spacing: 0.9px !important;
-    font-weight: 700 !important;
+    font-size: 7.5px !important;
+    letter-spacing: 1.2px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
   }
 
   .nav-right-premium {
