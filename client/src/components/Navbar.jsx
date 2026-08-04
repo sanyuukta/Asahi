@@ -64,7 +64,8 @@ function Navbar() {
             <div className="logo-premium"><img src={logo} alt="ASAHI" /></div>
             <div className="brand-text-premium">
               <h2>ASAHI</h2>
-              <span>Bilingual Services</span>
+              <span className="sub-line-1">JLPT PREPARATION &amp;</span>
+              <span className="sub-line-2">BILINGUAL SERVICES</span>
             </div>
           </div>
 
