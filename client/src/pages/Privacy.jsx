@@ -1,94 +1,79 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Policies.css';
+import {
+  MdSecurity,
+  MdLockOutline,
+  MdPerson,
+  MdEmail,
+  MdLocationOn,
+  MdDataUsage,
+  MdPayment,
+  MdLocalShipping,
+  MdPhone,
+} from 'react-icons/md';
 
 const Privacy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="policy-page">
       <div className="policy-container">
         <div className="policy-header">
+          <span className="policy-badge">
+            <MdSecurity className="policy-badge-icon" /> DATA PROTECTION & PRIVACY
+          </span>
           <h1>Privacy <span>Policy</span></h1>
           <p>Last Updated: {new Date().toLocaleDateString()}</p>
         </div>
 
         <div className="policy-content">
           <p>
-            At ASAHI Bilingual Services ("ASAHI," "we," "our," or "us"), your privacy is important to us. This Privacy Policy explains how we collect, use, store, disclose, and protect your personal information when you visit our website, interact with our platforms, or use our educational services.
+            At <strong>ASAHI Bilingual Services</strong> ("ASAHI," "we," "our," or "us"), your privacy is paramount. This <span className="highlight-pill">Privacy Policy</span> explains how we collect, use, store, disclose, and safeguard your personal information when you visit our website, enroll in courses, or use our educational services.
           </p>
-          <p>By accessing or using our website, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</p>
 
           <h2>1. Information We Collect</h2>
           <h3>Personal Information</h3>
-          <p>You may voluntarily provide us with information such as:</p>
+          <p>You may voluntarily provide us with details such as:</p>
           <ul>
-            <li>Full Name</li>
-            <li>Email Address</li>
-            <li>Phone Number</li>
-            <li>Shipping Address (for book deliveries)</li>
-            <li>Current Educational/Professional Status</li>
-            <li>Billing and Payment Information (where applicable)</li>
-            <li>Any information submitted through contact forms, enrollment requests, or demo bookings.</li>
+            <li><MdPerson className="policy-list-icon" /><span><strong>Full Name & Contact Details</strong></span></li>
+            <li><MdEmail className="policy-list-icon" /><span><strong>Email Address & WhatsApp Phone Number</strong></span></li>
+            <li><MdLocationOn className="policy-list-icon" /><span><strong>Shipping Address</strong> (for physical study material and book deliveries)</span></li>
+            <li><MdDataUsage className="policy-list-icon" /><span><strong>Educational & Professional Background</strong></span></li>
+            <li><MdPayment className="policy-list-icon" /><span><strong>Encrypted Billing Data</strong> (processed securely via Razorpay)</span></li>
           </ul>
 
-          <h3>Technical Information</h3>
-          <p>When you visit our website, certain information may be collected automatically, including:</p>
+          <h2>2. How We Use Your Data</h2>
+          <div className="alert-note-box">
+            <MdLockOutline className="alert-icon" />
+            <span><strong>Data Assurance:</strong> ASAHI never sells, rents, or trades your personal information to third-party marketing agencies.</span>
+          </div>
+          <p>We use your information exclusively to:</p>
           <ul>
-            <li>IP Address</li>
-            <li>Browser Type and Version</li>
-            <li>Device Information</li>
-            <li>Pages Visited and Date/Time of Access</li>
+            <li><span>Process course enrollments and book orders efficiently.</span></li>
+            <li><span>Deliver JLPT study materials and grant portal access.</span></li>
+            <li><span>Send batch schedule notifications, mock test reports, and exam updates.</span></li>
+            <li><span>Provide end-to-end career guidance and visa assistance.</span></li>
           </ul>
 
-          <h2>2. How We Use Your Information</h2>
-          <p>We use the information we collect to:</p>
+          <h2>3. Data Protection & Security</h2>
+          <p>We implement industry-standard <strong>SSL encryption, secure cloud infrastructure, and administrative controls</strong> to prevent unauthorized access, alteration, or disclosure of your personal data.</p>
+
+          <h2>4. Third-Party Integrations</h2>
+          <p>We collaborate only with vetted trusted partners:</p>
           <ul>
-            <li>Process course enrollments and book orders.</li>
-            <li>Respond to inquiries, demo bookings, and support requests.</li>
-            <li>Deliver study materials and provide access to student portals.</li>
-            <li>Process payments and invoices securely.</li>
-            <li>Send important updates regarding batch schedules, exams, or orders.</li>
-            <li>Share educational newsletters or promotional communications (where permitted).</li>
-            <li>Maintain website security and prevent fraud.</li>
+            <li><MdPayment className="policy-list-icon" /><span><strong>Razorpay Gateway:</strong> For 256-bit encrypted secure online payments.</span></li>
+            <li><MdLocalShipping className="policy-list-icon" /><span><strong>Couriers & Logistics:</strong> To deliver physical books to your doorstep.</span></li>
           </ul>
 
-          <h2>3. Sharing of Information</h2>
-          <p>We value your trust and do not sell, rent, or trade your personal information. We may share information only when necessary with:</p>
-          <ul>
-            <li>Delivery and courier partners (for book shipping).</li>
-            <li>Payment processing partners (e.g., Razorpay) for secure transactions.</li>
-            <li>Cloud hosting and communication service providers.</li>
-            <li>Government authorities when required by applicable law.</li>
-          </ul>
-          <p>All third-party service providers are expected to maintain appropriate confidentiality and security standards.</p>
-
-          <h2>4. Data Security</h2>
-          <p>We implement commercially reasonable administrative, technical, and organizational measures to protect your information against unauthorized access, alteration, disclosure, misuse, or destruction. While we strive to use industry-standard security practices, no method of electronic transmission or storage can be guaranteed to be completely secure.</p>
-
-          <h2>5. Data Retention</h2>
-          <p>We retain personal information only for as long as necessary to deliver requested educational services, fulfill contractual obligations, meet legal requirements, or resolve disputes. When information is no longer required, it is securely deleted or anonymized where appropriate.</p>
-
-          <h2>6. Your Rights</h2>
-          <p>Depending on applicable laws, you may have the right to:</p>
-          <ul>
-            <li>Access your personal information.</li>
-            <li>Request correction of inaccurate information.</li>
-            <li>Request deletion of your personal data.</li>
-            <li>Withdraw previously provided consent.</li>
-          </ul>
-          <p>To exercise any of these rights, please contact us using the details provided below.</p>
-
-          <h2>7. Children's Privacy</h2>
-          <p>Our website and courses are open to students of various ages, but registrations and payments must be handled by individuals who are at least 18 years of age. We do not knowingly collect personal information directly from children under 13 without parental consent.</p>
-
-          <h2>8. Changes to This Privacy Policy</h2>
-          <p>We may update this Privacy Policy periodically to reflect changes in our services, business practices, or legal obligations. Any updates will be published on this page with the revised Last Updated date.</p>
-
-          <h2>9. Contact Us</h2>
-          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the way your personal information is handled, please contact us.</p>
-          <div className="contact-info-block">
-            <strong>ASAHI Bilingual Services</strong><br />
-            Email: asahi.learning@gmail.com<br />
-            Phone: +91-9876543210<br />
-            Location: Nagpur, Maharashtra, India
+          <h2>5. Contact Data Privacy Officer</h2>
+          <p>If you have any questions regarding your privacy rights or wish to request data updates, please contact our data officer:</p>
+          <div className="policy-contact-block">
+            <strong className="policy-contact-title">ASAHI Bilingual Services</strong>
+            <div className="policy-contact-row"><MdLocationOn className="policy-contact-icon" /><span><strong>Location:</strong> Nagpur, Maharashtra, India</span></div>
+            <div className="policy-contact-row"><MdEmail className="policy-contact-icon" /><span><strong>Email:</strong> asahi.learning@gmail.com</span></div>
+            <div className="policy-contact-row"><MdPhone className="policy-contact-icon" /><span><strong>Hotline:</strong> +91-8698888336</span></div>
           </div>
         </div>
       </div>

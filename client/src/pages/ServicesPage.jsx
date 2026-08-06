@@ -29,6 +29,29 @@ function ServicesPage() {
   const filterRef = useRef(null);
   const spotlightRef = useRef(null);
 
+  const stepsRowRef = useRef(null);
+  const [activeStepIdx, setActiveStepIdx] = useState(0);
+
+  // Auto-slide the pathway steps on mobile view
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && stepsRowRef.current) {
+        setActiveStepIdx((prevIdx) => {
+          const nextIdx = (prevIdx + 1) % 4; // 4 steps total
+          const container = stepsRowRef.current;
+          const card = container.children[nextIdx];
+          if (card) {
+            const scrollLeft = card.offsetLeft;
+            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+          }
+          return nextIdx;
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const t = setTimeout(() => {
@@ -333,7 +356,7 @@ function ServicesPage() {
 
   const handleWA = (title) => {
     const msg = `Konnichiwa ASAHI! I want to enquire about *${title}*. Please share details and batch schedules.`;
-    window.open(`https://api.whatsapp.com/send?phone=917796530192&text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=918698888336&text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   const toggleFaq = (index) => {
@@ -658,7 +681,7 @@ function ServicesPage() {
           {/* ELEGANT UNDERLINE */}
           <div className="svc-sub-underline" />
 
-          <div className="svc-steps-row">
+          <div className="svc-steps-row" ref={stepsRowRef}>
             {[
               { num: "01", kanji: "一 基礎", tag: "N5 & N4", title: "Foundation", icon: <FaGraduationCap />, desc: "Master Hiragana, Katakana, 300+ Kanji, and basic conversational fluency." },
               { num: "02", kanji: "二 応用", tag: "N3 & N2", title: "Advanced Fluency", icon: <FaAward />, desc: "Business Keigo honorifics, complex grammar, and speed reading comprehension." },
@@ -676,6 +699,27 @@ function ServicesPage() {
                 <p className="svc-step-desc">{step.desc}</p>
                 {i < 3 && <div className="svc-step-arrow"><FaArrowRight /></div>}
               </div>
+            ))}
+          </div>
+
+          {/* Mobile Step Indicator Dots */}
+          <div className="step-mobile-dots">
+            {[0, 1, 2, 3].map((idx) => (
+              <span
+                key={idx}
+                className={`step-dot ${activeStepIdx === idx ? "active" : ""}`}
+                onClick={() => {
+                  setActiveStepIdx(idx);
+                  if (stepsRowRef.current) {
+                    const container = stepsRowRef.current;
+                    const card = container.children[idx];
+                    if (card) {
+                      const scrollLeft = card.offsetLeft;
+                      container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                    }
+                  }
+                }}
+              />
             ))}
           </div>
         </div>

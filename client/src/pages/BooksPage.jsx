@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { 
   FaWhatsapp, 
@@ -25,6 +25,29 @@ function BooksPage() {
   const [booksList, setBooksList] = useState(FUJICHAN_BOOKS);
   const [activeIdx, setActiveIdx] = useState(0);
   const [animKey, setAnimKey] = useState(0);
+
+  const featureGridRef = useRef(null);
+  const [activeFeatureIdx, setActiveFeatureIdx] = useState(0);
+
+  // Auto-slide the features grid on mobile view
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && featureGridRef.current) {
+        setActiveFeatureIdx((prevIdx) => {
+          const nextIdx = (prevIdx + 1) % 3;
+          const container = featureGridRef.current;
+          const card = container.children[nextIdx];
+          if (card) {
+            const scrollLeft = card.offsetLeft;
+            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+          }
+          return nextIdx;
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const fetchApiBooks = async () => {
@@ -260,7 +283,7 @@ function BooksPage() {
         </div>
 
         {/* Feature Grid */}
-        <div className="japan-features-grid">
+        <div className="japan-features-grid" ref={featureGridRef}>
           <div className="japan-feature-card">
             <div className="feature-card-header">
               <div className="feature-icon-wrapper red">
@@ -299,6 +322,27 @@ function BooksPage() {
               Learn authentic pronunciation, business etiquette, and cultural nuances directly from certified bilingual Japanese educators.
             </p>
           </div>
+        </div>
+
+        {/* Mobile Feature Indicator Dots */}
+        <div className="features-mobile-dots">
+          {[0, 1, 2].map((idx) => (
+            <span
+              key={idx}
+              className={`feature-dot ${activeFeatureIdx === idx ? "active" : ""}`}
+              onClick={() => {
+                setActiveFeatureIdx(idx);
+                if (featureGridRef.current) {
+                  const container = featureGridRef.current;
+                  const card = container.children[idx];
+                  if (card) {
+                    const scrollLeft = card.offsetLeft;
+                    container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                  }
+                }
+              }}
+            />
+          ))}
         </div>
 
         {/* Story Banner */}

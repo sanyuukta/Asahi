@@ -89,7 +89,7 @@ function Hero() {
 
   const handleWhatsApp = () => {
     const msg = "Konnichiwa ASAHI! I want to consult regarding Japanese courses & career opportunities in Japan.";
-    window.open(`https://api.whatsapp.com/send?phone=917796530192&text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=918698888336&text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

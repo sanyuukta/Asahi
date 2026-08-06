@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { 
   FaWhatsapp, 
@@ -7,11 +7,11 @@ import {
   FaCheckCircle, 
   FaGraduationCap, 
   FaGlobeAsia, 
+  FaAward, 
+  FaStar,
   FaHeadphones,
   FaChalkboardTeacher,
-  FaEye,
-  FaAward,
-  FaStar
+  FaEye
 } from "react-icons/fa";
 import { FUJICHAN_BOOKS, WHATSAPP_NUMBER } from "../utils/booksData";
 import japanHeroImg from "../assets/japan_hero_scene.png";
@@ -23,6 +23,29 @@ function BookDetailPage() {
 
   const [currentBook, setCurrentBook] = useState(null);
   const [otherBooks, setOtherBooks] = useState([]);
+
+  const infoGridRef = useRef(null);
+  const [activeInfoIdx, setActiveInfoIdx] = useState(0);
+
+  // Auto-slide the info cards grid on mobile view
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && infoGridRef.current) {
+        setActiveInfoIdx((prevIdx) => {
+          const nextIdx = (prevIdx + 1) % 4; // 4 cards total
+          const container = infoGridRef.current;
+          const card = container.children[nextIdx];
+          if (card) {
+            const scrollLeft = card.offsetLeft;
+            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+          }
+          return nextIdx;
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const rawId = String(id || "").toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -219,7 +242,7 @@ function BookDetailPage() {
           </div>
 
           {/* 4 Feature Pillars (2x2 Grid) */}
-          <div className="informative-grid-2x2">
+          <div className="informative-grid-2x2" ref={infoGridRef}>
             <div className="info-card-horizontal">
               <div className="info-card-header">
                 <div className="info-icon-wrap red">
@@ -271,6 +294,27 @@ function BookDetailPage() {
                 <p>Unlock study abroad pathways, university admissions, IT engineering jobs, and visa guidance for living in Japan.</p>
               </div>
             </div>
+          </div>
+
+          {/* Mobile Info Indicator Dots */}
+          <div className="info-mobile-dots">
+            {[0, 1, 2, 3].map((idx) => (
+              <span
+                key={idx}
+                className={`info-dot ${activeInfoIdx === idx ? "active" : ""}`}
+                onClick={() => {
+                  setActiveInfoIdx(idx);
+                  if (infoGridRef.current) {
+                    const container = infoGridRef.current;
+                    const card = container.children[idx];
+                    if (card) {
+                      const scrollLeft = card.offsetLeft;
+                      container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                    }
+                  }
+                }}
+              />
+            ))}
           </div>
 
           {/* Side-by-Side Japanese Experience Story Showcase */}

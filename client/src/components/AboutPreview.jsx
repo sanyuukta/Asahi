@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -15,6 +16,8 @@ import owner from "../assets/owner.png";
 
 function AboutPreview() {
   const navigate = useNavigate();
+  const [activePillarIndex, setActivePillarIndex] = useState(0);
+  const pillarsGridRef = useRef(null);
 
   const pillars = [
     {
@@ -47,6 +50,26 @@ function AboutPreview() {
     }
   ];
 
+  // Auto-slide pillars on mobile view every 3.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 640 && pillarsGridRef.current) {
+        setActivePillarIndex((prevIdx) => {
+          const nextIdx = (prevIdx + 1) % pillars.length;
+          const container = pillarsGridRef.current;
+          const card = container.children[nextIdx];
+          if (card) {
+            const scrollLeft = card.offsetLeft - container.offsetLeft - 16;
+            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+          }
+          return nextIdx;
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [pillars.length]);
+
   return (
     <section className="about-preview-section">
       {/* Background ambient blurs */}
@@ -57,7 +80,7 @@ function AboutPreview() {
         {/* Section Header */}
         <header className="about-section-header">
           <span className="about-top-badge">
-            <FaAward className="badge-icon" /> ASAHI JLPT PREPARATION CLASSES & BILINGUAL SERVICES
+            <FaAward className="badge-icon" /> ASAHI JLPT PREPARATION CLASSES & ASAHI BILINGUAL SERVICES
           </span>
           <h2 className="about-section-title">
             What is <span className="gradient-text-red">ASAHI</span>?
@@ -125,10 +148,10 @@ function AboutPreview() {
               <strong>Asahi JLPT Preparation Classes & Asahi Bilingual Services</strong> is an official Japanese language academy dedicated to helping Indian students and professionals master Japanese language proficiency from <strong>N5 to N1</strong> while unlocking direct career opportunities across Tokyo, Osaka, and leading MNCs.
             </p>
 
-            {/* 4 Pillars Grid (2x2) */}
-            <div className="about-pillars-grid">
+            {/* 4 Pillars Grid */}
+            <div className="about-pillars-grid" ref={pillarsGridRef}>
               {pillars.map((p, idx) => (
-                <div className="pillar-item-card" key={idx}>
+                <div className={`pillar-item-card ${activePillarIndex === idx ? "active-slide" : ""}`} key={idx}>
                   <div className="pillar-card-top">
                     <div className={`pillar-icon-box ${p.color}`}>
                       {p.icon}
@@ -140,6 +163,28 @@ function AboutPreview() {
                     <p>{p.desc}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Mobile Indicator Dots */}
+            <div className="pillars-mobile-dots">
+              {pillars.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`pillars-dot ${activePillarIndex === idx ? "active" : ""}`}
+                  onClick={() => {
+                    setActivePillarIndex(idx);
+                    if (pillarsGridRef.current) {
+                      const container = pillarsGridRef.current;
+                      const card = container.children[idx];
+                      if (card) {
+                        const scrollLeft = card.offsetLeft - container.offsetLeft - 16;
+                        container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                      }
+                    }
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
               ))}
             </div>
 

@@ -620,6 +620,13 @@
   background: rgba(217, 28, 60, 0.08);
   color: #D70015;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.why-icon svg {
+  width: 1em;
+  height: 1em;
+  display: block;
 }
 
 .why-card:hover .why-icon {
@@ -714,12 +721,12 @@
     font-weight: 800 !important;
     margin-bottom: 4px !important;
     letter-spacing: -0.2px !important;
-    line-height: 1.25 !important;
+    line-height: 1.35 !important; /* Better line height */
   }
 
   .course-desc-premium {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
+    font-size: 11.5px !important; /* Slightly larger for readability */
+    line-height: 1.55 !important; /* Better line height */
     min-height: 44px !important;
     margin-bottom: 12px !important;
   }
@@ -746,87 +753,126 @@
   }
 
   .why-container {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    width: 100% !important;
+    position: relative !important; /* Establishes offset parent for correct offsetLeft */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Prevent vertical wrapping */
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 6px 0 16px 0 !important; /* Zero horizontal padding for clean snapping */
     margin: 0 !important;
-    padding: 10px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    scrollbar-width: none;
+  }
+
+  .why-container::-webkit-scrollbar {
+    display: none;
   }
 
   .why-card {
-    width: 100% !important;
+    flex: 0 0 100% !important; /* 100% width to show one card at a time */
+    min-width: 100% !important;
     max-width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 18px 14px !important;
+    scroll-snap-align: center !important; /* Center snapping */
+    padding: 20px 16px !important;
     border-radius: 20px !important;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04) !important;
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05) !important;
     box-sizing: border-box !important;
-  }
-
-  .why-card:nth-child(3) {
-    grid-column: span 2 !important;
-    justify-self: center !important;
-    width: 100% !important;
-    max-width: 270px !important;
-    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    text-align: left !important;
   }
 
   .why-card-top-row {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
     width: 100% !important;
-    margin: 0 0 14px !important;
+    margin: 0 0 12px !important;
   }
 
   .why-icon {
-    margin: 0 auto !important;
-    flex-shrink: 0 !important;
     width: 38px !important;
     height: 38px !important;
     font-size: 17px !important;
-    border-radius: 12px !important;
+    border-radius: 11px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .why-pill-badge {
-    font-size: 9.5px !important;
+    font-size: 10.5px !important;
+    font-weight: 750 !important;
     padding: 3.5px 9px !important;
-    border-radius: 8px !important;
+    border-radius: 7px !important;
     white-space: nowrap !important;
-    margin: 2px auto 0 !important;
+    margin: 0 !important;
   }
 
   .why-card-text {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 4px !important;
   }
 
   .why-card h3 {
-    font-size: 14.5px !important;
-    font-weight: 850 !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
     line-height: 1.35 !important;
-    margin: 0 0 4px !important;
+    margin: 5px 0 5px !important;
     color: #0f172a !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .why-card p {
-    font-size: 11.5px !important;
+    font-size: 12.5px !important;
     line-height: 1.5 !important;
     color: #475569 !important;
     margin: 0 !important;
-    text-align: center !important;
+    text-align: left !important;
+  }
+
+  /* MOBILE DOT INDICATORS */
+  .why-mobile-dots {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+  }
+
+  .why-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 20px !important;
+    background: #cbd5e1 !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.35s ease !important;
+  }
+
+  .why-dot.active {
+    width: 24px !important;
+    background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%) !important;
+    box-shadow: 0 4px 12px rgba(255, 30, 39, 0.35) !important;
   }
 }
 
@@ -834,13 +880,13 @@
   /* 1-column layout specifically optimized for mobile phones */
   .courses-grid {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 28px !important; /* More space between cards */
     max-width: 420px;
     margin: 0 auto;
   }
 
   .course-card-premium {
-    padding: 24px 20px 20px !important;
+    padding: 26px 20px 24px !important; /* Premium spacious card padding */
     border-radius: 20px !important;
     height: auto !important;
   }
@@ -859,23 +905,23 @@
   }
 
   .course-duration-badge {
-    font-size: 11px !important;
+    font-size: 11.5px !important;
   }
 
   .clock-icon {
-    font-size: 11px !important;
+    font-size: 11.5px !important;
   }
 
   .course-level-title {
-    font-size: 18px !important;
-    margin-bottom: 6px !important;
+    font-size: 19px !important; /* Bold, readable title */
+    margin-bottom: 8px !important;
     letter-spacing: -0.3px !important;
-    line-height: 1.3 !important;
+    line-height: 1.4 !important; /* Better line height */
   }
 
   .course-desc-premium {
-    font-size: 12.5px !important;
-    line-height: 1.5 !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important; /* Premium line height */
     min-height: auto !important; /* No fixed min-height needed since layout is single-col */
     margin-bottom: 0 !important;
   }
@@ -883,12 +929,12 @@
   /* Show divider and highlights list on mobile since it's 1-column with ample width */
   .card-divider-premium {
     display: block !important;
-    margin: 16px 0 !important;
+    margin: 20px 0 !important; /* Generous spacing */
   }
 
   .card-highlights-premium {
     display: block !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 22px !important;
   }
 
   .highlights-title {
@@ -900,37 +946,37 @@
   .highlights-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
+    gap: 12px !important; /* More space */
   }
 
   .highlight-item span {
-    font-size: 11.5px !important;
+    font-size: 12px !important;
   }
 
   .enroll-btn-premium {
-    padding: 12px !important;
-    font-size: 13px !important;
+    padding: 13px !important;
+    font-size: 13.5px !important;
     border-radius: 10px !important;
   }
 
   /* Adjust section header space and title sizes for mobile screens */
   .courses-header-section {
-    margin-bottom: 30px !important;
+    margin-bottom: 40px !important; /* More breathing room */
   }
 
   .courses-header-section.section-nat {
-    margin-top: 60px !important; /* Scale down top margin between sections */
+    margin-top: 80px !important; /* Scale down top margin between sections */
   }
 
   .courses-main-title {
-    font-size: 26px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
+    font-size: 28px !important;
+    line-height: 1.3 !important; /* Proper line height */
+    margin-bottom: 14px !important;
   }
 
   .courses-page-desc {
-    font-size: 13.5px !important;
-    line-height: 1.55 !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important; /* Proper line height */
   }
 
   .courses-page-desc::after {
@@ -938,7 +984,8 @@
   }
 
   .why-subtitle-courses {
-    font-size: 13.5px !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
     margin-top: 10px !important;
     padding: 0 16px !important;
   }

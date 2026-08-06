@@ -410,16 +410,16 @@ function Register() {
             </div>
           </a>
 
-          <a href="tel:+917796530192" className="contact-box">
+          <a href="tel:+918698888336" className="contact-box">
             <div className="contact-icon phone"><FaPhoneAlt /></div>
             <div className="contact-text">
               <h3>PHONE & ADMISSIONS</h3>
-              <p>+91 77965 30192 / +91 93254 75225</p>
+              <p>+91 86988 88336</p>
             </div>
           </a>
 
           <a
-            href="https://www.google.com/maps?q=Nagpur"
+            href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-box"
@@ -427,7 +427,7 @@ function Register() {
             <div className="contact-icon loc"><FaLocationDot /></div>
             <div className="contact-text">
               <h3>CAMPUS LOCATION</h3>
-              <p>Nagpur, Maharashtra, India</p>
+              <p>Reshimbagh, Nagpur, Maharashtra, India</p>
             </div>
           </a>
 
@@ -435,7 +435,7 @@ function Register() {
             <div className="map-card-header">
               <span><FaMapMarkerAlt /> ASAHI NAGPUR CAMPUS MAP</span>
               <a 
-                href="https://www.google.com/maps?q=Nagpur" 
+                href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="map-header-link"
@@ -446,7 +446,7 @@ function Register() {
             <div className="map-frame-wrapper">
               <iframe
                 title="ASAHI Campus Map"
-                src="https://www.google.com/maps?q=Nagpur&output=embed"
+                src="https://www.google.com/maps?q=Reshim+Bagh,+Nagpur&output=embed"
                 loading="lazy"
               />
             </div>

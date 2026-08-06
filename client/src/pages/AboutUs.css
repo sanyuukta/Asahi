@@ -345,101 +345,217 @@
   height: 6px;
 }
 
+/* ================= 2. STATS SECTION (WOW STYLES) ================= */
+.about-stats {
+  padding: 60px 5% 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.stat-card.active-card,
+.stat-card:hover {
+  border-color: rgba(255, 30, 39, 0.4);
+  box-shadow: none;
+  transform: translateY(-4px) scale(1.01);
+  background: #ffffff;
+}
+
+.stat-icon-wrapper {
+  margin: 0 auto 12px;
+  position: relative;
+  display: inline-block;
+}
+
 .stat-icon {
-  font-size: 28px;
-  color: #D70015;
-  margin-bottom: 15px;
-  background: rgba(217, 28, 60, 0.05);
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 30, 39, 0.08) 0%, rgba(217, 28, 60, 0.15) 100%);
+  color: #ff1e27;
+  font-size: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 15px;
+  box-shadow: 0 8px 20px rgba(255, 30, 39, 0.12);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.stat-card.active-card .stat-icon,
 .stat-card:hover .stat-icon {
   background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
   color: #ffffff;
-  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 30, 39, 0.35);
+  transform: scale(1.08) rotate(5deg);
 }
 
-.stat-card h3 {
-  font-size: 36px;
+.stat-pill-tag {
+  display: inline-block;
+  font-size: 9.5px;
   font-weight: 800;
-  color: #0f172a;
+  letter-spacing: 0.8px;
+  color: #d70015;
+  background: rgba(255, 30, 39, 0.06);
+  border: 1px solid rgba(255, 30, 39, 0.15);
+  padding: 3px 10px;
+  border-radius: 12px;
   margin-bottom: 8px;
 }
 
-.stat-card p {
-  color: #64748b;
-  font-size: 15px;
-  font-weight: 500;
+.stat-number {
+  font-size: 38px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+  line-height: 1.1;
 }
 
-/* ================= 3. MISSION & VISION ================= */
+.stat-card.active-card .stat-number,
+.stat-card:hover .stat-number {
+  background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ================= 3. MISSION & VISION (WOW STYLES) ================= */
 .mission-vision {
-  padding: 80px 5%;
+  padding: 70px 5%;
 }
 
 .mv-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 36px;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 40px auto 0;
 }
 
 .mv-card {
-  background: white;
-  padding: 50px 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-  border: 1px solid rgba(0,0,0,0.05);
   position: relative;
+  background: #ffffff;
+  padding: 44px 38px 48px;
+  border-radius: 24px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: none;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.mv-card-top-bar {
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mv-card-top-bar.ruby {
+  background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%);
+}
+
+.mv-card.active-card,
 .mv-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 22px 45px rgba(217, 28, 60, 0.08);
-  border-color: rgba(217, 28, 60, 0.35);
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255, 30, 39, 0.35);
+  box-shadow: none;
+}
+
+.mv-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
 
 .mv-icon {
-  font-size: 28px;
-  color: #D70015;
-  background: rgba(217, 28, 60, 0.05);
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-bottom: 20px;
+  font-size: 24px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mv-card:hover .mv-icon {
+.mv-icon.ruby {
+  background: rgba(255, 30, 39, 0.08);
+  color: #ff1e27;
+}
+
+.mv-card.active-card .mv-icon.ruby,
+.mv-card:hover .mv-icon.ruby {
   background: linear-gradient(135deg, #FF1E27 0%, #B30012 100%);
   color: #ffffff;
-  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 30, 39, 0.3);
+  transform: scale(1.08);
+}
+
+.mv-tag.ruby-tag {
+  background: rgba(255, 30, 39, 0.08);
+  color: #d70015;
+  border: 1px solid rgba(255, 30, 39, 0.2);
 }
 
 .mv-card h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
+  font-size: 26px;
+  font-weight: 850;
+  margin-bottom: 14px;
   color: #0f172a;
 }
 
-.mv-card p {
-  font-size: 17px;
+.quote-wrapper {
+  position: relative;
+  padding-left: 22px;
+  border-left: 3px solid rgba(255, 30, 39, 0.35);
+}
+
+.quote-mark {
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  font-size: 40px;
+  font-family: Georgia, serif;
+  color: rgba(255, 30, 39, 0.12);
+  pointer-events: none;
+}
+
+.quote-wrapper p {
+  font-size: 15.5px;
   color: #475569;
   line-height: 1.7;
   font-style: italic;
+  margin: 0;
+  font-weight: 500;
 }
 
 /* ================= 4. WHY CHOOSE ASAHI ================= */
@@ -1073,55 +1189,207 @@
 }
 
 @media (max-width: 768px) {
+
+  /* ── HERO ─────────────────────────────────── */
   .about-hero-redesign {
-    padding: 90px 4% 40px;
+    padding: 130px 5% 36px !important;
   }
   .about-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .about-hero-right {
+    display: none !important;
+  }
+  .about-hero-left {
+    align-items: center !important;
+    text-align: center !important;
   }
   .hero-pill-badge {
-    font-size: 10.5px;
-    padding: 5px 12px;
-    margin-bottom: 12px;
+    font-size: 9.5px !important;
+    padding: 5px 12px !important;
+    margin-bottom: 14px !important;
+    text-align: center !important;
   }
   .about-hero-left h1 {
     font-size: 26px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 14px !important;
+    letter-spacing: -0.3px !important;
   }
   .about-hero-left p {
     font-size: 13.5px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 20px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+    color: #475569 !important;
   }
   .hero-highlights-list {
-    margin-bottom: 24px !important;
-    gap: 8px !important;
+    margin-bottom: 20px !important;
+    gap: 10px !important;
+    align-items: center !important;
+    width: 100% !important;
   }
-  .hero-highlights-list .h-item {
-    font-size: 12px !important;
+  .h-item {
+    font-size: 13px !important;
+    gap: 8px !important;
+    justify-content: center !important;
   }
   .hero-buttons-row {
     flex-direction: column !important;
     width: 100% !important;
     gap: 10px !important;
+    align-items: center !important;
   }
   .btn-primary-asahi, .btn-secondary-asahi {
     width: 100% !important;
     justify-content: center !important;
-    padding: 12px 20px !important;
+    padding: 13px 20px !important;
     font-size: 14px !important;
-  }
-  .about-hero-right {
-    display: none !important;
+    border-radius: 14px !important;
   }
 
+  /* ── STATS — HORIZONTAL AUTO-SLIDE CAROUSEL ── */
+  .about-stats {
+    padding: 28px 4% 16px !important;
+    margin-top: 0 !important;
+  }
+  .stats-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0 !important;
+    padding: 8px 0 16px !important;
+    scrollbar-width: none !important;
+  }
+  .stats-grid::-webkit-scrollbar { display: none !important; }
+  .stat-card {
+    flex: 0 0 82% !important;
+    min-width: 82% !important;
+    scroll-snap-align: center !important;
+    padding: 28px 20px !important;
+    border-radius: 24px !important;
+    margin: 0 8px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-shadow: none !important;
+    border: 1.5px solid #e2e8f0 !important;
+    transition: all 0.4s ease !important;
+  }
+  .stat-card.active-card {
+    border-color: rgba(255, 30, 39, 0.45) !important;
+    box-shadow: none !important;
+  }
+  .stat-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+    border-radius: 50% !important;
+  }
+  .stat-number {
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    margin-bottom: 4px !important;
+  }
+  .stat-label {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    line-height: 1.45 !important;
+  }
+
+  /* ── MISSION & VISION — HORIZONTAL AUTO-SLIDE ── */
+  .mission-vision {
+    padding: 28px 4% 16px !important;
+  }
+  .mv-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0 !important;
+    padding: 8px 0 16px !important;
+    scrollbar-width: none !important;
+    grid-template-columns: unset !important;
+    margin-top: 16px !important;
+  }
+  .mv-container::-webkit-scrollbar { display: none !important; }
+  .mv-card {
+    flex: 0 0 88% !important;
+    min-width: 88% !important;
+    scroll-snap-align: center !important;
+    padding: 30px 22px !important;
+    border-radius: 24px !important;
+    margin: 0 8px !important;
+    text-align: left !important;
+    box-shadow: none !important;
+    border: 1.5px solid #e2e8f0 !important;
+  }
+  .mv-card-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 14px !important;
+  }
+  .mv-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    margin: 0 !important;
+  }
+  .mv-tag {
+    font-size: 9.5px !important;
+    padding: 4px 12px !important;
+  }
+  .mv-card h2 {
+    font-size: 22px !important;
+    font-weight: 850 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.3 !important;
+  }
+  .quote-wrapper p {
+    font-size: 13.5px !important;
+    line-height: 1.7 !important;
+    color: #475569 !important;
+  }
+
+  /* ── SECTION HEADER (shared) ─────────────── */
+  .section-header {
+    margin-bottom: 22px !important;
+    padding: 0 4px !important;
+  }
+  .section-header h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+    letter-spacing: -0.3px !important;
+  }
+  .section-header p {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    color: #64748b !important;
+  }
+  .gradient-underline-sm {
+    width: 60px !important;
+    height: 3px !important;
+    margin: 12px auto 14px !important;
+  }
+
+  /* ── KEY MILESTONES — HORIZONTAL AUTO-SLIDE ─ */
   .key-milestones-section {
-    padding: 40px 16px;
+    padding: 36px 4% 24px !important;
+    background: #ffffff !important;
   }
   .milestones-wrapper {
-    margin-top: 20px;
+    margin-top: 16px !important;
   }
   .milestones-nodes-row {
     display: none !important;
@@ -1129,299 +1397,311 @@
   .milestones-line {
     display: none !important;
   }
+  .milestones-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0 !important;
+    padding: 4px 0 12px !important;
+    scrollbar-width: none !important;
+    grid-template-columns: unset !important;
+  }
+  .milestones-grid::-webkit-scrollbar { display: none !important; }
+  .milestone-card {
+    flex: 0 0 86% !important;
+    min-width: 86% !important;
+    scroll-snap-align: center !important;
+    padding: 28px 22px 30px !important;
+    border-radius: 20px !important;
+    margin: 0 8px !important;
+    text-align: center !important;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06) !important;
+  }
   .milestone-card-top-icon {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 30, 39, 0.1);
-    color: #ff1e27;
-    font-size: 15px;
-    margin: 0 auto 8px;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 30, 39, 0.1) !important;
+    color: #ff1e27 !important;
+    font-size: 18px !important;
+    margin: 0 auto 12px !important;
   }
-  .milestones-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .milestone-card {
-    padding: 16px 10px 18px;
-    border-radius: 16px;
-    text-align: center;
-  }
-  .milestone-node {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 12px;
-  }
-  .node-dot {
-    width: 10px;
-    height: 10px;
+  .milestone-pill-badge {
+    font-size: 10px !important;
+    padding: 3px 10px !important;
+    margin-bottom: 10px !important;
+    display: inline-block !important;
   }
   .milestone-year {
-    font-size: 26px;
-    margin-bottom: 4px;
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    margin-bottom: 6px !important;
+    line-height: 1 !important;
   }
   .milestone-card-title {
-    font-size: 13.5px;
-    margin-bottom: 6px;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.35 !important;
+    min-height: auto !important;
   }
   .milestone-card-desc {
-    font-size: 11.5px;
-    line-height: 1.45;
-  }
-  .about-hero {
-    padding: 100px 16px 60px;
-    min-height: auto;
-  }
-  .hero-badge {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-  .hero-content h1 { font-size: 32px; }
-  .hero-content p { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
-  .hero-buttons { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; }
-  .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 15px; width: 100%; }
-
-  .about-stats {
-    padding: 30px 16px;
-    margin-top: 0; /* Align stats section without overlap offset on mobile */
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
-    gap: 16px;
+  /* ── CAROUSEL DOTS (shared across all 3) ─── */
+  .about-carousel-dots {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 6px auto 0 !important;
+    width: 100% !important;
+  }
+  .about-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #cbd5e1 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+  }
+  .about-dot.active {
+    width: 24px !important;
+    border-radius: 10px !important;
+    background: linear-gradient(90deg, #FF1E27 0%, #B30012 100%) !important;
+    box-shadow: 0 2px 8px rgba(255, 30, 39, 0.4) !important;
   }
 
-  .stat-card {
-    padding: 20px 12px;
-    border-radius: 14px;
-  }
-
-  .stat-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .stat-card h3 {
-    font-size: 26px;
-    margin-bottom: 4px;
-  }
-
-  .stat-card p {
-    font-size: 12px;
-  }
-
-  .mission-vision {
-    padding: 40px 10px;
-  }
-  
-  .mv-container {
-    grid-template-columns: repeat(2, 1fr); /* Force side-by-side layout on mobile */
-    gap: 12px;
-  }
-
-  .mv-card {
-    padding: 24px 12px;
-    text-align: center; /* Center-aligned contents */
-    border-left: none;
-    border-top: 3px solid #D91C3C; /* Top border accent on mobile */
-    border-radius: 14px;
-  }
-
-  .mv-icon {
-    margin: 0 auto 10px; /* Centers the icon */
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
-  }
-
-  .mv-card h2 {
-    font-size: 16px !important;
-    margin-bottom: 8px;
-  }
-
-  .mv-card p {
-    font-size: 11.5px !important;
-    line-height: 1.45;
-  }
-
+  /* ── WHY CHOOSE ASAHI ────────────────────── */
   .why-choose-us {
-    padding: 45px 16px;
+    padding: 36px 4% !important;
+    background: white !important;
   }
-
-  .section-header {
-    margin-bottom: 30px;
-  }
-
-  .section-header h2 {
-    font-size: 28px;
-  }
-
-  .section-header p {
-    font-size: 14.5px;
-  }
-
   .features-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2-column features grid on mobile! */
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
-
   .feature-card {
-    padding: 20px 12px;
-    border-radius: 12px;
-    text-align: center; /* Centered texts */
+    padding: 20px 14px !important;
+    border-radius: 16px !important;
+    text-align: center !important;
   }
-
   .feature-icon {
-    margin: 0 auto 12px; /* Centered icon */
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    font-size: 20px;
+    margin: 0 auto 12px !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 12px !important;
+    font-size: 20px !important;
   }
-
   .feature-card h4 {
-    font-size: 15px;
-    margin-bottom: 6px;
+    font-size: 14px !important;
+    font-weight: 750 !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
   }
-
   .feature-card p {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    color: #64748b !important;
   }
 
+  /* ── INTL TRUST SECTION ──────────────────── */
   .intl-trust-section {
-    padding: 40px 16px;
+    padding: 36px 4% !important;
   }
-
+  .intl-container {
+    flex-direction: column !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08) !important;
+  }
   .intl-box {
-    padding: 35px 20px;
+    padding: 32px 20px !important;
+    text-align: center !important;
   }
-
   .dark-box h2, .light-box h2 {
-    font-size: 26px;
+    font-size: 23px !important;
+    font-weight: 850 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.3 !important;
   }
-
-  .intl-list li {
-    font-size: 14px;
+  .dark-box > p, .light-box > p {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 22px !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-
+  .intl-pill-badge {
+    font-size: 9.5px !important;
+    padding: 5px 14px !important;
+    margin: 0 auto 12px !important;
+    display: inline-block !important;
+    letter-spacing: 0.5px !important;
+  }
+  .intl-list-grid {
+    gap: 10px !important;
+    text-align: left !important;
+  }
+  .intl-glass-item {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
   .trust-badges-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    gap: 12px !important;
+    margin-bottom: 24px !important;
   }
-
   .trust-badge-card {
     flex-direction: column !important;
     text-align: center !important;
     justify-content: center !important;
-    padding: 14px 8px !important;
+    padding: 18px 10px !important;
     gap: 8px !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04) !important;
+    background: #ffffff !important;
   }
-
   .t-icon-box {
     margin: 0 auto !important;
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 17px !important;
-    border-radius: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+    border-radius: 14px !important;
   }
-
   .t-card-info {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 2px !important;
+    gap: 3px !important;
   }
-
   .t-card-info strong {
     font-size: 12.5px !important;
-    font-weight: 850 !important;
+    font-weight: 800 !important;
     color: #0f172a !important;
-    line-height: 1.25 !important;
+    line-height: 1.3 !important;
     margin: 0 !important;
   }
-
   .t-card-info span {
-    font-size: 10px !important;
+    font-size: 10.5px !important;
     font-weight: 600 !important;
     color: #64748b !important;
     line-height: 1.2 !important;
   }
-
-  .trust-ticks p {
-    font-size: 13.5px;
+  .trust-ticks {
+    gap: 10px !important;
+    text-align: left !important;
+  }
+  .tick-row {
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    padding: 12px 16px !important;
+    border-radius: 14px !important;
+    line-height: 1.45 !important;
+    background: rgba(255, 30, 39, 0.04) !important;
+    border: 1px solid rgba(255, 30, 39, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(255, 30, 39, 0.03) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .tick-row .tick-icon {
+    font-size: 17px !important;
+    color: #ff1e27 !important;
+    flex-shrink: 0 !important;
   }
 
-  .achievements-timeline {
-    padding: 40px 16px;
-  }
-  
-  .timeline-container::before { left: 20px; }
-  .timeline-item { flex-direction: column !important; align-items: flex-end; }
-  .timeline-dot { left: 20px; }
-  .timeline-content { width: calc(100% - 48px); padding: 16px 20px; }
-  
+  /* ── CTA SECTION ─────────────────────────── */
   .about-cta {
-    padding: 40px 16px;
+    padding: 36px 4% !important;
   }
-
-  .cta-container {
-    padding: 35px 20px;
-    border-radius: 16px;
+  .dark-luxury-cta {
+    padding: 36px 22px !important;
+    border-radius: 24px !important;
   }
-
-  .cta-container h2 {
-    font-size: 26px;
+  .cta-badge {
+    font-size: 10px !important;
+    padding: 5px 14px !important;
+    margin-bottom: 14px !important;
   }
-
-  .cta-container p {
-    font-size: 15px;
-    margin-bottom: 20px;
+  .dark-luxury-cta h2 {
+    font-size: 24px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+    font-weight: 850 !important;
+  }
+  .dark-luxury-cta p {
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 24px !important;
+    color: #cbd5e1 !important;
+  }
+  .cta-features-pills {
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .cta-features-pills span {
+    font-size: 12.5px !important;
+    padding: 7px 16px !important;
+  }
+  .cta-buttons-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+  .btn-primary-asahi, .btn-whatsapp-cta {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+    font-size: 14px !important;
+    border-radius: 14px !important;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 { font-size: 26px; }
-  .section-header h2 { font-size: 24px; }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  .about-hero-left h1 {
+    font-size: 23px !important;
+    line-height: 1.4 !important;
   }
-
+  .section-header h2 { font-size: 21px !important; }
+  .stat-card { flex: 0 0 86% !important; min-width: 86% !important; }
+  .mv-card { flex: 0 0 92% !important; min-width: 92% !important; }
+  .milestone-card { flex: 0 0 90% !important; min-width: 90% !important; }
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
   }
-
-  .stat-card {
-    padding: 16px 8px;
-  }
-
-  .stat-card h3 {
-    font-size: 22px;
-  }
-
-  .stat-card p {
-    font-size: 11px;
-  }
-
   .feature-card {
-    padding: 16px 8px;
+    padding: 16px 8px !important;
   }
-
   .feature-card h4 {
-    font-size: 13.5px;
+    font-size: 13.5px !important;
   }
-
   .feature-card p {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 }
+
+
+/* Hide dots on desktop */
+@media (min-width: 769px) {
+  .about-carousel-dots { display: none !important; }
+}
+

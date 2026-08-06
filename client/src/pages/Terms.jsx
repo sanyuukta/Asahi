@@ -1,87 +1,99 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Policies.css';
+import {
+  MdVerifiedUser,
+  MdWarning,
+  MdLightbulb,
+  MdLocationOn,
+  MdEmail,
+  MdPhone,
+  MdSchool,
+  MdBusiness,
+  MdTranslate,
+  MdMenuBook,
+  MdWork,
+} from 'react-icons/md';
 
 const Terms = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="policy-page">
       <div className="policy-container">
         <div className="policy-header">
+          <span className="policy-badge">
+            <MdVerifiedUser className="policy-badge-icon" /> ASAHI OFFICIAL TERMS
+          </span>
           <h1>Terms & <span>Conditions</span></h1>
           <p>Last Updated: {new Date().toLocaleDateString()}</p>
         </div>
 
         <div className="policy-content">
           <p>
-            Welcome to ASAHI Bilingual Services ("ASAHI", "Company", "we", "our", or "us"). By accessing or using our website, courses, materials, or services, you agree to be bound by these Terms & Conditions ("Terms"). If you do not agree with these Terms, please discontinue the use of our website immediately.
+            Welcome to <strong>ASAHI Bilingual Services</strong> ("ASAHI", "Company", "we", "our", or "us"). By accessing or using our website, courses, materials, or services, you agree to be bound by these <span className="highlight-pill">Terms & Conditions</span>. If you do not agree with these Terms, please discontinue the use of our website immediately.
           </p>
 
           <h2>1. Acceptance of Terms</h2>
           <p>By visiting or using our website, you confirm that:</p>
           <ul>
-            <li>You are at least 18 years of age or accessing the website under the supervision of a parent or legal guardian.</li>
-            <li>You agree to comply with these Terms and all applicable laws and regulations.</li>
-            <li>The information you provide to us is accurate and complete.</li>
+            <li><span>You are <strong>at least 18 years of age</strong> or accessing under the supervision of a parent or legal guardian.</span></li>
+            <li><span>You agree to comply with these Terms and all applicable Indian and international laws.</span></li>
+            <li><span>The information you provide during enrollment or book ordering is <strong>accurate and complete</strong>.</span></li>
           </ul>
 
-          <h2>2. About ASAHI</h2>
-          <p>ASAHI Bilingual Services provides professional Japanese language education and services, including but not limited to:</p>
+          <h2>2. About ASAHI Services</h2>
+          <p>ASAHI Bilingual Services provides professional Japanese language education and services, including:</p>
           <ul>
-            <li>Japanese Language Courses (JLPT N5 to N1)</li>
-            <li>Bilingual Corporate Training</li>
-            <li>Translation & Interpretation Services</li>
-            <li>Study Material & Books Distribution</li>
-            <li>Career & Cultural Consultation</li>
+            <li><MdSchool className="policy-list-icon" /><span><strong>Japanese Language Courses:</strong> Comprehensive preparation for <span className="highlight-pill">JLPT N5 to N1</span> and NAT-TEST exams.</span></li>
+            <li><MdBusiness className="policy-list-icon" /><span><strong>Corporate Training:</strong> Specialized bilingual training for Indian & Japanese MNCs.</span></li>
+            <li><MdTranslate className="policy-list-icon" /><span><strong>Translation & Interpretation:</strong> Professional technical and business Japanese services.</span></li>
+            <li><MdMenuBook className="policy-list-icon" /><span><strong>Study Material & Distribution:</strong> Physical JLPT prep workbooks and digital resources.</span></li>
+            <li><MdWork className="policy-list-icon" /><span><strong>Career Guidance:</strong> Placement assistance for opportunities in Tokyo & Osaka.</span></li>
           </ul>
-          <p>Information displayed on this website is intended for general informational purposes only and may be updated without prior notice.</p>
 
-          <h2>3. Use of Website</h2>
-          <p>You agree that you will not:</p>
+          <h2>3. Use of Website & Student Portals</h2>
+          <div className="alert-note-box">
+            <MdWarning className="alert-icon" />
+            <span>Unfair usage, unauthorized distribution of course materials, or portal credentials sharing will result in immediate termination of access without refund.</span>
+          </div>
+          <p>You agree that you will <strong>not</strong>:</p>
           <ul>
-            <li>Use the website for any unlawful activity.</li>
-            <li>Attempt to gain unauthorized access to our student portals or systems.</li>
-            <li>Upload viruses or malicious software.</li>
-            <li>Copy, reproduce, or distribute website content or paid study materials without permission.</li>
-            <li>Interfere with website security or functionality.</li>
+            <li><span>Use the website or study materials for any unlawful or unauthorized activity.</span></li>
+            <li><span>Attempt to breach security or gain unauthorized access to student portals.</span></li>
+            <li><span>Copy, reproduce, or resell ASAHI proprietary study materials and books.</span></li>
           </ul>
-          <p>Any misuse may result in suspension of access and legal action.</p>
 
-          <h2>4. Intellectual Property</h2>
-          <p>Unless otherwise stated, all content on this website including Logos, Graphics, Images, Videos, Course Structures, Text, Study Documents, and Branding is the exclusive property of ASAHI Bilingual Services and is protected under applicable intellectual property laws.</p>
-          <p>No material, especially paid course content and books, may be copied, modified, republished, sold, or distributed without our written permission.</p>
+          <h2>4. Intellectual Property Rights</h2>
+          <p>All content on this platform—including <strong>Logos, Course Syllabi, Books, Video Lectures, and Branding</strong>—is the exclusive property of <strong>ASAHI Bilingual Services</strong> and protected under Copyright and Intellectual Property laws.</p>
 
           <h2>5. Course Enrollments & Book Purchases</h2>
           <ul>
-            <li>Enrollment in a course or purchase of a book is subject to seat availability and stock.</li>
-            <li>Prices are subject to change without prior notice, but such changes will not affect already confirmed enrollments.</li>
-            <li>Access to online portals or digital materials is granted solely to the registered student and cannot be shared.</li>
+            <li><span>Course enrollments and book orders are subject to <strong>seat availability and stock status</strong>.</span></li>
+            <li><span>Course portal access is granted <strong>strictly to the registered learner</strong> and cannot be transferred.</span></li>
           </ul>
 
-          <h2>6. Payments & Refunds</h2>
-          <p>Clients and students agree to:</p>
+          <h2>6. Payments & Refund Policy</h2>
+          <div className="alert-note-box">
+            <MdLightbulb className="alert-icon" />
+            <span><strong>Strict Refund Policy:</strong> Once a batch has commenced or a study material/book is dispatched, fees are strictly non-refundable.</span>
+          </div>
           <ul>
-            <li>Pay fees in full prior to the commencement of courses or dispatch of books.</li>
-            <li>Pay applicable taxes where required.</li>
+            <li><span>All course fees and book charges must be paid in full prior to batch commencement or shipping.</span></li>
+            <li><span>Payments are processed securely via encrypted gateway integration (Razorpay).</span></li>
           </ul>
-          <p>Refunds are strictly subject to our Refund Policy. Generally, once a batch starts or a book is dispatched, fees are non-refundable unless specified otherwise under special circumstances.</p>
 
-          <h2>7. Confidentiality</h2>
-          <p>Any confidential information shared between ASAHI and corporate clients or students shall remain confidential unless disclosure is required by law or both parties agree in writing.</p>
+          <h2>7. Limitation of Liability</h2>
+          <p>While ASAHI provides world-class guidance and certified native sensei coaching, passing scores for JLPT/NAT exams depend on individual student dedication and study hours. Our total liability is limited to the amount paid for the specific course or item.</p>
 
-          <h2>8. Limitation of Liability</h2>
-          <p>To the maximum extent permitted by law, ASAHI shall not be liable for indirect damages, loss of profits, business interruption, or any damages arising from the use or inability to use our website or services. Our total liability shall not exceed the amount paid by the client for the specific service giving rise to the claim.</p>
-
-          <h2>9. Warranty Disclaimer</h2>
-          <p>All courses, materials, and website content are provided on an "as is" and "as available" basis. While we strive to provide the best education to help you pass JLPT exams, we do not guarantee specific exam results or job placements unless explicitly contracted.</p>
-
-          <h2>10. Changes to These Terms</h2>
-          <p>We reserve the right to modify these Terms at any time. Changes become effective immediately upon publication on this website. Users are encouraged to review this page periodically.</p>
-
-          <h2>11. Contact Us</h2>
-          <p>For any questions regarding these Terms & Conditions, please contact:</p>
-          <div className="contact-info-block">
-            <strong>ASAHI Bilingual Services</strong><br />
-            Email: asahi.learning@gmail.com<br />
-            Location: Nagpur, Maharashtra, India
+          <h2>8. Contact & Legal Enquiries</h2>
+          <p>For official questions regarding these Terms & Conditions, please reach out to our administration team:</p>
+          <div className="policy-contact-block">
+            <strong className="policy-contact-title">ASAHI Bilingual Services</strong>
+            <div className="policy-contact-row"><MdLocationOn className="policy-contact-icon" /><span><strong>Location:</strong> Nagpur, Maharashtra, India</span></div>
+            <div className="policy-contact-row"><MdEmail className="policy-contact-icon" /><span><strong>Email:</strong> asahi.learning@gmail.com</span></div>
+            <div className="policy-contact-row"><MdPhone className="policy-contact-icon" /><span><strong>Hotline:</strong> +91-8698888336</span></div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ function Footer() {
 
   const handleWhatsApp = () => {
     const msg = "Konnichiwa ASAHI! I want to inquire about Japanese Language courses and enrollment.";
-    window.open(`https://api.whatsapp.com/send?phone=917796530192&text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=918698888336&text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -103,7 +103,7 @@ function Footer() {
                 <div className="c-icon-wrap"><FaMapMarkerAlt /></div>
                 <div>
                   <strong>Nagpur Campus</strong>
-                  <span>Nagpur, Maharashtra, India</span>
+                  <span>Reshimbagh, Nagpur, Maharashtra, India</span>
                 </div>
               </div>
 
@@ -111,7 +111,7 @@ function Footer() {
                 <div className="c-icon-wrap"><FaPhone /></div>
                 <div>
                   <strong>Phone Support</strong>
-                  <span>+91 9876543210</span>
+                  <span>+91 86988 88336</span>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ function Footer() {
                 <div className="c-icon-wrap"><FaEnvelope /></div>
                 <div>
                   <strong>Email Support</strong>
-                  <span>asahi.learning@gmail.com</span>
+                  <span>asahibilingual@gmail.com</span>
                 </div>
               </div>
 
@@ -138,7 +138,7 @@ function Footer() {
                 <span className="live-dot" />
                 <span>ASAHI Nagpur Campus</span>
                 <a 
-                  href="https://maps.google.com/?q=Nagpur,+Maharashtra" 
+                  href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="map-dir-link"
@@ -147,7 +147,7 @@ function Footer() {
                 </a>
               </div>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.41701349386!2d79.00246944964645!3d21.14936343513364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf11%3A0x39be5b9ca10543e3!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps?q=Reshim+Bagh,+Nagpur&output=embed" 
                 width="100%" 
                 height="120" 
                 style={{ border: 0, display: "block" }} 

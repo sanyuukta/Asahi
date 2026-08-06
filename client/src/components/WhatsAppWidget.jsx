@@ -30,8 +30,8 @@ function WhatsAppWidget() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Target WhatsApp phone number (+91 77965 30192)
-  const adminPhone = "917796530192";
+  // Target WhatsApp phone number (+91 86988 88336)
+  const adminPhone = "918698888336";
 
   const topics = [
     {
@@ -167,8 +167,9 @@ function WhatsAppWidget() {
                 <span className="online-indicator-dot"></span>
               </div>
               <div className="header-title-details">
-                <h4>ASAHI Bilingual Services</h4>
-                <p>🟢 Online • Replies in &lt; 5 mins</p>
+                <h4>ASAHI</h4>
+                <span className="header-subtitle-line1">JLPT PREPARATION CLASSES</span>
+                <span className="header-subtitle-line2">&amp; BILINGUAL SERVICES</span>
               </div>
             </div>
           </div>

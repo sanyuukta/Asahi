@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { 
@@ -33,9 +33,67 @@ const AnimatedCounter = ({ from = 0, to, duration = 2, suffix = "" }) => {
 const AboutUs = () => {
   const navigate = useNavigate();
 
+  // Carousel refs & states
+  const statsRowRef = useRef(null);
+  const [activeStatIdx, setActiveStatIdx] = useState(0);
+  const mvRowRef = useRef(null);
+  const [activeMvIdx, setActiveMvIdx] = useState(0);
+  const msRowRef = useRef(null);
+  const [activeMsIdx, setActiveMsIdx] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Auto-slide stats — use scrollLeft cleanly without offset subtraction
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && statsRowRef.current) {
+        const container = statsRowRef.current;
+        setActiveStatIdx(prev => {
+          const next = (prev + 1) % 4;
+          const card = container.children[next];
+          if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+          return next;
+        });
+      }
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Auto-slide mission/vision
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && mvRowRef.current) {
+        const container = mvRowRef.current;
+        setActiveMvIdx(prev => {
+          const next = (prev + 1) % 2;
+          const card = container.children[next];
+          if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+          return next;
+        });
+      }
+    }, 3600);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Auto-slide milestones
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && msRowRef.current) {
+        const container = msRowRef.current;
+        setActiveMsIdx(prev => {
+          const next = (prev + 1) % 4;
+          const card = container.children[next];
+          if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+          return next;
+        });
+      }
+    }, 3400);
+    return () => clearInterval(timer);
+  }, []);
+
+
 
   const stats = [
     { icon: <FaUserGraduate />, value: <AnimatedCounter to={1000} suffix="+" />, label: "Students Successfully Trained" },
@@ -194,6 +252,7 @@ const AboutUs = () => {
       <section className="about-stats">
         <motion.div 
           className="stats-grid"
+          ref={statsRowRef}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -201,50 +260,103 @@ const AboutUs = () => {
         >
           {stats.map((stat, i) => (
             <motion.div 
-              className="stat-card" 
+              className={`stat-card ${activeStatIdx === i ? "active-card" : ""}`} 
               key={i}
               variants={cardVariants}
             >
-              <div className="stat-icon">{stat.icon}</div>
-              <h3>{stat.value}</h3>
-              <p>{stat.label}</p>
+              <div className="stat-icon-wrapper">
+                <div className="stat-icon">{stat.icon}</div>
+              </div>
+              <span className="stat-pill-tag">OFFICIAL STAT</span>
+              <h3 className="stat-number">{stat.value}</h3>
+              <p className="stat-label">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
+        {/* Mobile carousel dots */}
+        <div className="about-carousel-dots">
+          {[0,1,2,3].map(idx => (
+            <span key={idx} className={`about-dot${activeStatIdx === idx ? " active" : ""}`}
+              onClick={() => {
+                setActiveStatIdx(idx);
+                const container = statsRowRef.current;
+                if (container) {
+                  const card = container.children[idx];
+                  if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+                }
+              }}
+            />
+          ))}
+        </div>
       </section>
 
       {/* 3. MISSION & VISION */}
       <section className="mission-vision">
-        <div className="mv-container">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="milestones-tag">CORE GUIDING PRINCIPLES</span>
+          <h2>Driven By <span className="gradient-text">Excellence</span></h2>
+          <div className="gradient-underline-sm" />
+        </motion.div>
+
+        <div className="mv-container" ref={mvRowRef}>
           <motion.div 
-            className="mv-card"
+            className={`mv-card mission-card ${activeMvIdx === 0 ? "active-card" : ""}`}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
+            <div className="mv-card-top-bar ruby" />
             <div className="mv-card-header">
-              <div className="mv-icon"><FaGlobeAsia /></div>
-              <span className="mv-tag">TARGET EXCELLENCE</span>
+              <div className="mv-icon ruby"><FaGlobeAsia /></div>
+              <span className="mv-tag ruby-tag">TARGET EXCELLENCE</span>
             </div>
             <h2>Our Mission</h2>
-            <p>"To create globally skilled professionals through quality Japanese language education, cultural immersion, and career-oriented training."</p>
+            <div className="quote-wrapper">
+              <span className="quote-mark">“</span>
+              <p>To create globally skilled professionals through quality Japanese language education, cultural immersion, and career-oriented training.</p>
+            </div>
           </motion.div>
           
           <motion.div 
-            className="mv-card"
+            className={`mv-card vision-card ${activeMvIdx === 1 ? "active-card" : ""}`}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
+            <div className="mv-card-top-bar ruby" />
             <div className="mv-card-header">
-              <div className="mv-icon"><FaChartLine /></div>
-              <span className="mv-tag">FUTURE ROADMAP</span>
+              <div className="mv-icon ruby"><FaChartLine /></div>
+              <span className="mv-tag ruby-tag">FUTURE ROADMAP</span>
             </div>
             <h2>Our Vision</h2>
-            <p>"To become India's most trusted Japanese Language Institute connecting students with incredible international opportunities in Japan."</p>
+            <div className="quote-wrapper">
+              <span className="quote-mark">“</span>
+              <p>To become India's most trusted Japanese Language Institute connecting students with incredible international opportunities in Japan.</p>
+            </div>
           </motion.div>
+        </div>
+        {/* Mobile carousel dots */}
+        <div className="about-carousel-dots">
+          {[0,1].map(idx => (
+            <span key={idx} className={`about-dot${activeMvIdx === idx ? " active" : ""}`}
+              onClick={() => {
+                setActiveMvIdx(idx);
+                const container = mvRowRef.current;
+                if (container) {
+                  const card = container.children[idx];
+                  if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+                }
+              }}
+            />
+          ))}
         </div>
       </section>
 
@@ -278,6 +390,7 @@ const AboutUs = () => {
 
           <motion.div 
             className="milestones-grid"
+            ref={msRowRef}
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -293,6 +406,21 @@ const AboutUs = () => {
               </motion.div>
             ))}
           </motion.div>
+          {/* Mobile carousel dots */}
+          <div className="about-carousel-dots">
+            {[0,1,2,3].map(idx => (
+              <span key={idx} className={`about-dot${activeMsIdx === idx ? " active" : ""}`}
+                onClick={() => {
+                  setActiveMsIdx(idx);
+                  const container = msRowRef.current;
+                  if (container) {
+                    const card = container.children[idx];
+                    if (card) container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+                  }
+                }}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -423,7 +551,7 @@ const AboutUs = () => {
             </button>
             <button 
               className="btn-whatsapp-cta" 
-              onClick={() => window.open(`https://api.whatsapp.com/send?phone=917796530192&text=${encodeURIComponent("Hello ASAHI! I want to enquire about your Japanese courses.")}`, "_blank")}
+              onClick={() => window.open(`https://api.whatsapp.com/send?phone=918698888336&text=${encodeURIComponent("Hello ASAHI! I want to enquire about your Japanese courses.")}`, "_blank")}
             >
               <FaWhatsapp /> Quick WhatsApp Enquiry
             </button>

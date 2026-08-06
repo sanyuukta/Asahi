@@ -146,15 +146,35 @@
 }
 
 .header-title-details h4 {
-  font-size: 15.5px !important;
+  font-size: 17px !important;
+  font-weight: 850 !important;
+  margin: 0 0 1px 0 !important;
+  letter-spacing: 0.4px !important;
+}
+
+.header-subtitle-line1,
+.header-subtitle-line2 {
+  display: block !important;
+  font-size: 9.5px !important;
   font-weight: 750 !important;
-  margin: 0 0 2px 0 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+}
+
+.header-subtitle-line1 {
+  margin-top: 2px !important;
+}
+
+.header-subtitle-line2 {
+  margin-bottom: 0 !important;
 }
 
 .header-title-details p {
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   margin: 0 !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-weight: 500 !important;
 }
 

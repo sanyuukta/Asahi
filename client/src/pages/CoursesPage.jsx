@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -23,7 +23,7 @@ import imgN3 from "../assets/course_n3.png";
 import imgN2 from "../assets/course_n2.png";
 import imgN1 from "../assets/course_n1.png";
 
-const adminPhone = "917796530192";
+const adminPhone = "918698888336";
 
 const jlptCourses = [
   {
@@ -193,6 +193,28 @@ function CourseCard({ course, type }) {
 
 function CoursesPage() {
   const [activeExamTrack, setActiveExamTrack] = useState("JLPT");
+  const [activeWhyIndex, setActiveWhyIndex] = useState(0);
+  const whyContainerRef = useRef(null);
+
+  // Auto-slide "Why Our Courses Stand Out" cards on mobile view
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (window.innerWidth <= 768 && whyContainerRef.current) {
+        setActiveWhyIndex((prevIdx) => {
+          const nextIdx = (prevIdx + 1) % 3;
+          const container = whyContainerRef.current;
+          const card = container.children[nextIdx];
+          if (card) {
+            const scrollLeft = card.offsetLeft;
+            container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+          }
+          return nextIdx;
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="courses-page">
@@ -313,12 +335,13 @@ function CoursesPage() {
 
         <motion.div 
           className="why-container"
+          ref={whyContainerRef}
           variants={gridContainerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.15 }}
         >
-          <motion.div className="why-card" variants={cardVariants}>
+          <motion.div className={`why-card ${activeWhyIndex === 0 ? "active-slide" : ""}`} variants={cardVariants}>
             <div className="why-card-top-row">
               <div className="why-icon">
                 <FaTrophy />
@@ -333,7 +356,7 @@ function CoursesPage() {
             </div>
           </motion.div>
 
-          <motion.div className="why-card" variants={cardVariants}>
+          <motion.div className={`why-card ${activeWhyIndex === 1 ? "active-slide" : ""}`} variants={cardVariants}>
             <div className="why-card-top-row">
               <div className="why-icon">
                 <FaUserTie />
@@ -348,7 +371,7 @@ function CoursesPage() {
             </div>
           </motion.div>
 
-          <motion.div className="why-card" variants={cardVariants}>
+          <motion.div className={`why-card ${activeWhyIndex === 2 ? "active-slide" : ""}`} variants={cardVariants}>
             <div className="why-card-top-row">
               <div className="why-icon">
                 <FaGlobeAmericas />
@@ -363,6 +386,28 @@ function CoursesPage() {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Mobile Indicator Dots */}
+        <div className="why-mobile-dots">
+          {[0, 1, 2].map((idx) => (
+            <button
+              key={idx}
+              className={`why-dot ${activeWhyIndex === idx ? "active" : ""}`}
+              onClick={() => {
+                setActiveWhyIndex(idx);
+                if (whyContainerRef.current) {
+                  const container = whyContainerRef.current;
+                  const card = container.children[idx];
+                  if (card) {
+                    const scrollLeft = card.offsetLeft;
+                    container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+                  }
+                }
+              }}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

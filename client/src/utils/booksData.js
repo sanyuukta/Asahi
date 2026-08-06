@@ -2,7 +2,7 @@ import fujichan1Img from "../assets/fujichan1.png";
 import fujichan2Img from "../assets/fujichan2.png";
 import fujichan3Img from "../assets/fujichan-3.png";
 
-export const WHATSAPP_NUMBER = "917796530192";
+export const WHATSAPP_NUMBER = "918698888336";
 
 export const FUJICHAN_BOOKS = [
   {

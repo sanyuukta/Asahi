@@ -1,14 +1,11 @@
-/* ==========================================
-   ULTRA-PREMIUM FLOATING NAVBAR
-   ========================================== */
 .navbar-premium {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 94px;
+  height: 105px;
   z-index: 1000;
-  overflow: hidden; /* Keep the curved pseudo-element clipped */
+  overflow: hidden;
   
   /* Polished Luxury Paint - Multi-layered Red Background */
   background:
@@ -41,6 +38,10 @@
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.navbar-premium.navbar-hidden {
+  transform: translateY(-100%);
+}
+
 .navbar-premium:hover {
   box-shadow: none;
 }
@@ -67,7 +68,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 24px;
+  padding: 0 10px;
   position: relative;
   z-index: 5;
 }
@@ -126,22 +127,23 @@
   justify-content: center;
   align-items: flex-start;
   gap: 0;
+  margin-top: 4px;
 }
 
 .brand-text-premium h2 {
   font-size: 22px;
   font-weight: 900;
   color: #ffffff;
-  line-height: 1;
+  line-height: 1.33;
   letter-spacing: 0.8px;
-  margin: 3px 0 3px 0;
+  margin-top: 0;
 }
 
 .brand-text-premium .sub-line-1 {
   font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 1.6px;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(238, 232, 232, 0.95);
   text-transform: uppercase;
   display: block;
   margin: 0;
@@ -152,7 +154,7 @@
   font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 1.6px;
-  color: rgba(255, 255, 255, 0.95);
+ color: rgba(238, 232, 232, 0.95);
   text-transform: uppercase;
   display: block;
   margin-top: 1px;
@@ -357,7 +359,7 @@
     left: 0 !important;
     right: 0 !important;
     border-radius: 0 !important;
-    height: 94px !important;
+    height: 105px !important;
     padding: 0 !important;
     overflow: visible !important;
   }
@@ -398,14 +400,15 @@
     justify-content: center !important;
     align-items: flex-start !important;
     gap: 0 !important;
+    margin-top: 4px !important;
   }
 
   .brand-text-premium h2 {
     font-size: 17px !important;
     font-weight: 900 !important;
     color: #ffffff !important;
-    margin: 3px 0 3px 0 !important;
-    line-height: 1 !important;
+    margin-top: 0 !important;
+    line-height: 1.33 !important;
     letter-spacing: 0.8px !important;
   }
 
@@ -456,6 +459,7 @@
     white-space: nowrap !important;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
     order: -1 !important;
+    margin-right: 8px !important;
   }
 
   .menu-icon-premium {
@@ -546,18 +550,54 @@
     transform: rotate(90deg) scale(1.05) !important;
   }
 
-  .swiggy-user-info h2 {
-    font-size: 20px;
-    font-weight: 800;
-    margin: 0;
+  .swiggy-user-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
 
-  .swiggy-user-info p {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 4px 0 0 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  .drawer-logo-img img {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+    display: block !important;
+  }
+
+  .drawer-brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .drawer-brand-text h2 {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  .drawer-brand-text .sub-line-1,
+  .drawer-brand-text .sub-line-2 {
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    display: block !important;
+    letter-spacing: 1.1px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+  }
+
+  .drawer-brand-text .sub-line-1 {
+    margin-top: 2px !important;
+  }
+
+  .drawer-brand-text .sub-line-2 {
+    margin-top: 1px !important;
   }
 
   .mobile-menu-body {
@@ -569,38 +609,51 @@
   .swiggy-list-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
   }
 
   .swiggy-other-title {
-    margin: 8px 0 2px;
-    font-size: 12px;
+    margin: 10px 0 2px;
+    font-size: 10.5px;
     font-weight: 800;
-    color: #64748b;
+    color: #94a3b8;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    padding: 0 4px;
   }
 
   .swiggy-list-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 16px;
+    padding: 12px 14px;
     background: #f8fafc;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
   }
 
   .swiggy-list-item:hover {
     background: #f1f5f9;
   }
 
+  .swiggy-list-item.active-item {
+    background: rgba(255, 30, 39, 0.08) !important;
+    border: 1px solid rgba(255, 30, 39, 0.2) !important;
+    border-left: 4px solid #D5001C !important;
+  }
+
+  .swiggy-list-item.active-item .sli-left {
+    color: #D5001C !important;
+    font-weight: 750 !important;
+  }
+
   .sli-left {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 600;
     color: #111111;
   }
@@ -612,48 +665,47 @@
 
   .sli-arrow {
     color: #94a3b8;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .mobile-footer {
-    padding: 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 14px 18px 75px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     background: #f8fafc;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
-  .legal-links {
+  .social-connect {
     display: flex;
-    gap: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #64748b;
-    margin-bottom: 16px;
-  }
-
-  .legal-links span {
-    cursor: pointer;
-  }
-
-  .legal-links span:hover {
-    color: #D5001C;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .social-connect p {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 9.5px;
+    font-weight: 750;
     color: #94a3b8;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    text-align: center;
   }
 
   .social-icons {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 14px;
+    width: 100%;
   }
 
   .social-icon {
-    font-size: 18px;
+    font-size: 16px;
     color: #64748b;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -661,6 +713,26 @@
 
   .social-icon:hover {
     color: #D5001C;
+  }
+
+  .drawer-copyright-text {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 9.5px;
+    color: #64748b;
+    line-height: 1.45;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+  }
+
+  .drawer-copyright-text .tagline {
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: 2px;
+    font-style: normal;
+    font-weight: 600;
   }
 }
 
@@ -670,45 +742,57 @@
   }
 
   .main-nav-premium {
-    gap: 10px !important;
+    gap: 12px !important;
   }
 
   .logo-premium img {
-    width: 38px !important;
-    height: 38px !important;
+    width: 43px !important;
+    height: 43px !important;
+    padding: 1.5px !important;
+  }
+
+  .brand-text-premium {
+    margin-top: 12px !important;
   }
 
   .brand-text-premium h2 {
-    font-size: 15px !important;
-    letter-spacing: 0.6px !important;
+    font-size: 16.5px !important;
+    letter-spacing: 0.8px !important;
+    line-height: 1.33 !important;
+    margin-top: 13px !important;
+    margin-bottom: 2px !important;
   }
 
   .brand-text-premium .sub-line-1 {
-    font-size: 7.5px !important;
-    letter-spacing: 1.2px !important;
+    font-size: 7.8px !important;
+    letter-spacing: 1.4px !important;
     font-weight: 800 !important;
     color: #ffffff !important;
+    line-height: 1.25 !important;
   }
 
   .brand-text-premium .sub-line-2 {
-    font-size: 7.5px !important;
-    letter-spacing: 1.2px !important;
+    font-size: 7.8px !important;
+    letter-spacing: 1.4px !important;
     font-weight: 800 !important;
     color: #ffffff !important;
+    line-height: 1.25 !important;
+    margin-top: 1px !important;
   }
 
   .nav-right-premium {
-    gap: 20px !important;
+    gap: 12px !important;
   }
 
   .enroll-pill-btn {
-    padding: 7.5px 14px !important;
+    padding: 8px 14px !important;
     font-size: 12px !important;
+    font-weight: 750 !important;
   }
 
   .menu-icon-premium {
-    width: 36px !important;
-    height: 36px !important;
+    width: 37px !important;
+    height: 37px !important;
     font-size: 15px !important;
   }
 }
