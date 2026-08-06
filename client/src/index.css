@@ -333,3 +333,57 @@ code {
   transform: translateX(3px) !important;
   transition: transform 0.25s ease !important;
 }
+
+/* ===== GLOBAL MOBILE TYPOGRAPHY SCALE ===== */
+@media (max-width: 768px) {
+
+  /* Main section headings (h2 level) — subheadings across all pages */
+  h2,
+  .section-heading,
+  .section-title,
+  .hero-luxury-title,
+  [class*="section-head"],
+  [class*="section-title"],
+  [class*="-heading"],
+  [class*="-title"]:not(.policy-badge):not(.badge):not(.tag):not(.label):not(nav *):not(header *) {
+    font-size: calc(var(--mobile-sub-base, 1em) + 0px) !important;
+  }
+
+  /* Subheadings & sub-titles (h3/h4 level) */
+  h3,
+  h4,
+  [class*="sub-title"],
+  [class*="sub-head"],
+  [class*="card-title"],
+  [class*="course-title"],
+  [class*="item-title"],
+  [class*="review-title"],
+  [class*="stat-label"],
+  [class*="section-sub"] {
+    font-size: calc(1em + 0.5px) !important;
+  }
+
+  /* Description paragraphs & body text matching the hero desc style */
+  p,
+  [class*="description"],
+  [class*="-desc"],
+  [class*="luxury-description"],
+  [class*="about-desc"],
+  [class*="card-desc"],
+  [class*="preview-text"],
+  [class*="section-desc"],
+  [class*="intro-text"],
+  li {
+    font-size: calc(1em + 0.5px) !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Headings: increase by 1.3px */
+  h1,
+  [class*="luxury-title"],
+  [class*="hero-title"],
+  [class*="page-title"],
+  [class*="main-title"] {
+    font-size: calc(1em + 1.3px) !important;
+  }
+}
