@@ -127,7 +127,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 0;
-  margin-top: 4px;
+  margin-top: 11px;
 }
 
 .brand-text-premium h2 {
@@ -400,7 +400,7 @@
     justify-content: center !important;
     align-items: flex-start !important;
     gap: 0 !important;
-    margin-top: 4px !important;
+    margin-top: 14px !important;
   }
 
   .brand-text-premium h2 {
@@ -752,14 +752,14 @@
   }
 
   .brand-text-premium {
-    margin-top: 12px !important;
+    margin-top: 14px !important;
   }
 
   .brand-text-premium h2 {
     font-size: 16.5px !important;
     letter-spacing: 0.8px !important;
     line-height: 1.33 !important;
-    margin-top: 13px !important;
+    margin-top: 0 !important;
     margin-bottom: 2px !important;
   }
 
