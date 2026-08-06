@@ -118,6 +118,7 @@
 
 @media (max-width: 650px) {
   .exam-track-toggle-wrapper {
+    margin-top: 20px;
     margin-bottom: 24px;
     padding: 5px;
     max-width: 100%;
