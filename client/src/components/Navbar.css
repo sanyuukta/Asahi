@@ -1,7 +1,6 @@
 /* ==========================================
    ASAHI PREMIUM NAVBAR STYLES
    Prominent, High-Visibility Design for Desktop & Mobile
-   Generous Header Height with Ultra-Crisp Spacing
    ========================================== */
 
 .navbar-premium {
@@ -9,7 +8,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 118px;
+  height: 106px;
   z-index: 1000;
   overflow: hidden;
   
@@ -35,13 +34,13 @@
 
 .navbar-container-premium {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 24px;
+  padding: 0 20px;
   position: relative;
   z-index: 5;
   box-sizing: border-box;
@@ -66,23 +65,23 @@
 .main-nav-premium {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
 }
 
-/* White Squircle box for Logo (Desktop Size: 70px x 70px) */
+/* White Squircle box for Logo (Desktop Size: 64px x 64px) */
 .logo-squircle-box {
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
   background: #ffffff;
-  border-radius: 18px;
-  padding: 6px;
+  border-radius: 16px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 0 0 1.5px rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 0 1.5px rgba(255, 255, 255, 0.95);
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -91,7 +90,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 11px;
   display: block;
 }
 
@@ -102,8 +101,8 @@
 /* Vertical White Divider Line */
 .brand-vertical-divider {
   width: 2px;
-  height: 58px;
-  background: rgba(255, 255, 255, 0.78);
+  height: 52px;
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 2px;
   flex-shrink: 0;
   margin: 0 4px;
@@ -118,13 +117,13 @@
   text-align: center;
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.16;
+  line-height: 1.15;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .brand-text-banner .brand-line-1 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 850;
   color: #ffffff;
   letter-spacing: 0.3px;
@@ -133,7 +132,7 @@
 }
 
 .brand-text-banner .brand-line-2 {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 850;
   color: #ffffff;
   letter-spacing: 0.3px;
@@ -142,7 +141,7 @@
 }
 
 .brand-text-banner .brand-line-amp {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 850;
   color: #ffffff;
   margin: 1px 0;
@@ -150,7 +149,7 @@
 }
 
 .brand-text-banner .brand-line-3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 850;
   color: #ffffff;
   letter-spacing: 0.3px;
@@ -162,7 +161,7 @@
 .nav-links-premium {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -172,12 +171,12 @@
 
 .nav-links-premium a, .special-nav-link {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
   transition: all 0.25s ease;
   position: relative;
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: 24px;
   cursor: pointer;
 }
@@ -199,7 +198,7 @@
 .nav-right-premium {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   position: relative;
   z-index: 5;
   flex-shrink: 0;
@@ -211,9 +210,9 @@
   overflow: hidden;
   background: #ffffff !important;
   color: #b80016 !important;
-  font-size: 15px !important;
+  font-size: 14.5px !important;
   font-weight: 850 !important;
-  padding: 11px 26px !important;
+  padding: 10px 24px !important;
   border-radius: 50px !important;
   border: none !important;
   cursor: pointer !important;
@@ -240,13 +239,13 @@
 /* Circular Hamburger Icon Button */
 .menu-icon-circle {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -270,25 +269,22 @@
    TABLET & MOBILE BREAKPOINTS
    ========================================== */
 @media (max-width: 1200px) {
-  .navbar-premium {
-    height: 112px !important;
-  }
   .nav-links-premium {
-    gap: 14px;
+    gap: 12px;
   }
   .nav-links-premium a, .special-nav-link {
-    padding: 7px 14px;
-    font-size: 14.5px;
+    padding: 6px 12px;
+    font-size: 14px;
   }
   .brand-text-banner .brand-line-1,
   .brand-text-banner .brand-line-3 {
-    font-size: 14.5px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 960px) {
   .navbar-premium {
-    height: 106px !important;
+    height: 96px !important;
   }
 
   .desktop-only-links {
@@ -300,56 +296,56 @@
   }
 
   .navbar-container-premium {
-    padding: 0 16px !important;
+    padding: 0 14px !important;
   }
 
   .main-nav-premium {
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
   .logo-squircle-box {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 15px !important;
-    padding: 4.5px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 14px !important;
+    padding: 4px !important;
   }
 
   .brand-vertical-divider {
-    height: 48px !important;
+    height: 44px !important;
     margin: 0 2px !important;
   }
 
   .brand-text-banner .brand-line-1 {
-    font-size: 13.8px !important;
+    font-size: 13px !important;
     letter-spacing: 0.2px !important;
   }
   .brand-text-banner .brand-line-2 {
-    font-size: 12.5px !important;
+    font-size: 12px !important;
     margin-top: 0.5px !important;
   }
   .brand-text-banner .brand-line-amp {
-    font-size: 11px !important;
+    font-size: 10.5px !important;
     margin: 0.5px 0 !important;
   }
   .brand-text-banner .brand-line-3 {
-    font-size: 13.8px !important;
+    font-size: 13px !important;
     letter-spacing: 0.2px !important;
   }
 
   .nav-right-premium {
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
   .enroll-pill-btn {
-    padding: 9px 20px !important;
-    font-size: 13.5px !important;
+    padding: 8px 18px !important;
+    font-size: 13px !important;
     border-radius: 40px !important;
   }
 
   .menu-icon-circle {
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 20px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 19px !important;
   }
 
   /* DRAWER STYLES */
@@ -404,24 +400,24 @@
   }
 
   .drawer-squircle {
-    width: 48px !important;
-    height: 48px !important;
+    width: 46px !important;
+    height: 46px !important;
     border-radius: 12px !important;
   }
 
   .drawer-divider {
-    height: 38px !important;
+    height: 36px !important;
   }
 
   .drawer-banner-text .brand-line-1,
   .drawer-banner-text .brand-line-3 {
-    font-size: 11.5px !important;
+    font-size: 11px !important;
   }
   .drawer-banner-text .brand-line-2 {
-    font-size: 10.5px !important;
+    font-size: 10px !important;
   }
   .drawer-banner-text .brand-line-amp {
-    font-size: 9.5px !important;
+    font-size: 9px !important;
   }
 
   .mobile-close-btn {
@@ -591,62 +587,7 @@
 /* SMARTPHONES (<= 450px) */
 @media (max-width: 450px) {
   .navbar-premium {
-    height: 102px !important;
-  }
-
-  .navbar-container-premium {
-    padding: 0 12px !important;
-  }
-
-  .main-nav-premium {
-    gap: 10px !important;
-  }
-
-  .logo-squircle-box {
-    width: 54px !important;
-    height: 54px !important;
-    border-radius: 13px !important;
-    padding: 4px !important;
-  }
-
-  .brand-vertical-divider {
-    height: 42px !important;
-    margin: 0 1px !important;
-  }
-
-  .brand-text-banner .brand-line-1 {
-    font-size: 12.5px !important;
-  }
-  .brand-text-banner .brand-line-2 {
-    font-size: 11.5px !important;
-  }
-  .brand-text-banner .brand-line-amp {
-    font-size: 10px !important;
-  }
-  .brand-text-banner .brand-line-3 {
-    font-size: 12.5px !important;
-  }
-
-  .nav-right-premium {
-    gap: 10px !important;
-  }
-
-  .enroll-pill-btn {
-    padding: 8px 16px !important;
-    font-size: 12.5px !important;
-  }
-
-  .menu-icon-circle {
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 18px !important;
-  }
-}
-
-/* EXTRA SMALL SMARTPHONES (<= 375px) */
-@media (max-width: 375px) {
-  .navbar-premium {
-    height: 98px !important;
+    height: 92px !important;
   }
 
   .navbar-container-premium {
@@ -658,27 +599,28 @@
   }
 
   .logo-squircle-box {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 11px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 13px !important;
     padding: 3.5px !important;
   }
 
   .brand-vertical-divider {
     height: 38px !important;
+    margin: 0 1px !important;
   }
 
   .brand-text-banner .brand-line-1 {
-    font-size: 11.2px !important;
+    font-size: 11.5px !important;
   }
   .brand-text-banner .brand-line-2 {
-    font-size: 10.2px !important;
+    font-size: 10.5px !important;
   }
   .brand-text-banner .brand-line-amp {
-    font-size: 9px !important;
+    font-size: 9.5px !important;
   }
   .brand-text-banner .brand-line-3 {
-    font-size: 11.2px !important;
+    font-size: 11.5px !important;
   }
 
   .nav-right-premium {
@@ -686,13 +628,67 @@
   }
 
   .enroll-pill-btn {
-    padding: 7px 12px !important;
-    font-size: 11.5px !important;
+    padding: 7px 14px !important;
+    font-size: 12px !important;
   }
 
   .menu-icon-circle {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 16px !important;
+    width: 39px !important;
+    height: 39px !important;
+    font-size: 17px !important;
+  }
+}
+
+/* EXTRA SMALL SMARTPHONES (<= 375px) */
+@media (max-width: 375px) {
+  .navbar-premium {
+    height: 88px !important;
+  }
+
+  .navbar-container-premium {
+    padding: 0 8px !important;
+  }
+
+  .main-nav-premium {
+    gap: 6px !important;
+  }
+
+  .logo-squircle-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 11px !important;
+    padding: 3px !important;
+  }
+
+  .brand-vertical-divider {
+    height: 34px !important;
+  }
+
+  .brand-text-banner .brand-line-1 {
+    font-size: 10.2px !important;
+  }
+  .brand-text-banner .brand-line-2 {
+    font-size: 9.2px !important;
+  }
+  .brand-text-banner .brand-line-amp {
+    font-size: 8.2px !important;
+  }
+  .brand-text-banner .brand-line-3 {
+    font-size: 10.2px !important;
+  }
+
+  .nav-right-premium {
+    gap: 6px !important;
+  }
+
+  .enroll-pill-btn {
+    padding: 6px 11px !important;
+    font-size: 11px !important;
+  }
+
+  .menu-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 15px !important;
   }
 }
