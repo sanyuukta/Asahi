@@ -81,7 +81,7 @@ function ContactPage() {
                   </div>
                   <div className="info-details">
                     <h3>Our Address</h3>
-                    <p>Reshimbagh, Nagpur, Maharashtra, India</p>
+                    <p>Sankranti Apartment, Near Wateshwar Hanuman Mandir, Reshimbagh, Nagpur, Maharashtra, India</p>
                   </div>
                 </div>
 
@@ -101,7 +101,7 @@ function ContactPage() {
                   </div>
                   <div className="info-details">
                     <h3>Email Address</h3>
-                    <p>asahibilingual@gmail.com</p>
+                    <p>absindia20@gmail.com</p>
                   </div>
                 </div>
 
@@ -121,7 +121,7 @@ function ContactPage() {
                 <h3>Our Location</h3>
                 <div className="map-iframe-container">
                   <iframe 
-                    src="https://www.google.com/maps?q=Reshim+Bagh,+Nagpur&output=embed" 
+                    src="https://www.google.com/maps?q=wateshwar+hanuman+mandir+reshimbagh+nagpur&output=embed" 
                     width="100%" 
                     height="200" 
                     style={{ border: 0, display: "block" }} 

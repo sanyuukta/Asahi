@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-EMAIL_USER = os.getenv("EMAIL_USER", "sanyukta.tiwari20@gmail.com")
+EMAIL_USER = os.getenv("EMAIL_USER", "absindia20@gmail.com")
 EMAIL_PASS = os.getenv("EMAIL_PASS", "qyxvsolvhjibtymx")
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "sanyukta.tiwari20@gmail.com")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "absindia20@gmail.com")
 
 def get_layout_wrapper(title: str, content_html: str) -> str:
     year = datetime.datetime.now().year

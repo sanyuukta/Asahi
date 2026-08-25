@@ -75,11 +75,15 @@ function Navbar() {
       <header className={`navbar-premium ${visible ? "" : "navbar-hidden"}`}>
         <div className="navbar-container-premium">
           <div className="main-nav-premium" onClick={handleGoHome}>
-            <div className="logo-premium"><img src={logo} alt="ASAHI" /></div>
-            <div className="brand-text-premium">
-              <h2>ASAHI</h2>
-              <span className="sub-line-1">JLPT PREPARATION &amp;</span>
-              <span className="sub-line-2">BILINGUAL SERVICES</span>
+            <div className="logo-squircle-box">
+              <img src={logo} alt="ASAHI Logo" />
+            </div>
+            <div className="brand-vertical-divider" />
+            <div className="brand-text-banner">
+              <span className="brand-line-1">Asahi JLPT Preparation</span>
+              <span className="brand-line-2">Classes</span>
+              <span className="brand-line-amp">&amp;</span>
+              <span className="brand-line-3">Asahi Bilingual Services</span>
             </div>
           </div>
 
@@ -104,7 +108,7 @@ function Navbar() {
               Enroll Now
             </button>
 
-            <div className="menu-icon-premium" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="menu-icon-circle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation menu">
               {menuOpen ? <FaTimes /> : <FaBars />}
             </div>
           </div>
@@ -116,11 +120,15 @@ function Navbar() {
         <div className={`mobile-menu-container ${menuOpen ? "active" : ""}`}>
           <div className="mobile-menu-header-swiggy">
             <div className="swiggy-user-info" onClick={handleGoHome} style={{ cursor: "pointer" }}>
-              <div className="drawer-logo-img"><img src={logo} alt="ASAHI" /></div>
-              <div className="drawer-brand-text">
-                <h2>ASAHI</h2>
-                <span className="sub-line-1">JLPT PREPARATION &amp;</span>
-                <span className="sub-line-2">BILINGUAL SERVICES</span>
+              <div className="logo-squircle-box drawer-squircle">
+                <img src={logo} alt="ASAHI Logo" />
+              </div>
+              <div className="brand-vertical-divider drawer-divider" />
+              <div className="brand-text-banner drawer-banner-text">
+                <span className="brand-line-1">Asahi JLPT Preparation</span>
+                <span className="brand-line-2">Classes</span>
+                <span className="brand-line-amp">&amp;</span>
+                <span className="brand-line-3">Asahi Bilingual Services</span>
               </div>
             </div>
             <div className="mobile-close-btn" onClick={() => setMenuOpen(false)} title="Close Menu">

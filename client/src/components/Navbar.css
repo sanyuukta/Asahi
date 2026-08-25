@@ -1,79 +1,52 @@
+/* ==========================================
+   ASAHI PREMIUM NAVBAR STYLES
+   Prominent, High-Visibility Design for Desktop & Mobile
+   ========================================== */
+
 .navbar-premium {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 105px;
+  height: 106px;
   z-index: 1000;
   overflow: hidden;
   
-  /* Polished Luxury Paint - Multi-layered Red Background */
+  /* Rich multi-layered crimson red banner with glossy shine & bottom depth */
   background:
-    /* Top-right glossy highlight */
-    radial-gradient(circle at 85% 0%, rgba(255,80,80,.22), transparent 32%),
-    /* Second curved wave highlight */
-    radial-gradient(circle at 35% -40%, rgba(255,255,255,.08), transparent 45%),
-    /* Diagonal light reflection */
-    linear-gradient(135deg, rgba(255,255,255,.08) 0%, transparent 35%),
-    /* Bottom curved fade into a darker red wave */
-    radial-gradient(circle at 50% 140%, rgba(130, 0, 10, 0.4) 0%, transparent 60%),
-    /* Base Ferrari Crimson Gradient */
+    radial-gradient(circle at 90% 10%, rgba(255, 140, 140, 0.28), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(110, 0, 10, 0.5), transparent 55%),
     linear-gradient(90deg,
-      #b50016 0%,
-      #cb001b 35%,
-      #d7001e 60%,
-      #c10018 100%
+      #b80016 0%,
+      #c9001a 35%,
+      #d9001d 65%,
+      #bd0017 100%
     );
   
-  /* 6px Glass backdrop blur */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  
-  /* Bottom Border Spec */
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  
-  /* Clean, flat professional look - no outer header shadows */
-  box-shadow: none;
-  
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 24px rgba(170, 0, 15, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-premium.navbar-hidden {
   transform: translateY(-100%);
 }
 
-.navbar-premium:hover {
-  box-shadow: none;
-}
-
-/* /* Clean Glossy Top Bar Glow */
-.navbar-premium::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Centered content layout container */
 .navbar-container-premium {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
   z-index: 5;
+  box-sizing: border-box;
 }
 
-/* Force immediate navbar blocks to vertical center (desktop) */
+/* Force immediate navbar items to vertical center */
 .navbar-container-premium > .main-nav-premium,
 .navbar-container-premium > .nav-links-premium,
 .navbar-container-premium > .nav-right-premium {
@@ -88,84 +61,107 @@
   height: 100% !important;
 }
 
-@media (max-width: 1280px) {
-  .navbar-container-premium {
-    padding: 0 24px;
-  }
-}
-
-/* BRAND LOGO AREA */
+/* BRAND LOGO & TITLE AREA */
 .main-nav-premium {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
-  position: relative;
-  z-index: 5;
+  user-select: none;
+  flex-shrink: 0;
 }
 
-.logo-premium {
+/* White Squircle box for Logo (Desktop Size: 64px x 64px) */
+.logo-squircle-box {
+  width: 64px;
+  height: 64px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 0 1.5px rgba(255, 255, 255, 0.95);
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.logo-premium img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 50%;
-  background: white;
-  padding: 2.5px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.logo-squircle-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 11px;
+  display: block;
 }
 
-.brand-text-premium {
+.main-nav-premium:hover .logo-squircle-box {
+  transform: scale(1.05);
+}
+
+/* Vertical White Divider Line */
+.brand-vertical-divider {
+  width: 2px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+
+/* Brand Text Banner (4 prominent lines) */
+.brand-text-banner {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  gap: 0;
-  margin-top: 11px;
-}
-
-.brand-text-premium h2 {
-  font-size: 22px;
-  font-weight: 900;
+  text-align: center;
   color: #ffffff;
-  line-height: 1.33;
-  letter-spacing: 0.8px;
-  margin-top: 0;
-}
-
-.brand-text-premium .sub-line-1 {
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: 1.6px;
-  color: rgba(238, 232, 232, 0.95);
-  text-transform: uppercase;
-  display: block;
-  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.15;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.brand-text-premium .sub-line-2 {
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: 1.6px;
- color: rgba(238, 232, 232, 0.95);
-  text-transform: uppercase;
+.brand-text-banner .brand-line-1 {
+  font-size: 15px;
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: block;
+}
+
+.brand-text-banner .brand-line-2 {
+  font-size: 13.5px;
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: 0.3px;
   margin-top: 1px;
-  white-space: nowrap;
+  display: block;
 }
 
-/* NAVIGATION LINKS */
+.brand-text-banner .brand-line-amp {
+  font-size: 12px;
+  font-weight: 850;
+  color: #ffffff;
+  margin: 1px 0;
+  display: block;
+}
+
+.brand-text-banner .brand-line-3 {
+  font-size: 15px;
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+/* DESKTOP NAVIGATION LINKS */
 .nav-links-premium {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -175,161 +171,93 @@
 
 .nav-links-premium a, .special-nav-link {
   text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
-  transition: all 0.3s ease;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.25s ease;
   position: relative;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 8px 16px;
+  border-radius: 24px;
   cursor: pointer;
-}
-
-.nav-links-premium a::after, .special-nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: white;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
 }
 
 .nav-links-premium a:hover, .special-nav-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .nav-links-premium a.active {
   color: #ffffff;
-  font-weight: 750;
-  background: rgba(255, 255, 255, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links-premium a.active::after {
-  display: none;
+  font-weight: 850;
+  background: rgba(255, 255, 255, 0.24);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 /* RIGHT SECTION ITEMS */
 .nav-right-premium {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   position: relative;
   z-index: 5;
+  flex-shrink: 0;
 }
 
-/* Icon Buttons (Cart/Profile) */
-.nav-icon-btn {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.nav-icon-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.08);
-}
-
+/* Prominent White Pill Button with Red Text */
 .enroll-pill-btn {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.95) !important;
-  color: #b50016 !important;
-  font-size: 13.5px !important;
-  font-weight: 750 !important;
-  padding: 10px 22px !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  background: #ffffff !important;
+  color: #b80016 !important;
+  font-size: 14.5px !important;
+  font-weight: 850 !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  border: none !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  z-index: 1;
-}
-
-.enroll-pill-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(179, 0, 18, 0.22) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: -1;
-  pointer-events: none;
+  white-space: nowrap !important;
+  letter-spacing: 0.3px !important;
 }
 
 .enroll-pill-btn:hover {
   background: #ffffff !important;
-  color: #d7001e !important;
-  border-color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.12) !important;
-}
-
-.enroll-pill-btn:hover::after {
-  left: 200%;
+  color: #d9001d !important;
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.45), 0 5px 16px rgba(0, 0, 0, 0.22) !important;
 }
 
 .enroll-pill-btn:active {
-  transform: translateY(0) !important;
+  transform: translateY(0) scale(0.98) !important;
 }
 
-/* Touch / mobile — header button slide on tap */
-@media (hover: none), (pointer: coarse), (max-width: 768px) {
-  .enroll-pill-btn {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
-
-  .enroll-pill-btn:active {
-    background: #ffffff !important;
-    color: #d7001e !important;
-    transform: translateY(-2px) scale(0.98) !important;
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.12) !important;
-  }
-
-  .enroll-pill-btn:active::after {
-    left: 200%;
-  }
-}
-
-/* Mobile Hamburger */
-.menu-icon-premium {
+/* Circular Hamburger Icon Button */
+.menu-icon-circle {
   display: none;
-  font-size: 22px;
-  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
 }
 
-.menu-icon-premium:hover {
-  transform: scale(1.08);
+.menu-icon-circle:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #ffffff;
+  transform: scale(1.06);
 }
 
 /* Mobile Menu Container Hidden on Desktop */
@@ -340,144 +268,87 @@
 /* ==========================================
    TABLET & MOBILE BREAKPOINTS
    ========================================== */
-/* ==========================================
-   TABLET & MOBILE BREAKPOINTS (ULTRA-CLEAN)
-   ========================================== */
-@media (max-width: 1024px) {
-  .navbar-premium {
-    width: 100%;
-    padding: 0 20px;
-  }
+@media (max-width: 1200px) {
   .nav-links-premium {
-    gap: 16px;
+    gap: 12px;
+  }
+  .nav-links-premium a, .special-nav-link {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .brand-text-banner .brand-line-1,
+  .brand-text-banner .brand-line-3 {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .navbar-premium {
-    width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    border-radius: 0 !important;
-    height: 105px !important;
-    padding: 0 !important;
-    overflow: visible !important;
-  }
-
-  .navbar-premium::before {
-    display: none;
-  }
-
-  .navbar-container-premium {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .main-nav-premium {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    cursor: pointer;
-  }
-
-  .logo-premium img {
-    width: 46px !important;
-    height: 46px !important;
-  }
-
-  .brand-text-premium {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    gap: 0 !important;
-    margin-top: 14px !important;
-  }
-
-  .brand-text-premium h2 {
-    font-size: 17px !important;
-    font-weight: 900 !important;
-    color: #ffffff !important;
-    margin-top: 0 !important;
-    line-height: 1.33 !important;
-    letter-spacing: 0.8px !important;
-  }
-
-  .brand-text-premium .sub-line-1 {
-    font-size: 8px !important;
-    font-weight: 800 !important;
-    letter-spacing: 1.4px !important;
-    color: #ffffff !important;
-    margin: 0 !important;
-    display: block !important;
-    white-space: nowrap !important;
-  }
-
-  .brand-text-premium .sub-line-2 {
-    font-size: 8px !important;
-    font-weight: 800 !important;
-    letter-spacing: 1.4px !important;
-    color: #ffffff !important;
-    margin-top: 1px !important;
-    display: block !important;
-    white-space: nowrap !important;
+    height: 96px !important;
   }
 
   .desktop-only-links {
     display: none !important;
   }
 
-  .nav-right-premium {
+  .menu-icon-circle {
     display: flex !important;
-    align-items: center !important;
+  }
+
+  .navbar-container-premium {
+    padding: 0 14px !important;
+  }
+
+  .main-nav-premium {
     gap: 10px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
+  }
+
+  .logo-squircle-box {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 14px !important;
+    padding: 4px !important;
+  }
+
+  .brand-vertical-divider {
+    height: 44px !important;
+    margin: 0 2px !important;
+  }
+
+  .brand-text-banner .brand-line-1 {
+    font-size: 13px !important;
+    letter-spacing: 0.2px !important;
+  }
+  .brand-text-banner .brand-line-2 {
+    font-size: 12px !important;
+    margin-top: 0.5px !important;
+  }
+  .brand-text-banner .brand-line-amp {
+    font-size: 10.5px !important;
+    margin: 0.5px 0 !important;
+  }
+  .brand-text-banner .brand-line-3 {
+    font-size: 13px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  .nav-right-premium {
+    gap: 10px !important;
   }
 
   .enroll-pill-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 6px 11px !important;
-    font-size: 10.5px !important;
-    font-weight: 700 !important;
-    border-radius: 14px !important;
-    background: #ffffff !important;
-    color: #b50016 !important;
-    border: 1px solid rgba(255, 255, 255, 0.9) !important;
-    white-space: nowrap !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
-    order: -1 !important;
-    margin-right: 8px !important;
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    border-radius: 40px !important;
   }
 
-  .menu-icon-premium {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 10px !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.35) !important;
-    color: #ffffff !important;
-    font-size: 16px !important;
-    cursor: pointer !important;
-    order: 1 !important;
+  .menu-icon-circle {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 19px !important;
   }
 
-
+  /* DRAWER STYLES */
   .mobile-menu-container {
     position: fixed;
     top: 0;
@@ -487,7 +358,7 @@
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     z-index: 9999;
@@ -520,12 +391,33 @@
   }
 
   .mobile-menu-header-swiggy {
-    background: linear-gradient(135deg, #D5001C 0%, #C50018 100%);
-    padding: 24px 20px;
+    background: linear-gradient(135deg, #be0018 0%, #dc001e 100%);
+    padding: 18px 16px;
     color: white;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+  }
+
+  .drawer-squircle {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 12px !important;
+  }
+
+  .drawer-divider {
+    height: 36px !important;
+  }
+
+  .drawer-banner-text .brand-line-1,
+  .drawer-banner-text .brand-line-3 {
+    font-size: 11px !important;
+  }
+  .drawer-banner-text .brand-line-2 {
+    font-size: 10px !important;
+  }
+  .drawer-banner-text .brand-line-amp {
+    font-size: 9px !important;
   }
 
   .mobile-close-btn {
@@ -546,62 +438,18 @@
 
   .mobile-close-btn:hover, .mobile-close-btn:active {
     background: #ffffff !important;
-    color: #D5001C !important;
+    color: #be0018 !important;
     transform: rotate(90deg) scale(1.05) !important;
   }
 
   .swiggy-user-info {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
-  }
-
-  .drawer-logo-img img {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    border: 2px solid rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
-    display: block !important;
-  }
-
-  .drawer-brand-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .drawer-brand-text h2 {
-    font-size: 19px !important;
-    font-weight: 900 !important;
-    color: #ffffff !important;
-    margin: 0 !important;
-    line-height: 1.1 !important;
-    letter-spacing: 0.8px !important;
-  }
-
-  .drawer-brand-text .sub-line-1,
-  .drawer-brand-text .sub-line-2 {
-    font-size: 8px !important;
-    font-weight: 800 !important;
-    color: rgba(255, 255, 255, 0.92) !important;
-    display: block !important;
-    letter-spacing: 1.1px !important;
-    line-height: 1.25 !important;
-    white-space: nowrap !important;
-  }
-
-  .drawer-brand-text .sub-line-1 {
-    margin-top: 2px !important;
-  }
-
-  .drawer-brand-text .sub-line-2 {
-    margin-top: 1px !important;
+    gap: 10px !important;
   }
 
   .mobile-menu-body {
-    padding: 20px;
+    padding: 16px;
     flex-grow: 1;
     overflow-y: auto;
   }
@@ -609,12 +457,12 @@
   .swiggy-list-container {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
   }
 
   .swiggy-other-title {
     margin: 10px 0 2px;
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 800;
     color: #94a3b8;
     text-transform: uppercase;
@@ -630,7 +478,7 @@
     background: #f8fafc;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     border: 1px solid transparent;
   }
 
@@ -641,11 +489,11 @@
   .swiggy-list-item.active-item {
     background: rgba(255, 30, 39, 0.08) !important;
     border: 1px solid rgba(255, 30, 39, 0.2) !important;
-    border-left: 4px solid #D5001C !important;
+    border-left: 4px solid #be0018 !important;
   }
 
   .swiggy-list-item.active-item .sli-left {
-    color: #D5001C !important;
+    color: #be0018 !important;
     font-weight: 750 !important;
   }
 
@@ -653,14 +501,14 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 600;
     color: #111111;
   }
 
   .sli-icon {
-    color: #D5001C;
-    font-size: 16px;
+    color: #be0018;
+    font-size: 17px;
   }
 
   .sli-arrow {
@@ -669,7 +517,7 @@
   }
 
   .mobile-footer {
-    padding: 14px 18px 75px !important;
+    padding: 14px 18px 24px !important;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     background: #f8fafc;
     display: flex !important;
@@ -712,7 +560,7 @@
   }
 
   .social-icon:hover {
-    color: #D5001C;
+    color: #be0018;
   }
 
   .drawer-copyright-text {
@@ -736,63 +584,111 @@
   }
 }
 
-@media (max-width: 480px) {
+/* SMARTPHONES (<= 450px) */
+@media (max-width: 450px) {
+  .navbar-premium {
+    height: 92px !important;
+  }
+
   .navbar-container-premium {
-    padding: 0 14px !important;
+    padding: 0 10px !important;
   }
 
   .main-nav-premium {
-    gap: 12px !important;
+    gap: 8px !important;
   }
 
-  .logo-premium img {
-    width: 43px !important;
-    height: 43px !important;
-    padding: 1.5px !important;
+  .logo-squircle-box {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 13px !important;
+    padding: 3.5px !important;
   }
 
-  .brand-text-premium {
-    margin-top: 14px !important;
+  .brand-vertical-divider {
+    height: 38px !important;
+    margin: 0 1px !important;
   }
 
-  .brand-text-premium h2 {
-    font-size: 16.5px !important;
-    letter-spacing: 0.8px !important;
-    line-height: 1.33 !important;
-    margin-top: 0 !important;
-    margin-bottom: 2px !important;
+  .brand-text-banner .brand-line-1 {
+    font-size: 11.5px !important;
   }
-
-  .brand-text-premium .sub-line-1 {
-    font-size: 7.8px !important;
-    letter-spacing: 1.4px !important;
-    font-weight: 800 !important;
-    color: #ffffff !important;
-    line-height: 1.25 !important;
+  .brand-text-banner .brand-line-2 {
+    font-size: 10.5px !important;
   }
-
-  .brand-text-premium .sub-line-2 {
-    font-size: 7.8px !important;
-    letter-spacing: 1.4px !important;
-    font-weight: 800 !important;
-    color: #ffffff !important;
-    line-height: 1.25 !important;
-    margin-top: 1px !important;
+  .brand-text-banner .brand-line-amp {
+    font-size: 9.5px !important;
+  }
+  .brand-text-banner .brand-line-3 {
+    font-size: 11.5px !important;
   }
 
   .nav-right-premium {
-    gap: 12px !important;
+    gap: 8px !important;
   }
 
   .enroll-pill-btn {
-    padding: 8px 14px !important;
+    padding: 7px 14px !important;
     font-size: 12px !important;
-    font-weight: 750 !important;
   }
 
-  .menu-icon-premium {
-    width: 37px !important;
-    height: 37px !important;
+  .menu-icon-circle {
+    width: 39px !important;
+    height: 39px !important;
+    font-size: 17px !important;
+  }
+}
+
+/* EXTRA SMALL SMARTPHONES (<= 375px) */
+@media (max-width: 375px) {
+  .navbar-premium {
+    height: 88px !important;
+  }
+
+  .navbar-container-premium {
+    padding: 0 8px !important;
+  }
+
+  .main-nav-premium {
+    gap: 6px !important;
+  }
+
+  .logo-squircle-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 11px !important;
+    padding: 3px !important;
+  }
+
+  .brand-vertical-divider {
+    height: 34px !important;
+  }
+
+  .brand-text-banner .brand-line-1 {
+    font-size: 10.2px !important;
+  }
+  .brand-text-banner .brand-line-2 {
+    font-size: 9.2px !important;
+  }
+  .brand-text-banner .brand-line-amp {
+    font-size: 8.2px !important;
+  }
+  .brand-text-banner .brand-line-3 {
+    font-size: 10.2px !important;
+  }
+
+  .nav-right-premium {
+    gap: 6px !important;
+  }
+
+  .enroll-pill-btn {
+    padding: 6px 11px !important;
+    font-size: 11px !important;
+  }
+
+  .menu-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
     font-size: 15px !important;
   }
 }

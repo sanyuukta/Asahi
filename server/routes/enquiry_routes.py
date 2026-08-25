@@ -100,7 +100,7 @@ async def submit_enquiry(payload: EnquiryRequest):
         send_email_async(email, "Thank You for Contacting ASAHI Japanese Learning", user_html)
 
         # Send Admin Email
-        admin_email = os.getenv("ADMIN_EMAIL", "sanyukta.tiwari20@gmail.com")
+        admin_email = os.getenv("ADMIN_EMAIL", "absindia20@gmail.com")
         admin_html = get_admin_enquiry_template(name, email, phone, exam, level, message)
         send_email_async(admin_email, f"Action Required: New Enrollment Enquiry - {name}", admin_html)
 

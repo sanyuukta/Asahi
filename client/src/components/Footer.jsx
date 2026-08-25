@@ -103,7 +103,7 @@ function Footer() {
                 <div className="c-icon-wrap"><FaMapMarkerAlt /></div>
                 <div>
                   <strong>Nagpur Campus</strong>
-                  <span>Reshimbagh, Nagpur, Maharashtra, India</span>
+                  <span>Sankranti Apartment, Near Wateshwar Hanuman Mandir, Reshimbagh, Nagpur, Maharashtra, India</span>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ function Footer() {
                 <div className="c-icon-wrap"><FaEnvelope /></div>
                 <div>
                   <strong>Email Support</strong>
-                  <span>asahibilingual@gmail.com</span>
+                  <span>absindia20@gmail.com</span>
                 </div>
               </div>
 
@@ -138,7 +138,7 @@ function Footer() {
                 <span className="live-dot" />
                 <span>ASAHI Nagpur Campus</span>
                 <a 
-                  href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024" 
+                  href="https://www.google.com/maps/search/?api=1&query=wateshwar+hanuman+mandir+reshimbagh+nagpur" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="map-dir-link"
@@ -147,7 +147,7 @@ function Footer() {
                 </a>
               </div>
               <iframe 
-                src="https://www.google.com/maps?q=Reshim+Bagh,+Nagpur&output=embed" 
+                src="https://www.google.com/maps?q=wateshwar+hanuman+mandir+reshimbagh+nagpur&output=embed" 
                 width="100%" 
                 height="120" 
                 style={{ border: 0, display: "block" }} 

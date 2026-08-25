@@ -91,8 +91,8 @@ const Terms = () => {
           <p>For official questions regarding these Terms & Conditions, please reach out to our administration team:</p>
           <div className="policy-contact-block">
             <strong className="policy-contact-title">ASAHI Bilingual Services</strong>
-            <div className="policy-contact-row"><MdLocationOn className="policy-contact-icon" /><span><strong>Location:</strong> Nagpur, Maharashtra, India</span></div>
-            <div className="policy-contact-row"><MdEmail className="policy-contact-icon" /><span><strong>Email:</strong> asahi.learning@gmail.com</span></div>
+            <div className="policy-contact-row"><MdLocationOn className="policy-contact-icon" /><span><strong>Location:</strong> Sankranti Apartment, Near Wateshwar Hanuman Mandir, Reshimbagh, Nagpur, Maharashtra, India</span></div>
+            <div className="policy-contact-row"><MdEmail className="policy-contact-icon" /><span><strong>Email:</strong> absindia20@gmail.com</span></div>
             <div className="policy-contact-row"><MdPhone className="policy-contact-icon" /><span><strong>Hotline:</strong> +91-8698888336</span></div>
           </div>
         </div>

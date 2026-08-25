@@ -23,7 +23,7 @@ def format_doc(doc):
 
 @router.post("/login")
 async def admin_login(payload: AdminLoginRequest):
-    admin_email = os.getenv("ADMIN_EMAIL", "sanyukta.tiwari20@gmail.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "absindia20@gmail.com")
     admin_pass = os.getenv("ADMIN_PASS", "asahi_admin_123")
 
     if not payload.email or not payload.password:

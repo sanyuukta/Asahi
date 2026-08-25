@@ -402,11 +402,11 @@ function Register() {
             <p className="contact-sub">Have questions? Speak directly with our bilingual education counselors.</p>
           </div>
 
-          <a href="mailto:asahibilingual@gmail.com" className="contact-box">
+          <a href="mailto:absindia20@gmail.com" className="contact-box">
             <div className="contact-icon email"><MdEmail /></div>
             <div className="contact-text">
               <h3>OFFICIAL EMAIL</h3>
-              <p>asahibilingual@gmail.com</p>
+              <p>absindia20@gmail.com</p>
             </div>
           </a>
 
@@ -419,7 +419,7 @@ function Register() {
           </a>
 
           <a
-            href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024"
+            href="https://www.google.com/maps/search/?api=1&query=wateshwar+hanuman+mandir+reshimbagh+nagpur"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-box"
@@ -427,7 +427,7 @@ function Register() {
             <div className="contact-icon loc"><FaLocationDot /></div>
             <div className="contact-text">
               <h3>CAMPUS LOCATION</h3>
-              <p>Reshimbagh, Nagpur, Maharashtra, India</p>
+              <p>Sankranti Apartment, Near Wateshwar Hanuman Mandir, Reshimbagh, Nagpur, Maharashtra, India</p>
             </div>
           </a>
 
@@ -435,7 +435,7 @@ function Register() {
             <div className="map-card-header">
               <span><FaMapMarkerAlt /> ASAHI NAGPUR CAMPUS MAP</span>
               <a 
-                href="https://www.google.com/maps/place/Reshim+Bagh,+Nagpur,+Maharashtra+440024" 
+                href="https://www.google.com/maps/search/?api=1&query=wateshwar+hanuman+mandir+reshimbagh+nagpur" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="map-header-link"
@@ -446,7 +446,7 @@ function Register() {
             <div className="map-frame-wrapper">
               <iframe
                 title="ASAHI Campus Map"
-                src="https://www.google.com/maps?q=Reshim+Bagh,+Nagpur&output=embed"
+                src="https://www.google.com/maps?q=wateshwar+hanuman+mandir+reshimbagh+nagpur&output=embed"
                 loading="lazy"
               />
             </div>
